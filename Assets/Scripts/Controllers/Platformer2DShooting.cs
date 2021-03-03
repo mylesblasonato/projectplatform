@@ -5,7 +5,13 @@ using UnityEngine;
 public class Platformer2DShooting : MonoBehaviour
 {
     [SerializeField] Transform _equippedGun;
+    [SerializeField] LineRenderer _lineRenderer;
     [SerializeField] bool _mouseAim = false, _mouseFlip = false;
+
+    private void Start()
+    {
+        _lineRenderer.enabled = false;
+    }
 
     private void Update()
     {
@@ -20,28 +26,48 @@ public class Platformer2DShooting : MonoBehaviour
 
     public void Shoot(float ctx)
     {
-        _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();
-
-        var origin = new Vector2(_equippedGun.GetChild(0).transform.position.x, _equippedGun.GetChild(0).transform.position.y);
-        var dest = new Vector2();
-
-        if (!_mouseAim)
-            dest = _equippedGun.right;
-        else
-            dest = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
-        RaycastHit2D hitObject = Physics2D.Raycast(
-            origin, 
-            dest, 
-            _equippedGun.GetComponent<Weapon>().Range, 
-            _equippedGun.GetComponent<Weapon>().LayerMask);
-
-        if (hitObject)
+        if (Mathf.Abs(ctx) >= 1)
         {
-            hitObject.transform.GetComponent<Rigidbody2D>().AddForce(-hitObject.normal * 200f);
+            _lineRenderer.enabled = true;
+            _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();           
+
+            var origin = new Vector2(_equippedGun.GetChild(0).transform.position.x, _equippedGun.GetChild(0).transform.position.y);
+            var dest = new Vector2();
+
+            if (!_mouseAim)
+                dest = _equippedGun.right;
+            else
+                dest = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            RaycastHit2D hitObject = Physics2D.Raycast(
+                origin,
+                dest,
+                _equippedGun.GetComponent<Weapon>().Range,
+                _equippedGun.GetComponent<Weapon>().LayerMask);
+
+            if (hitObject)
+            {
+                _lineRenderer.SetPosition(0, _equippedGun.GetChild(0).GetChild(0).transform.position);
+                _lineRenderer.SetPosition(1, hitObject.transform.position);
+
+                hitObject.transform.GetComponent<Rigidbody2D>().AddForce(-hitObject.normal * _equippedGun.GetComponent<Weapon>().Power);
+                hitObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            }
+            else
+            {
+                _lineRenderer.SetPosition(0, _equippedGun.GetChild(0).GetChild(0).transform.position);
+                _lineRenderer.SetPosition(1, _equippedGun.GetChild(0).GetChild(0).transform.right * 100f);
+            }
+
+            Invoke("TurnOffLine", 0.1f);
         }
     }
 
+    void TurnOffLine()
+    {
+        _lineRenderer.enabled = false;
+    }
+    
     // TOOLS / GIZMOS
     private void OnDrawGizmos()
     {
