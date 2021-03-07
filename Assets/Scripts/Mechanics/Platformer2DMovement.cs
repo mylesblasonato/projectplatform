@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Platformer2DMovement : MonoBehaviour
 {
-    [SerializeField] float _speed, _runMultiplier = 1.5f, _jumpForce = 10f, _gravity = 10f, _drag = 10f, _fallMultiplier = 3f;
+    [SerializeField] float _speed, _runMultiplier = 1.5f, _jumpForce = 10f, _gravity = 10f, _drag = 10f, _fallMultiplier = 3f, _jumpTimer = 0.5f;
     [SerializeField] int _jumpCount = 3;
     [SerializeField] Transform _groundCheck;
     [SerializeField] float _groundCheckRadius;
@@ -63,6 +63,16 @@ public class Platformer2DMovement : MonoBehaviour
         {
             _isJumping = true;
         }
+
+        if(isJumping == 0)
+            _isJumping = false;
+
+        Invoke("StopJump", _jumpTimer);
+    }
+
+    void StopJump()
+    {
+        _isJumping = false;
     }
 
     private void Update()
@@ -94,7 +104,7 @@ public class Platformer2DMovement : MonoBehaviour
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 0);
             _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-            _isJumping = false;
+            //_isJumping = false;
         }
     }
 
