@@ -4,18 +4,19 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
+[System.Serializable] public class UnityEventBool : UnityEvent<bool> { }
 
-public class InputManager : MonoSingleton, INewInputSystem
+public class InputManager : MonoBehaviour, INewInputSystem
 {
-    [SerializeField] InputAction _moveAction, _runAction, _jumpAction, _shootAction;
-    [SerializeField] UnityEventFloat _OnMovePerformed, _OnRunPerformed, _OnJumpPerformed, _OnShootPerformed;
+    public InputAction _moveAction, _runAction, _jumpAction, _shootAction;
+    public UnityEventFloat _OnMovePerformed;
+    public UnityEventFloat _OnRunPerformed, _OnJumpPerformed, _OnShootPerformed;
 
     private void OnEnable() => Enable();
     private void OnDisable() => Disable();
     private void Awake()
     {
         EventHandlers();
-        base.MakeSingleton();
     }
     
     public void Enable()
@@ -36,20 +37,20 @@ public class InputManager : MonoSingleton, INewInputSystem
 
     public void EventHandlers()
     {
-        _moveAction.performed += ctx => LeftAndRightInputActionPerformed(ctx.ReadValue<float>());
-        _moveAction.canceled += ctx => LeftAndRightInputActionPerformed(ctx.ReadValue<float>());
+        _moveAction.performed += ctx => MovePerformed(ctx);
+        _moveAction.canceled += ctx => MovePerformed(ctx);
 
-        _runAction.performed += ctx => RunInputActionPerformed(ctx.ReadValue<float>());
-        _runAction.canceled += ctx => RunInputActionPerformed(ctx.ReadValue<float>());
+        _runAction.performed += ctx => RunInputActionPerformed(ctx);
+        _runAction.canceled += ctx => RunInputActionPerformed(ctx);
 
-        _jumpAction.performed += ctx => JumpInputActionPerformed(ctx.ReadValue<float>());
-        _jumpAction.canceled += ctx => JumpInputActionPerformed(ctx.ReadValue<float>());
+        _jumpAction.performed += ctx => JumpInputActionPerformed(ctx);
+        _jumpAction.canceled += ctx => JumpInputActionPerformed(ctx);
 
-        _shootAction.performed += ctx => OnShootPerformed(ctx.ReadValue<float>());
+        _shootAction.performed += ctx => OnShootPerformed(ctx);
     }
 
-    public void LeftAndRightInputActionPerformed(float ctx) => _OnMovePerformed?.Invoke(ctx);
-    public void RunInputActionPerformed(float ctx) => _OnRunPerformed?.Invoke(ctx);
-    public void JumpInputActionPerformed(float ctx) => _OnJumpPerformed?.Invoke(ctx);
-    public void OnShootPerformed(float ctx) => _OnShootPerformed?.Invoke(ctx);
+    public void MovePerformed(InputAction.CallbackContext ctx) => _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x);
+    public void RunInputActionPerformed(InputAction.CallbackContext ctx) => _OnRunPerformed?.Invoke(ctx.ReadValue<float>());
+    public void JumpInputActionPerformed(InputAction.CallbackContext ctx) => _OnJumpPerformed?.Invoke(ctx.ReadValue<float>());
+    public void OnShootPerformed(InputAction.CallbackContext ctx) => _OnShootPerformed?.Invoke(ctx.ReadValue<float>());
 }
