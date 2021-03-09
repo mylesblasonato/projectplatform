@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2546452017022610106}
   - component: {fileID: 2546452017022610105}
   - component: {fileID: 2546452017022610107}
+  - component: {fileID: 8263903942245583533}
   - component: {fileID: 2546452017022610100}
   - component: {fileID: 2546452017022610101}
   - component: {fileID: 1008470879}
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2546452017022610111}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -6.08, y: -2.488, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
@@ -38,7 +39,7 @@ Transform:
   - {fileID: 2546452018375646401}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &2546452017022610106
 Rigidbody2D:
   serializedVersion: 4
@@ -98,19 +99,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 224fc5c34a4450b40b56a34572372400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1.2
-  _runMultiplier: 1.5
-  _jumpForce: 25
-  _gravity: 8
-  _drag: 25
-  _fallMultiplier: 3
-  _jumpCount: 1
+  _speed: {fileID: 11400000, guid: 786dc3eb234ed2144913303c6cc2a29c, type: 2}
+  _runMultiplier: {fileID: 11400000, guid: af58754eaa1a9ad448e817f220f60783, type: 2}
+  _animator: {fileID: 1388521929}
+  _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
+--- !u!114 &8263903942245583533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546452017022610111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617143fff408434b86307da21847e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: {fileID: 11400000, guid: 6a0c412408bb5064da8e91e461a3ff44, type: 2}
+  _gravity: {fileID: 11400000, guid: 07db99a0e8cb1744cbd3a885a086946e, type: 2}
+  _drag: {fileID: 11400000, guid: 7762a1790df67294b9a5a5ed5cde38c6, type: 2}
+  _airDrag: {fileID: 11400000, guid: 85bcfccd98f62934ba40af8ad2ff5095, type: 2}
+  _dragSensitivity: {fileID: 11400000, guid: 72448f42c85cb6a449938eeb40a52a18, type: 2}
+  _fallMultiplier: {fileID: 11400000, guid: 3ad17cc7cbcfd1a459184fbe957a7cdc, type: 2}
+  _jumpTimer: {fileID: 11400000, guid: 513646974b91d6d45bf02b9b0065c4cc, type: 2}
+  _jumpCount: {fileID: 11400000, guid: 2970608db6167d246b19324d5e6387ae, type: 2}
+  _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
   _groundCheck: {fileID: 2546452018375646401}
-  _groundCheckRadius: 0.3
+  _groundCheckRadius: 0.05
   _groundMask:
     serializedVersion: 2
     m_Bits: 256
   _animator: {fileID: 1388521929}
+  _isJumping: 0
 --- !u!114 &2546452017022610100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,8 +318,8 @@ MonoBehaviour:
   _OnJumpPerformed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2546452017022610107}
-        m_TargetAssemblyTypeName: Platformer2DMovement, Assembly-CSharp
+      - m_Target: {fileID: 8263903942245583533}
+        m_TargetAssemblyTypeName: Platformer2DJump, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -383,7 +403,7 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2546452017566659734}
-  serializedVersion: 7
+  serializedVersion: 6
   lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 0
@@ -3955,20 +3975,19 @@ ParticleSystem:
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 4
+    serializedVersion: 3
     type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    m_Planes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    plane0: {fileID: 0}
+    plane1: {fileID: 0}
+    plane2: {fileID: 0}
+    plane3: {fileID: 0}
+    plane4: {fileID: 0}
+    plane5: {fileID: 0}
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -4142,20 +4161,17 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
-    serializedVersion: 2
+    collisionShape0: {fileID: 0}
+    collisionShape1: {fileID: 0}
+    collisionShape2: {fileID: 0}
+    collisionShape3: {fileID: 0}
+    collisionShape4: {fileID: 0}
+    collisionShape5: {fileID: 0}
     inside: 1
     outside: 0
     enter: 0
     exit: 0
-    colliderQueryMode: 0
     radiusScale: 1
-    primitives:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -5399,7 +5415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2546452018375646400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.309, z: 0}
+  m_LocalPosition: {x: 0, y: -0.479, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2546452017022610104}
