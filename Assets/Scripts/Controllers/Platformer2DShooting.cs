@@ -7,10 +7,15 @@ public class Platformer2DShooting : MonoBehaviour
     [SerializeField] Transform _equippedGun;
     [SerializeField] LineRenderer _lineRenderer;
     [SerializeField] bool _mouseAim = false, _mouseFlip = false;
+    [SerializeField] SoFloat _inputDirection;
+
+    [SerializeField] Animator _animator;
+    Rigidbody2D _rb;
 
     private void Start()
     {
         _lineRenderer.enabled = false;
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -29,6 +34,7 @@ public class Platformer2DShooting : MonoBehaviour
         if (Mathf.Abs(ctx) >= 1)
         {
             _lineRenderer.enabled = true;
+            _animator.SetTrigger("Shoot");
             _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();           
 
             var origin = new Vector2(_equippedGun.GetChild(0).transform.position.x, _equippedGun.GetChild(0).transform.position.y);
@@ -66,6 +72,7 @@ public class Platformer2DShooting : MonoBehaviour
     void TurnOffLine()
     {
         _lineRenderer.enabled = false;
+        
     }
     
     // TOOLS / GIZMOS

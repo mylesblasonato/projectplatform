@@ -36,6 +36,7 @@ public class Platformer2DJump : MonoBehaviour
             if (_currentJumpCount < _jumpCount.Value)
             {
                 _isJumping = true;
+                _animator.SetTrigger("Jump");
                 Invoke("StopJump", _jumpTimer.Value);
             }
         }
@@ -64,6 +65,7 @@ public class Platformer2DJump : MonoBehaviour
         if (_isGrounded)
         {
             _currentJumpCount = 0;
+            _animator.SetTrigger("Land");
             if (Mathf.Abs(_rb.velocity.x) > _dragSensitivity.Value)
                 _rb.drag = _drag.Value;
             else

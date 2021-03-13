@@ -1,40 +1,31 @@
 fileFormatVersion: 2
-guid: eede539a6336d9b4d87a72683cdb1379
+guid: b0c03b61568609343b6315ddc59220af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2456337592447410214
-    second: Dark_0
+      213: -9024073875183706388
+    second: DarkBottom_0
   - first:
-      213: 3668844235565957644
-    second: Dark_1
+      213: 6016611104669476861
+    second: DarkBottom_1
   - first:
-      213: 2908445944672754156
-    second: Dark_2
+      213: -7777722889862355235
+    second: DarkBottom_2
   - first:
-      213: 7011632633457172539
-    second: Dark_0
+      213: -4553492385735614477
+    second: DarkBottom_3
   - first:
-      213: -1706543976777161865
-    second: Dark_1
+      213: -1650153409884436499
+    second: DarkBottom_4
   - first:
-      213: 4711705692503554881
-    second: Dark_2
+      213: -833979632017168814
+    second: DarkBottom_5
   - first:
-      213: 512351887571169308
-    second: Dark_3
+      213: -5786232453627450079
+    second: DarkBottom_6
   - first:
-      213: 5079737881821524708
-    second: Dark_4
-  - first:
-      213: 3980960744619198163
-    second: Dark_5
-  - first:
-      213: -4368747341043782616
-    second: Dark_6
-  - first:
-      213: -8267345778489866531
-    second: Dark_7
+      213: -8351781564151712192
+    second: DarkBottom_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,28 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dark_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 33
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c103ea2c35d3c1700800000000000000
-      internalID: 512351887571169308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dark_0
+      name: DarkBottom_0
       rect:
         serializedVersion: 2
         x: 0
@@ -183,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adfdbb159f559edd0800000000000000
-      internalID: -2456337592447410214
+      spriteID: ceedac24f9c04c280800000000000000
+      internalID: -9024073875183706388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_1
+      name: DarkBottom_1
       rect:
         serializedVersion: 2
         x: 33
@@ -204,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c020625d46a5ae230800000000000000
-      internalID: 3668844235565957644
+      spriteID: df7ae7d1ceb4f7350800000000000000
+      internalID: 6016611104669476861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_2
+      name: DarkBottom_2
       rect:
         serializedVersion: 2
         x: 66
@@ -225,14 +195,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce915a45d20ec5820800000000000000
-      internalID: 2908445944672754156
+      spriteID: dd664546d3aff0490800000000000000
+      internalID: -7777722889862355235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_4
+      name: DarkBottom_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff58c4fccebec0c0800000000000000
+      internalID: -4553492385735614477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkBottom_4
       rect:
         serializedVersion: 2
         x: 33
@@ -246,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e2311e90bade7640800000000000000
-      internalID: 5079737881821524708
+      spriteID: de740f2773a7919e0800000000000000
+      internalID: -1650153409884436499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_5
+      name: DarkBottom_5
       rect:
         serializedVersion: 2
         x: 66
@@ -267,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d64dc784b63f3730800000000000000
-      internalID: 3980960744619198163
+      spriteID: 256a4bb71fb1d64f0800000000000000
+      internalID: -833979632017168814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_6
+      name: DarkBottom_6
       rect:
         serializedVersion: 2
         x: 0
@@ -288,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82c27af90771f53c0800000000000000
-      internalID: -4368747341043782616
+      spriteID: 12de2bd7d3c23bfa0800000000000000
+      internalID: -5786232453627450079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dark_7
+      name: DarkBottom_7
       rect:
         serializedVersion: 2
         x: 33
@@ -309,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd649c511dc744d80800000000000000
-      internalID: -8267345778489866531
+      spriteID: 046b413cae2881c80800000000000000
+      internalID: -8351781564151712192
       vertices: []
       indices: 
       edges: []
