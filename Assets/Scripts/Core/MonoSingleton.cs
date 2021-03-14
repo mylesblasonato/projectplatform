@@ -2,10 +2,10 @@
 
 public class MonoSingleton : MonoBehaviour
 {
-    private static MonoSingleton _instance;
+    protected static MonoSingleton _instance;
     public static MonoSingleton Instance => _instance;
 
-    protected void MakeSingleton()
+    protected void MakeSingleton(MonoSingleton obj)
     {
         if (_instance != null && _instance != this)
         {
@@ -13,7 +13,7 @@ public class MonoSingleton : MonoBehaviour
         }
         else
         {
-            _instance = this;
+            _instance = obj;
         }
     }
 }

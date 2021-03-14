@@ -30,6 +30,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Crouch",
+                    "type": "PassThrough",
+                    "id": "2f3e2c97-cc9a-4796-bd23-7ef301597912",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "c4157122-ebc8-44d9-8d71-c4fb46b07a9f",
@@ -96,19 +104,8 @@
                 },
                 {
                     "name": "",
-                    "id": "204030e4-6c64-430c-bbc1-a2bb655e83da",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "e028e15a-d8a6-4033-a84d-5dc452cb77d4",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -124,6 +121,50 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "204030e4-6c64-430c-bbc1-a2bb655e83da",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0063dc4e-c900-4bc1-aa04-8a9df6a29a6f",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc4a6f3e-8462-496b-9abe-cd3a85d6fa3d",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8f8793b-1d43-4d13-a486-3f55b3d3c0a8",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

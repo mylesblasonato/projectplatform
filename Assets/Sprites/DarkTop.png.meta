@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: 3305739998354313012
     second: DarkTop_7
+  - first:
+      213: 7942343632317966071
+    second: DarkTop_8
+  - first:
+      213: -4022144044996426325
+    second: DarkTop_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -205,8 +211,8 @@ TextureImporter:
       name: DarkTop_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 33
+        x: 99
+        y: 66
         width: 32
         height: 32
       alignment: 0
@@ -226,7 +232,7 @@ TextureImporter:
       name: DarkTop_4
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 33
         width: 32
         height: 32
@@ -247,7 +253,7 @@ TextureImporter:
       name: DarkTop_5
       rect:
         serializedVersion: 2
-        x: 66
+        x: 33
         y: 33
         width: 32
         height: 32
@@ -268,8 +274,8 @@ TextureImporter:
       name: DarkTop_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 66
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -289,8 +295,8 @@ TextureImporter:
       name: DarkTop_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
+        x: 99
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -302,6 +308,48 @@ TextureImporter:
       bones: []
       spriteID: 43f85b1930950ed20800000000000000
       internalID: 3305739998354313012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkTop_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6e568047fd83e60800000000000000
+      internalID: 7942343632317966071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkTop_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba509822d497e28c0800000000000000
+      internalID: -4022144044996426325
       vertices: []
       indices: 
       edges: []

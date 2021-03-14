@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Platformer2DMovement : MonoBehaviour
 {
-    [SerializeField] SoFloat _speed, _runMultiplier;
-    [SerializeField] Animator _animator;
+    [SerializeField] SoFloat _speed, _airSpeedModifier, _runMultiplier;
+    [SerializeField] Animator _animator, _animatorTop;
     [SerializeField] SoFloat _inputDirection;
 
     Platformer2DJump _platformerJump;
@@ -25,22 +25,28 @@ public class Platformer2DMovement : MonoBehaviour
     public void Walk(float inputDirection)
     {
         _inputDirection.Value = inputDirection;
-        _animator.SetFloat("IdleToWalk", Mathf.Abs(_inputDirection.Value));
-
+        RunCheck();
         if (_inputDirection.Value < 0)
             transform.localRotation = new Quaternion(0, 180f, 0, 0);
         if (_inputDirection.Value > 0)
             transform.localRotation = Quaternion.identity;
-
         if (_inputDirection.Value != 0)
             _isMoving = true;
         else
             _isMoving = false;
     }
 
+    void RunCheck()
+    {
+        if (!_isRunning)
+            EventManager.Instance.GetComponent<EventManager>()?.Walk();
+        else
+            EventManager.Instance.GetComponent<EventManager>()?.Run();
+    }
+
     public void Run(float isRunning)
     {
-        if (isRunning != 0)
+        if (isRunning == 1)
         {
             _velocity *= _runMultiplier.Value;
             _isRunning = true;
@@ -50,17 +56,25 @@ public class Platformer2DMovement : MonoBehaviour
             _velocity =  _speed.Value;
             _isRunning = false;
         }
+        RunCheck();
     }
 
     private void FixedUpdate()
     {
-        if (_isMoving) Move();
+        if (_isMoving) 
+            Move();
+    }
+
+    private void Update()
+    {
+        if (_rb.velocity.x == 0)
+            EventManager.Instance.GetComponent<EventManager>()?.Idle();
     }
 
     private void Move()
     {
-        if(_platformerJump._isJumping)
-            _rb.velocity += new Vector2((_inputDirection.Value * _velocity) * 0.8f, 0);
+        if(_platformerJump != null && _platformerJump._isJumping)
+            _rb.velocity += new Vector2((_inputDirection.Value * _velocity) * _airSpeedModifier.Value, 0);
         else
             _rb.velocity += new Vector2(_inputDirection.Value * _velocity, 0);
     }

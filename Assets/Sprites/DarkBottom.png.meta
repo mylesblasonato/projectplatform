@@ -26,6 +26,15 @@ TextureImporter:
   - first:
       213: -8351781564151712192
     second: DarkBottom_7
+  - first:
+      213: 7909276599103154933
+    second: DarkBottom_8
+  - first:
+      213: -7970407147858100872
+    second: DarkBottom_9
+  - first:
+      213: -3891344993946560270
+    second: DarkBottom_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -205,8 +214,8 @@ TextureImporter:
       name: DarkBottom_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 33
+        x: 99
+        y: 66
         width: 32
         height: 32
       alignment: 0
@@ -226,7 +235,7 @@ TextureImporter:
       name: DarkBottom_4
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 33
         width: 32
         height: 32
@@ -247,7 +256,7 @@ TextureImporter:
       name: DarkBottom_5
       rect:
         serializedVersion: 2
-        x: 66
+        x: 33
         y: 33
         width: 32
         height: 32
@@ -268,8 +277,8 @@ TextureImporter:
       name: DarkBottom_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 66
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -289,8 +298,8 @@ TextureImporter:
       name: DarkBottom_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
+        x: 99
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -302,6 +311,69 @@ TextureImporter:
       bones: []
       spriteID: 046b413cae2881c80800000000000000
       internalID: -8351781564151712192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkBottom_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa6ad7692563cd60800000000000000
+      internalID: 7909276599103154933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkBottom_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dfea49dec636190800000000000000
+      internalID: -7970407147858100872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkBottom_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f81251685a2ff9c0800000000000000
+      internalID: -3891344993946560270
       vertices: []
       indices: 
       edges: []
