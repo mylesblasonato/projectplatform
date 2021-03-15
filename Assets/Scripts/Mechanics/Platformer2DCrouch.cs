@@ -14,7 +14,7 @@ public class Platformer2DCrouch : MonoBehaviour
     Rigidbody2D _rb;
     bool _crouchDash = false;
 
-    [HideInInspector] public bool _isCrouching = false;
+    public bool _isCrouching = false;
 
     void Start()
     {
@@ -37,7 +37,6 @@ public class Platformer2DCrouch : MonoBehaviour
                 if (_moveMechanic._isRunning)
                 {
                     _rb.drag = _crouchDrag.Value;
-                    _crouchDash = true;
                 }
                 else
                 {
@@ -66,6 +65,11 @@ public class Platformer2DCrouch : MonoBehaviour
     public void Crouch(float isCrouching)
     {
         _isCrouching = (isCrouching >= 0.9f);
+
+        if (_moveMechanic._isRunning)
+        {
+            _crouchDash = true;
+        }
     }
 
     #region HELPERS
