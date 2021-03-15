@@ -237,6 +237,7 @@ MonoBehaviour:
   _animator: {fileID: 742572741}
   _animatorTop: {fileID: 537081763}
   _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
+  _isRunning: 0
 --- !u!114 &8263903942245583533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _isJumping: 0
+  _isGrounded: 0
 --- !u!114 &8595988829903466675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,10 +278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5071d02eea4602e4095e84f599ec2959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _crouchDrag: {fileID: 11400000, guid: be42fc1f902536a43a3526a830521402, type: 2}
+  _dashCrouchForce: {fileID: 11400000, guid: 2ae28bbf27e6dd24cb310d20f1df6451, type: 2}
   _boxColliderStand: {fileID: 2546452017022610105}
   _boxColliderCrouch: {fileID: 4270269119357015490}
   _playerSpriteTop: {fileID: 2546452018349504515}
   _crouchPos: {fileID: 6371059243015158530}
+  _isCrouching: 0
 --- !u!114 &2546452017022610100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +549,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2f3e2c97-cc9a-4796-bd23-7ef301597912
     m_ActionName: Player/Crouch[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 54fed39d-262e-450b-8304-2482aead06cc
+    m_ActionName: Player/Pause[/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player

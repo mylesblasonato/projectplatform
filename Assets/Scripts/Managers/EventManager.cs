@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventManager : MonoSingleton
+public class EventManager : MonoSingleton<EventManager>
 {
     [HideInInspector] public UnityAction _OnIdle, _OnWalk, _OnRun, _OnJump, _OnLand, _OnCrouch, _OnStand, _OnShoot, _OnStopShoot;
 
@@ -16,9 +16,4 @@ public class EventManager : MonoSingleton
     public void Stand() => _OnStand?.Invoke();
     public void Shoot() => _OnShoot?.Invoke();
     public void StopShoot() => _OnStopShoot?.Invoke();
-
-    private void Awake()
-    {
-        MakeSingleton(this);
-    }
 }

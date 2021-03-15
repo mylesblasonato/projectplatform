@@ -9,16 +9,18 @@ public class Platformer2DMovement : MonoBehaviour
     [SerializeField] Animator _animator, _animatorTop;
     [SerializeField] SoFloat _inputDirection;
 
+    Platformer2DCrouch _platformerCrouch;
     Platformer2DJump _platformerJump;
     float _velocity;
     Rigidbody2D _rb;
     bool _isMoving = false;
-    bool _isRunning = false;
+    [HideInInspector] public bool _isRunning = false;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _platformerJump = GetComponent<Platformer2DJump>();
+        _platformerCrouch = GetComponent<Platformer2DCrouch>();
         _velocity = _speed.Value;
     }
 
@@ -39,9 +41,9 @@ public class Platformer2DMovement : MonoBehaviour
     void RunCheck()
     {
         if (!_isRunning)
-            EventManager.Instance.GetComponent<EventManager>()?.Walk();
+            EventManager.Instance.Walk();
         else
-            EventManager.Instance.GetComponent<EventManager>()?.Run();
+            EventManager.Instance.Run();
     }
 
     public void Run(float isRunning)
@@ -68,14 +70,17 @@ public class Platformer2DMovement : MonoBehaviour
     private void Update()
     {
         if (_rb.velocity.x == 0)
-            EventManager.Instance.GetComponent<EventManager>()?.Idle();
+            EventManager.Instance.Idle();
     }
 
     private void Move()
     {
-        if(_platformerJump != null && _platformerJump._isJumping)
-            _rb.velocity += new Vector2((_inputDirection.Value * _velocity) * _airSpeedModifier.Value, 0);
-        else
-            _rb.velocity += new Vector2(_inputDirection.Value * _velocity, 0);
+        if (!_platformerCrouch._isCrouching)
+        {
+            if (_platformerJump != null && _platformerJump._isJumping)
+                _rb.velocity += new Vector2((_inputDirection.Value * _velocity) * _airSpeedModifier.Value, 0);
+            else
+                _rb.velocity += new Vector2(_inputDirection.Value * _velocity, 0);
+        }
     }
 }

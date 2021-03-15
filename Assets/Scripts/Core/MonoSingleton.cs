@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 
-public class MonoSingleton : MonoBehaviour
+public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    protected static MonoSingleton _instance;
-    public static MonoSingleton Instance => _instance;
-
-    protected void MakeSingleton(MonoSingleton obj)
+    public static T Instance { get; private set; }
+    protected virtual void Awake()
     {
-        if (_instance != null && _instance != this)
+        if (Instance != null)
         {
-            Destroy(this.gameObject);
+            Debug.LogError("A instance already exists");
+            Destroy(this); //Or GameObject as appropriate
+            return;
         }
-        else
-        {
-            _instance = obj;
-        }
+        Instance = this.gameObject.GetComponent<T>();
+        DontDestroyOnLoad(gameObject);
     }
 }

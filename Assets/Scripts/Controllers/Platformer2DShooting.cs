@@ -10,20 +10,22 @@ public class Platformer2DShooting : MonoBehaviour
     [SerializeField] SoFloat _inputDirection;
 
     Rigidbody2D _rb;
+    Camera _main;
 
     private void Start()
     {
         _lineRenderer.enabled = false;
         _rb = GetComponent<Rigidbody2D>();
+        _main = Camera.main;
     }
 
     private void Update()
     {
         if (_mouseFlip)
         {
-            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
+            if (_main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
                 transform.localRotation = new Quaternion(0, 180f, 0, 0);
-            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
+            if (_main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
                 transform.localRotation = Quaternion.identity;
         }
     }
@@ -33,7 +35,7 @@ public class Platformer2DShooting : MonoBehaviour
         if (Mathf.Abs(ctx) >= 1)
         {
             _lineRenderer.enabled = true;
-            EventManager.Instance.GetComponent<EventManager>()?.Shoot();
+            EventManager.Instance.Shoot();
             _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();
             var origin = new Vector2(_equippedGun.GetChild(0).transform.position.x, _equippedGun.GetChild(0).transform.position.y);
             var dest = new Vector2();
@@ -41,7 +43,7 @@ public class Platformer2DShooting : MonoBehaviour
             if (!_mouseAim)
                 dest = _equippedGun.right;
             else
-                dest = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                dest = _main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
             RaycastHit2D hitObject = Physics2D.Raycast(
                 origin,
@@ -67,7 +69,7 @@ public class Platformer2DShooting : MonoBehaviour
         }
         else
         {
-            EventManager.Instance.GetComponent<EventManager>()?.StopShoot();
+            EventManager.Instance.StopShoot();
         }
     }
 
@@ -79,7 +81,7 @@ public class Platformer2DShooting : MonoBehaviour
         if (!_mouseAim)
             Gizmos.DrawRay(_equippedGun.GetChild(0).transform.position, _equippedGun.right);
         else
-            Gizmos.DrawRay(_equippedGun.GetChild(0).transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+            Gizmos.DrawRay(_equippedGun.GetChild(0).transform.position, _main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
 
     }
     #endregion

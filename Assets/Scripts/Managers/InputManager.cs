@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour, INewInputSystem
 
     private void OnEnable() => Enable();
     private void OnDisable() => Disable();
-    private void Awake()
+    private void Start()
     {
         EventHandlers();
     }
@@ -53,9 +53,9 @@ public class InputManager : MonoBehaviour, INewInputSystem
         _shootAction.performed += ctx => OnShootPerformed(ctx);
     }
 
-    public void MovePerformed(InputAction.CallbackContext ctx) => _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x);
-    public void RunInputActionPerformed(InputAction.CallbackContext ctx) => _OnRunPerformed?.Invoke(ctx.ReadValue<float>());
-    public void JumpInputActionPerformed(InputAction.CallbackContext ctx) => _OnJumpPerformed?.Invoke(ctx.ReadValue<float>());
-    public void CrouchInputActionPerformed(InputAction.CallbackContext ctx) => _OnCrouchPerformed?.Invoke(ctx.ReadValue<float>());
-    public void OnShootPerformed(InputAction.CallbackContext ctx) => _OnShootPerformed?.Invoke(ctx.ReadValue<float>());
+    public void MovePerformed(InputAction.CallbackContext ctx) { if (GameManager.Instance.GetComponent<GameManager>().IsPaused) return; _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x); }
+    public void RunInputActionPerformed(InputAction.CallbackContext ctx) { if (GameManager.Instance.GetComponent<GameManager>().IsPaused) return; _OnRunPerformed?.Invoke(ctx.ReadValue<float>()); }
+    public void JumpInputActionPerformed(InputAction.CallbackContext ctx) { if (GameManager.Instance.GetComponent<GameManager>().IsPaused) return; _OnJumpPerformed?.Invoke(ctx.ReadValue<float>()); }
+    public void CrouchInputActionPerformed(InputAction.CallbackContext ctx) { if (GameManager.Instance.GetComponent<GameManager>().IsPaused) return; _OnCrouchPerformed?.Invoke(ctx.ReadValue<float>()); }
+    public void OnShootPerformed(InputAction.CallbackContext ctx) { if (GameManager.Instance.GetComponent<GameManager>().IsPaused) return; _OnShootPerformed?.Invoke(ctx.ReadValue<float>()); }
 }

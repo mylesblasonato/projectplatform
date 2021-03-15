@@ -37,7 +37,7 @@ public class Platformer2DJump : MonoBehaviour
             if (_currentJumpCount < _jumpCount.Value)
             {
                 _isJumping = true;
-                EventManager.Instance.GetComponent<EventManager>()?.Jump();
+                EventManager.Instance.Jump();
                 Invoke("StopJump", _jumpTimer.Value);
             }
         }
@@ -58,9 +58,9 @@ public class Platformer2DJump : MonoBehaviour
     void GroundCheck()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, _groundMask);
-        if (_isGrounded)
+        if (_isGrounded && !_crouchMechanic._isCrouching)
         {
-            EventManager.Instance.GetComponent<EventManager>()?.Land();
+            EventManager.Instance.Land();
             _currentJumpCount = 0;            
             if (Mathf.Abs(_rb.velocity.x) > _dragSensitivity.Value)
                 _rb.drag = _drag.Value;

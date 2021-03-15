@@ -9,28 +9,28 @@ public class PlatformerAnimationController : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Instance.GetComponent<EventManager>()._OnIdle += IdleAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnWalk += WalkAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnRun += RunAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnJump += JumpAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnLand += LandAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnCrouch += CrouchAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnStand += StandAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnShoot += ShootAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnStopShoot += StopShootAnimation;
+        EventManager.Instance._OnIdle += IdleAnimation;
+        EventManager.Instance._OnWalk += WalkAnimation;
+        EventManager.Instance._OnRun += RunAnimation;
+        EventManager.Instance._OnJump += JumpAnimation;
+        EventManager.Instance._OnLand += LandAnimation;
+        EventManager.Instance._OnCrouch += CrouchAnimation;
+        EventManager.Instance._OnStand += StandAnimation;
+        EventManager.Instance._OnShoot += ShootAnimation;
+        EventManager.Instance._OnStopShoot += StopShootAnimation;
     }
   
-    private void OnDisable()
+    private void OnDestroy()
     {
-        EventManager.Instance.GetComponent<EventManager>()._OnIdle -= IdleAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnWalk -= WalkAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnRun -= RunAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnJump -= JumpAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnLand -= LandAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnCrouch -= CrouchAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnStand -= StandAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnShoot -= ShootAnimation;
-        EventManager.Instance.GetComponent<EventManager>()._OnStopShoot += StopShootAnimation;
+        EventManager.Instance._OnIdle -= IdleAnimation;
+        EventManager.Instance._OnWalk -= WalkAnimation;
+        EventManager.Instance._OnRun -= RunAnimation;
+        EventManager.Instance._OnJump -= JumpAnimation;
+        EventManager.Instance._OnLand -= LandAnimation;
+        EventManager.Instance._OnCrouch -= CrouchAnimation;
+        EventManager.Instance._OnStand -= StandAnimation;
+        EventManager.Instance._OnShoot -= ShootAnimation;
+        EventManager.Instance._OnStopShoot += StopShootAnimation;
     }
 
     void IdleAnimation()
