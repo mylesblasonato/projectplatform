@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platformer2DCrouch : MonoBehaviour
 {
-    [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold;
+    [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold, _slopeGravity;
     [SerializeField] BoxCollider2D _boxColliderStand, _boxColliderCrouch;
     [SerializeField] GameObject _playerSpriteTop;
     [SerializeField] Transform _crouchPos;
@@ -28,25 +28,23 @@ public class Platformer2DCrouch : MonoBehaviour
 
     void Update()
     {
-        //if (_isCrouching)
+        _slope = Physics2D.Raycast(
+            Vector2.zero + new Vector2(transform.localPosition.x, transform.localPosition.y),
+            new Vector2(0, -1),
+            2f,
+            _slopeMask);
+
+        if (_slope && !_isSloping)
         {
-            _slope = Physics2D.Raycast(
-                Vector2.zero + new Vector2(transform.localPosition.x, transform.localPosition.y),
-                new Vector2(0, -1),
-                1000f,
-                _slopeMask); 
-
-            if (_slope && !_isSloping)
-            {
-                Slope();
-            }
-
-            if (!_slope && _isSloping)
-            {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-                _isSloping = false;
-            }
+            Slope();
         }
+
+        if (!_slope)
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+            _isSloping = false;
+        }
+        
 
         if (_jumpMechanic._isGrounded)
         {
@@ -82,11 +80,15 @@ public class Platformer2DCrouch : MonoBehaviour
 
     void Slope()
     {
-        Debug.Log(Mathf.Abs(Vector2.Dot(transform.up, _slope.normal + new Vector2(transform.localPosition.x, transform.localPosition.y))));
-        if (Mathf.Abs(Vector2.Dot(transform.up, _slope.normal + new Vector2(transform.localPosition.x, transform.localPosition.y))) < 1)
+        _rb.gravityScale = _slopeGravity.Value;
+        float slopeAngle = Vector2.Angle(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
+        if (slopeAngle > 0 && !_isSloping)
         {
             _isSloping = true;
-            transform.eulerAngles = new Vector3(0, 0, -45);
+            if (transform.rotation.y < 0)
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 45);
+            else
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45);
         }
     }
 

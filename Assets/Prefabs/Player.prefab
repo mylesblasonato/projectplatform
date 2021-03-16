@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016318694, y: -0.0052414387}
+  m_Offset: {x: -0.016318694, y: -0.0007224679}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15551344, y: 0.9676217}
+  m_Size: {x: 0.15551344, y: 1.0001516}
   m_EdgeRadius: 0
 --- !u!61 &4270269119357015490
 BoxCollider2D:
@@ -266,7 +266,7 @@ MonoBehaviour:
   _groundCheckRadius: 0.05
   _groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   _isJumping: 0
   _isGrounded: 0
 --- !u!114 &8595988829903466675
@@ -285,6 +285,7 @@ MonoBehaviour:
   _dashCrouchForce: {fileID: 11400000, guid: 2ae28bbf27e6dd24cb310d20f1df6451, type: 2}
   _crouchDashSpeedThreshold: {fileID: 11400000, guid: da9267357dc1b4f4a996d0c9057b90bb, type: 2}
   _crouchThreshold: {fileID: 11400000, guid: a231f187b7bc5fd4a922039cce256ec3, type: 2}
+  _slopeGravity: {fileID: 11400000, guid: 0392b7d1cabe08642964573f9f493815, type: 2}
   _boxColliderStand: {fileID: 2546452017022610105}
   _boxColliderCrouch: {fileID: 4270269119357015490}
   _playerSpriteTop: {fileID: 2546452018349504515}

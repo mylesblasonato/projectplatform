@@ -66,7 +66,6 @@ public class Platformer2DJump : MonoBehaviour
                 _rb.drag = _drag.Value;
             else
                 _rb.drag = 0f;
-            _rb.gravityScale = 0;
             _currentJumpForce = _jumpForce.Value;
         }
         else

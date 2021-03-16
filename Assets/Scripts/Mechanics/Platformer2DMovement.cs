@@ -13,6 +13,7 @@ public class Platformer2DMovement : MonoBehaviour
     Platformer2DJump _platformerJump;
     float _velocity;
     Rigidbody2D _rb;
+    bool _lookingLeft = false;
 
     public bool _isMoving = false;
     public bool _isRunning = false;
@@ -29,10 +30,23 @@ public class Platformer2DMovement : MonoBehaviour
     {
         _inputDirection.Value = inputDirection;
         RunCheck();
-        if (_inputDirection.Value < 0)
-            transform.localRotation = new Quaternion(0, 180f, 0, 0);
-        if (_inputDirection.Value > 0)
-            transform.localRotation = Quaternion.identity;      
+
+        if (transform.eulerAngles.y == 180)
+            _lookingLeft = true;
+        else
+            _lookingLeft = false;
+
+        if (inputDirection < 0 && !_lookingLeft)
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180, transform.eulerAngles.z);
+            _lookingLeft = true;
+        } 
+        else if (inputDirection > 0 && _lookingLeft)
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+            _lookingLeft = false;
+        }
+
         if (_inputDirection.Value != 0 && Mathf.Abs(_rb.velocity.x) > _idleThreshold.Value)
             _isMoving = true;     
     }
@@ -45,6 +59,10 @@ public class Platformer2DMovement : MonoBehaviour
                 EventManager.Instance.Walk();
             else
                 EventManager.Instance.Run();
+        }
+        else
+        {
+            EventManager.Instance.Idle();
         }
     }
 
