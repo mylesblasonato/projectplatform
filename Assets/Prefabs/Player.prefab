@@ -234,9 +234,12 @@ MonoBehaviour:
   _speed: {fileID: 11400000, guid: 786dc3eb234ed2144913303c6cc2a29c, type: 2}
   _airSpeedModifier: {fileID: 11400000, guid: e72423a05a4ce2b4e9f6600b6e8a3375, type: 2}
   _runMultiplier: {fileID: 11400000, guid: af58754eaa1a9ad448e817f220f60783, type: 2}
+  _moveThreshold: {fileID: 11400000, guid: 8d92aa70313b0f24db4bc7f2bbe786d3, type: 2}
+  _idleThreshold: {fileID: 11400000, guid: 5e05445537f2f184e82a45498297de09, type: 2}
   _animator: {fileID: 742572741}
   _animatorTop: {fileID: 537081763}
   _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
+  _isMoving: 0
   _isRunning: 0
 --- !u!114 &8263903942245583533
 MonoBehaviour:
@@ -280,10 +283,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crouchDrag: {fileID: 11400000, guid: be42fc1f902536a43a3526a830521402, type: 2}
   _dashCrouchForce: {fileID: 11400000, guid: 2ae28bbf27e6dd24cb310d20f1df6451, type: 2}
+  _crouchDashSpeedThreshold: {fileID: 11400000, guid: da9267357dc1b4f4a996d0c9057b90bb, type: 2}
+  _crouchThreshold: {fileID: 11400000, guid: a231f187b7bc5fd4a922039cce256ec3, type: 2}
   _boxColliderStand: {fileID: 2546452017022610105}
   _boxColliderCrouch: {fileID: 4270269119357015490}
   _playerSpriteTop: {fileID: 2546452018349504515}
   _crouchPos: {fileID: 6371059243015158530}
+  _slopeMask:
+    serializedVersion: 2
+    m_Bits: 128
   _isCrouching: 0
 --- !u!114 &2546452017022610100
 MonoBehaviour:

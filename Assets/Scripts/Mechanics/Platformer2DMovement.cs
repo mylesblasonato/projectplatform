@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Platformer2DMovement : MonoBehaviour
 {
-    [SerializeField] SoFloat _speed, _airSpeedModifier, _runMultiplier;
+    [SerializeField] SoFloat _speed, _airSpeedModifier, _runMultiplier, _moveThreshold, _idleThreshold;
     [SerializeField] Animator _animator, _animatorTop;
     [SerializeField] SoFloat _inputDirection;
 
@@ -13,8 +13,9 @@ public class Platformer2DMovement : MonoBehaviour
     Platformer2DJump _platformerJump;
     float _velocity;
     Rigidbody2D _rb;
-    bool _isMoving = false;
-    [HideInInspector] public bool _isRunning = false;
+
+    public bool _isMoving = false;
+    public bool _isRunning = false;
 
     private void Start()
     {
@@ -31,19 +32,20 @@ public class Platformer2DMovement : MonoBehaviour
         if (_inputDirection.Value < 0)
             transform.localRotation = new Quaternion(0, 180f, 0, 0);
         if (_inputDirection.Value > 0)
-            transform.localRotation = Quaternion.identity;
-        if (_inputDirection.Value != 0)
-            _isMoving = true;
-        else
-            _isMoving = false;
+            transform.localRotation = Quaternion.identity;      
+        if (_inputDirection.Value != 0 && Mathf.Abs(_rb.velocity.x) > _idleThreshold.Value)
+            _isMoving = true;     
     }
 
     void RunCheck()
     {
-        if (!_isRunning)
-            EventManager.Instance.Walk();
-        else
-            EventManager.Instance.Run();
+        if (!_platformerCrouch._isCrouching)
+        {
+            if (!_isRunning)
+                EventManager.Instance.Walk();
+            else
+                EventManager.Instance.Run();
+        }
     }
 
     public void Run(float isRunning)
@@ -63,19 +65,21 @@ public class Platformer2DMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isMoving) 
-            Move();
+        Move();
+
+        if (Mathf.Abs(_rb.velocity.x) < 0.5f)
+            _isMoving = false;
     }
 
     private void Update()
     {
-        if (_rb.velocity.x == 0)
+        if (Mathf.Abs(_rb.velocity.x) < 0.5f)
             EventManager.Instance.Idle();
     }
 
     private void Move()
     {
-        if (!_platformerCrouch._isCrouching)
+        if (!_platformerCrouch._isCrouching && Mathf.Abs(_inputDirection.Value) > _moveThreshold.Value)
         {
             if (_platformerJump != null && _platformerJump._isJumping)
                 _rb.velocity += new Vector2((_inputDirection.Value * _velocity) * _airSpeedModifier.Value, 0);

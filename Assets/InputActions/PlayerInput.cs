@@ -36,7 +36,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Run"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""e42c6180-401d-4bcb-8a92-639f90b5458e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
