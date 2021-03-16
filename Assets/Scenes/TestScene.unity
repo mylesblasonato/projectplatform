@@ -3367,6 +3367,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8263903942245583533, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _cyoteTime
+      value: 
+      objectReference: {fileID: 11400000, guid: e29f30ea6a907cc43946cd143a2816e6, type: 2}
+    - target: {fileID: 8263903942245583533, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _crouchThreshold
+      value: 
+      objectReference: {fileID: 11400000, guid: a231f187b7bc5fd4a922039cce256ec3, type: 2}
+    - target: {fileID: 8263903942245583533, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
       propertyPath: _groundMask.m_Bits
       value: 896
       objectReference: {fileID: 0}
