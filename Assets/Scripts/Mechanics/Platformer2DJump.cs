@@ -51,7 +51,10 @@ public class Platformer2DJump : MonoBehaviour
     void Jumping()
     {
         if (_isJumping)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, 0);
             _rb.AddForce(Vector2.up * _currentJumpForce, ForceMode2D.Impulse);
+        }
     }
 
     void StopJump() => _isJumping = false;

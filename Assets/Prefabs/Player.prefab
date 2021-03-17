@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2546452017022610101}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,11 +262,13 @@ MonoBehaviour:
   _jumpTimer: {fileID: 11400000, guid: 513646974b91d6d45bf02b9b0065c4cc, type: 2}
   _jumpCount: {fileID: 11400000, guid: 2970608db6167d246b19324d5e6387ae, type: 2}
   _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
+  _cyoteTime: {fileID: 11400000, guid: e29f30ea6a907cc43946cd143a2816e6, type: 2}
+  _crouchThreshold: {fileID: 11400000, guid: a231f187b7bc5fd4a922039cce256ec3, type: 2}
   _groundCheck: {fileID: 2546452018375646401}
   _groundCheckRadius: 0.05
   _groundMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 896
   _isJumping: 0
   _isGrounded: 0
 --- !u!114 &8595988829903466675
@@ -293,6 +295,7 @@ MonoBehaviour:
   _slopeMask:
     serializedVersion: 2
     m_Bits: 128
+  _crouchAxis: 0
   _isCrouching: 0
 --- !u!114 &2546452017022610100
 MonoBehaviour:

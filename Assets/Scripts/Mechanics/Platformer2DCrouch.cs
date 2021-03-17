@@ -75,12 +75,15 @@ public class Platformer2DCrouch : MonoBehaviour
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 45);
             else
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45);
+
+            if (transform.rotation.y == 0 && transform.eulerAngles.z == 45)
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45);
         }
     }
 
     void FixedUpdate()
     {
-        if (_canCrouchDash && _moveMechanic._isRunning && _isCrouching && _moveMechanic._isMoving && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
+        if (_jumpMechanic._isGrounded && _canCrouchDash && _moveMechanic._isRunning && _isCrouching && _moveMechanic._isMoving && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
         {
             _rb.velocity = Vector2.zero;
             _rb.AddForce(transform.right * _dashCrouchForce.Value, ForceMode2D.Impulse);
@@ -99,7 +102,7 @@ public class Platformer2DCrouch : MonoBehaviour
 
     public void CrouchDown()
     {
-        if (!_isCrouching) return;
+        if (!_isCrouching && !_jumpMechanic._isGrounded) return;
         _boxColliderStand.enabled = false;
         _boxColliderCrouch.enabled = true;
         _playerSpriteTop.transform.position = _crouchPos.position;
