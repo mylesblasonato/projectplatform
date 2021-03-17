@@ -107,6 +107,7 @@ public class StoryManager : MonoBehaviour
     public void Play()
     {
         _finishPrinting = false;
+        _portraitUI.transform.localScale = new Vector3(_currentStorySequence.StoryNodes[_currentNode].PortraitDirection, 1,1);
         _portraitUI.sprite = _currentStorySequence.StoryNodes[_currentNode].Portrait;
         _nameText.text = _currentStorySequence.StoryNodes[_currentNode].Name;
         StopAllCoroutines();

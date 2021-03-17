@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _storyNodes:
   - _portrait: {fileID: 2908445944672754156, guid: eede539a6336d9b4d87a72683cdb1379, type: 3}
+    _portraitDirection: 1
     _name: McCoy
     _dialogue: What is this place???
     _duration: 1
   - _portrait: {fileID: -2456337592447410214, guid: eede539a6336d9b4d87a72683cdb1379, type: 3}
+    _portraitDirection: -1
     _name: McCoy
     _dialogue: What is that?! Freeze!
     _duration: 1
   - _portrait: {fileID: 1872482916109191127, guid: 8581f6491c6a7e34cb12d5b0946a7a8f, type: 3}
+    _portraitDirection: 1
     _name: UNKNOW
     _dialogue: GET OUT NOW!!!
     _duration: 1
