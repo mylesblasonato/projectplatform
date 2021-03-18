@@ -33,16 +33,6 @@ public class StoryManager : MonoBehaviour
         _nextInputAction.performed -= ctx => Next(ctx.ReadValue<float>());
     }
 
-    void OnEnable()
-    {
-        _skipInputAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        _skipInputAction.Disable();
-    }
-
     public void StartSequence(StorySequence storySequence)
     {
         _currentStorySequence = storySequence;
@@ -55,13 +45,14 @@ public class StoryManager : MonoBehaviour
             _storyUI.SetActive(true);
             _triggered = true;
             Play();
-            Invoke("NextButtonActivate", 0.1f);
+            Invoke("NextButtonActivate", 0.2f);
         }
     }
 
     void NextButtonActivate()
     {
         _nextInputAction.Enable();
+        _skipInputAction.Enable();
     }
 
     public void Next(float ctx)
@@ -131,6 +122,7 @@ public class StoryManager : MonoBehaviour
         _triggered = false;
         _lastNode = false;
         _nextInputAction.Disable();
+        _skipInputAction.Disable();
     }
 
     IEnumerator Print()

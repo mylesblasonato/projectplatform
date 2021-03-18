@@ -11,6 +11,7 @@ public class Platformer2DShooting : MonoBehaviour
 
     Rigidbody2D _rb;
     Camera _main;
+    RaycastHit2D _hitObject;
 
     private void Start()
     {
@@ -41,7 +42,7 @@ public class Platformer2DShooting : MonoBehaviour
             var dest = new Vector2();
 
             if (!_mouseAim)
-                dest = _equippedGun.right;
+                dest = (transform.localRotation.y == 0) ? transform.right : -transform.right;
             else
                 dest = _main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
@@ -53,18 +54,20 @@ public class Platformer2DShooting : MonoBehaviour
 
             if (hitObject)
             {
-                _lineRenderer.SetPosition(0, _equippedGun.GetChild(0).GetChild(0).transform.position);
-                _lineRenderer.SetPosition(1, hitObject.transform.position);
+                _hitObject = hitObject;
+                _lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
+                _lineRenderer.SetPosition(1, new Vector3(hitObject.transform.position.x, 0, 0));
 
                 hitObject.transform.GetComponent<Rigidbody2D>().AddForce(-hitObject.normal * _equippedGun.GetComponent<Weapon>().Power);
-                hitObject.transform.GetChild(0).position = hitObject.point;
-                hitObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                
+                
             }
             else
             {
-                _lineRenderer.SetPosition(0, _equippedGun.GetChild(0).GetChild(0).transform.position);
-                _lineRenderer.SetPosition(1, _equippedGun.GetChild(0).GetChild(0).transform.right * 100f);
+                _lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
+                _lineRenderer.SetPosition(1, dest * 500);
             }
+
             Invoke("TurnOffLine", 0.1f);
         }
         else
@@ -73,7 +76,18 @@ public class Platformer2DShooting : MonoBehaviour
         }
     }
 
-    void TurnOffLine() =>_lineRenderer.enabled = false;   
+    void TurnOffLine()
+    {
+        _lineRenderer.enabled = false;
+        BloodVfx();
+    }
+
+    void BloodVfx()
+    {
+        if (_hitObject.transform.gameObject.layer != 9) return;
+        _hitObject.transform.GetChild(0).position = _hitObject.point;
+        _hitObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+    }
 
     #region HELPERS
     private void OnDrawGizmos()
