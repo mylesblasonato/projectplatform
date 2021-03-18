@@ -36,13 +36,11 @@ public class StoryManager : MonoBehaviour
     void OnEnable()
     {
         _skipInputAction.Enable();
-        _nextInputAction.Enable();
     }
 
     void OnDisable()
     {
         _skipInputAction.Disable();
-        _nextInputAction.Disable();
     }
 
     public void StartSequence(StorySequence storySequence)
@@ -57,12 +55,18 @@ public class StoryManager : MonoBehaviour
             _storyUI.SetActive(true);
             _triggered = true;
             Play();
+            Invoke("NextButtonActivate", 0.1f);
         }
+    }
+
+    void NextButtonActivate()
+    {
+        _nextInputAction.Enable();
     }
 
     public void Next(float ctx)
     {
-        if (ctx < 1 && !_triggered) return;
+        if (ctx < 1 && !_triggered && _storyUI.activeSelf) return;
         if (!_finishPrinting)
         {
             if (!_isPrinting)
@@ -117,8 +121,8 @@ public class StoryManager : MonoBehaviour
     public void Skip(float ctx)
     {
         if (ctx < 1 && !_triggered) return;
-        _currentNode = _currentStorySequence.StoryNodes.Length;
-        Play();
+        FinishPrinting();
+        End();
     }
 
     void End()
@@ -126,6 +130,7 @@ public class StoryManager : MonoBehaviour
         _storyUI.SetActive(false);
         _triggered = false;
         _lastNode = false;
+        _nextInputAction.Disable();
     }
 
     IEnumerator Print()

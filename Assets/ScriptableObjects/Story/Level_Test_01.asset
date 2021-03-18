@@ -28,4 +28,4 @@ MonoBehaviour:
     _name: UNKNOW
     _dialogue: GET OUT NOW!!!
     _duration: 1
-  _onlyPlayOnce: 1
+  _onlyPlayOnce: 0

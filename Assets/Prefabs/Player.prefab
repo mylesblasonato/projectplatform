@@ -341,46 +341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0163f97733af2644fb63601ca1ac35e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f55dab1b-3074-4233-bdb5-38524a0387e4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  _runAction:
-    m_Name: Run
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: d8e6514f-1fdf-425b-b9f8-5dac3d44fc6a
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  _jumpAction:
-    m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 941d81dd-2054-44fd-a5e6-d4b40b9a96c6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  _crouchAction:
-    m_Name: Crouch
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a70d2111-2665-4733-bbf1-a4da7bbe23ba
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  _shootAction:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cad8dad6-a585-439f-af12-ff2974e95d6c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
+  _horAxis: Horizontal
+  _verAxis: 
+  _runAxis: 
+  _jumpAxis: 
+  _crouchAxis: 
+  _shootAxis: 
   _OnMovePerformed:
     m_PersistentCalls:
       m_Calls:
