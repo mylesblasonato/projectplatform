@@ -524,8 +524,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1008470879, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
-      propertyPath: _climbAxis
+      propertyPath: _runAxis
       value: Climb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008470879, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _climbAxis
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1008470879, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
       propertyPath: _OnClimbPerformed.m_PersistentCalls.m_Calls.Array.size
@@ -596,6 +600,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2546452017022610101, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClimbPerformed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2546452017022610101, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClimbPerformed
       objectReference: {fileID: 0}
@@ -655,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8595988829903466675, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _inputDirection
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
     - target: {fileID: 8595988829903466675, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
       propertyPath: _crouchSlowDownSpeed
       value: 

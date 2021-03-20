@@ -243,8 +243,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f377f66d-6dff-455d-b3d2-56d54b756402"",
-                    ""path"": ""Xbox Controller"",
+                    ""id"": ""ab88dff8-bf28-4845-b1ee-acb9c804652f"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",

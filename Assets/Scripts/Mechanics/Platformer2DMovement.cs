@@ -37,29 +37,33 @@ public class Platformer2DMovement : MonoBehaviour
         {
             _lookingLeft = true;
         }
-        else
+        
+        if (transform.eulerAngles.y == 0)
         {
             _lookingLeft = false;
         }
 
-        if (inputDirection < 0 && !_lookingLeft)
+        if (inputDirection < -_moveThreshold.Value && !_lookingLeft)
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180, transform.eulerAngles.z);
+            _lookingLeft = true;
         } 
-        else if (inputDirection > 0 && _lookingLeft)
+        
+        if (inputDirection > _moveThreshold.Value && _lookingLeft)
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+            _lookingLeft = false;
         }
     }
 
     void RunCheck()
     {
         if (_platformerJump._isJumping) return;
-        if (!_platformerCrouch._isCrouching)
+        if (!_platformerCrouch._isCrouching && Mathf.Abs(_inputDirection.Value) > _moveThreshold.Value)
         {
             if (_isWalking)
                 EventManager.Instance.Walk();
-            if (_isRunning)
+            if (_isRunning && !_isWalkMode)
                 EventManager.Instance.Run();
         }
         else
@@ -76,15 +80,12 @@ public class Platformer2DMovement : MonoBehaviour
             _isRunning = false;
             _isWalking = true;
             _isWalkMode = true;
-            //  _velocity += Mathf.Clamp(_inputDirection.Value, 0.5f, 0.5f) * _speed.Value;
         }
         else
         {
             _isWalking = false;
             _isWalkMode = false;
         }
-
-       // _rb.velocity = new Vector2(0, _rb.velocity.y);
     }
 
     private void FixedUpdate()
@@ -96,9 +97,10 @@ public class Platformer2DMovement : MonoBehaviour
             RunCheck();
         }
 
-        if(transform.right.x > 0 && _inputDirection.Value != 0)
+        if(_inputDirection.Value > _moveThreshold.Value)
             _rb.AddForce(new Vector2(1 * _velocity, 0));
-        else if (transform.right.x < 0 && _inputDirection.Value != 0)
+        
+        if (_inputDirection.Value < -_moveThreshold.Value)
             _rb.AddForce(new Vector2(-1 * _velocity, 0));
 
         if (Mathf.Abs(_rb.velocity.x) == 0f && !_platformerJump._isJumping)

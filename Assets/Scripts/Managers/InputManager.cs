@@ -14,10 +14,10 @@ public class InputManager : MonoBehaviour, INewInputSystem
     void Update()
     {
         if (GameManager.Instance.IsPaused) return;
-        if (Input.GetAxis(_horAxis) != 0)
+        if (Mathf.Abs(Input.GetAxis(_horAxis)) >= 0)
             _OnMovePerformed?.Invoke(Input.GetAxis(_horAxis));
-        if (Input.GetAxis(_climbAxis) != 0)
-            _OnClimbPerformed?.Invoke(Input.GetAxis(_climbAxis));
+        if (Mathf.Abs(Input.GetAxis(_runAxis)) >= 0)
+            _OnRunPerformed?.Invoke(Input.GetAxis(_runAxis));
     }
 
     public void MovePerformed(InputAction.CallbackContext ctx) 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Platformer2DCrouch : MonoBehaviour
 {
     [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold, _crouchSlowDownSpeed, _slopeGravity;
+    [SerializeField] SoFloat _inputDirection;
     [SerializeField] BoxCollider2D _boxColliderStand, _boxColliderCrouch;
     [SerializeField] GameObject _playerSpriteTop;
     [SerializeField] Transform _crouchPos;
@@ -79,14 +80,12 @@ public class Platformer2DCrouch : MonoBehaviour
     void FixedUpdate()
     {
         if (_jumpMechanic._isGrounded && 
-            _canCrouchDash && 
-            _moveMechanic._isRunning && 
-            _isCrouching && 
+            _isCrouching &&
+            _canCrouchDash &&
             _moveMechanic._isMoving 
             && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
         {
-            _rb.velocity = Vector2.zero;
-            _rb.AddForce(transform.right * _dashCrouchForce.Value, ForceMode2D.Impulse);
+            _rb.AddForce(new Vector2(_inputDirection.Value * (_moveMechanic._isRunning ? _dashCrouchForce.Value * 2f : _dashCrouchForce.Value), 0), ForceMode2D.Impulse);
             _canCrouchDash = false;
         }
 
@@ -116,18 +115,14 @@ public class Platformer2DCrouch : MonoBehaviour
         _playerSpriteTop.transform.position = _crouchPos.position;
         _playerSpriteTop.transform.localRotation = _crouchPos.localRotation;
         EventManager.Instance.Crouch();
-        if (_moveMechanic._isRunning)
-            _rb.drag = _crouchDrag.Value;
-        else
-            if(_isCrouching)
-                ManualFriction();
+        _rb.drag = _crouchDrag.Value;
     }
 
     public void Crouch(float isCrouching)
     {
         if (!_jumpMechanic._isGrounded) return;
         _crouchAxis = isCrouching;
-        _isCrouching = (isCrouching >= _crouchThreshold.Value);      
+        _isCrouching = (isCrouching >= _crouchThreshold.Value);
         if (!_isCrouching)
             _canCrouchDash = true;
     }
