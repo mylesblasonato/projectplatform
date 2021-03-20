@@ -41,14 +41,14 @@ public class PlatformerAnimationController : MonoBehaviour
 
     void WalkAnimation()
     {
-        _animatorTop.SetFloat("IdleToWalk", Mathf.Abs(_inputDirection.Value));
-        _animatorBottom.SetFloat("IdleToWalk", Mathf.Abs(_inputDirection.Value));
+        _animatorTop.SetFloat("IdleToWalk", Mathf.Abs(0.5f));
+        _animatorBottom.SetFloat("IdleToWalk", Mathf.Abs(0.5f));
     }
 
     void RunAnimation()
     {
-        _animatorTop.SetFloat("IdleToWalk", Mathf.Abs(2));
-        _animatorBottom.SetFloat("IdleToWalk", Mathf.Abs(2));
+        _animatorTop.SetFloat("IdleToWalk", Mathf.Abs(1f));
+        _animatorBottom.SetFloat("IdleToWalk", Mathf.Abs(1f));
     }
 
     void JumpAnimation()

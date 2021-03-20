@@ -25,34 +25,33 @@ public class Platformer2DJump : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        GroundCheck();
+    {       
         Jumping();
+        GroundCheck();
     }
 
+    private void Update()
+    {
+        if(_isJumping)
+            Invoke("StopJump", _jumpTimer.Value);
+    }
     public void Jump(float isJumping)
     {
-        if (isJumping == 1)
+        if (isJumping > 0)
         {
-            if (_currentJumpCount < _jumpCount.Value)
-            {
                 _isJumping = true;
                 _crouchMechanic._isCrouching = false;
                 EventManager.Instance.Jump();
-                Invoke("StopJump", _jumpTimer.Value);
-            }
+           
         }
         else
-        {
             StopJump();
-        }
     }
 
     void Jumping()
     {
         if (_isJumping)
         {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0);
             _rb.AddForce(Vector2.up * _currentJumpForce, ForceMode2D.Impulse);
         }
     }
@@ -73,7 +72,7 @@ public class Platformer2DJump : MonoBehaviour
             _currentJumpForce = _jumpForce.Value;
         }
         else
-        {         
+        {
             _currentJumpCount++;
             _rb.drag = _drag.Value * _airDrag.Value;
             _rb.gravityScale = _gravity.Value;

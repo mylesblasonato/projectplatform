@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Run",
+                    "name": "Walk",
                     "type": "PassThrough",
                     "id": "e42c6180-401d-4bcb-8a92-639f90b5458e",
                     "expectedControlType": "Button",
@@ -41,6 +41,14 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "c4157122-ebc8-44d9-8d71-c4fb46b07a9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Climb",
+                    "type": "Button",
+                    "id": "f94d51cd-542c-469d-b81a-450a2e7aefc1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -172,7 +180,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "Run",
+                    "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -217,6 +225,17 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f377f66d-6dff-455d-b3d2-56d54b756402",
+                    "path": "Xbox Controller",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Climb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

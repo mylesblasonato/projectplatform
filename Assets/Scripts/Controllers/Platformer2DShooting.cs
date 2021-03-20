@@ -5,17 +5,17 @@ using UnityEngine;
 public class Platformer2DShooting : MonoBehaviour
 {
     [SerializeField] Transform _equippedGun;
-    [SerializeField] LineRenderer _lineRenderer;
+    [SerializeField] GameObject _lineRendererPrefab, _bloodVfxPrefab, _dustVfxPrefab;
     [SerializeField] bool _mouseAim = false, _mouseFlip = false;
     [SerializeField] SoFloat _inputDirection;
 
+    LineRenderer _lineRenderer;
     Rigidbody2D _rb;
     Camera _main;
     RaycastHit2D _hitObject;
 
     private void Start()
     {
-        _lineRenderer.enabled = false;
         _rb = GetComponent<Rigidbody2D>();
         _main = Camera.main;
     }
@@ -35,14 +35,14 @@ public class Platformer2DShooting : MonoBehaviour
     {
         if (Mathf.Abs(ctx) >= 1)
         {
-            _lineRenderer.enabled = true;
+            _lineRenderer = GameObject.Instantiate(_lineRendererPrefab).GetComponent<LineRenderer>();
             EventManager.Instance.Shoot();
             _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();
-            var origin = new Vector2(_equippedGun.GetChild(0).transform.position.x, _equippedGun.GetChild(0).transform.position.y);
+            var origin = _equippedGun.transform.position;
             var dest = new Vector2();
 
             if (!_mouseAim)
-                dest = (transform.localRotation.y == 0) ? transform.right : -transform.right;
+                dest = transform.right;
             else
                 dest = _main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
@@ -55,20 +55,16 @@ public class Platformer2DShooting : MonoBehaviour
             if (hitObject)
             {
                 _hitObject = hitObject;
-                _lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
-                _lineRenderer.SetPosition(1, new Vector3(hitObject.transform.position.x, 0, 0));
-
+                _lineRenderer.SetPosition(0, new Vector2(origin.x + (transform.right.x * 0.3f), origin.y));
+                _lineRenderer.SetPosition(1, hitObject.point);
                 hitObject.transform.GetComponent<Rigidbody2D>().AddForce(-hitObject.normal * _equippedGun.GetComponent<Weapon>().Power);
-                
-                
+                Invoke("TurnOffLine", 0.1f);
             }
             else
             {
-                _lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
+                _lineRenderer.SetPosition(0, new Vector2(origin.x + (transform.right.x * 0.3f), origin.y));
                 _lineRenderer.SetPosition(1, dest * 500);
             }
-
-            Invoke("TurnOffLine", 0.1f);
         }
         else
         {
@@ -78,23 +74,37 @@ public class Platformer2DShooting : MonoBehaviour
 
     void TurnOffLine()
     {
-        _lineRenderer.enabled = false;
         BloodVfx();
     }
 
     void BloodVfx()
     {
-        if (_hitObject.transform.gameObject.layer != 9) return;
-        _hitObject.transform.GetChild(0).position = _hitObject.point;
-        _hitObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        if (_hitObject.transform.GetComponent<EnemyController>() == null)
+        {
+            var dust = GameObject.Instantiate(_dustVfxPrefab);
+            dust.transform.position = _hitObject.point;
+            if (_hitObject.normal.x > 0)
+                dust.transform.eulerAngles = new Vector3(0, 0, 0);
+            else
+                dust.transform.eulerAngles = new Vector3(0, 180f, 0);
+            dust.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            var blood = GameObject.Instantiate(_bloodVfxPrefab);
+            blood.transform.position = _hitObject.point;
+            if (_hitObject.normal.x > 0)
+                blood.transform.eulerAngles = new Vector3(0, 0, 0);
+            else
+                blood.transform.eulerAngles = new Vector3(0, 180f, 0);
+            blood.GetComponent<ParticleSystem>().Play();
+        }
     }
 
     #region HELPERS
     private void OnDrawGizmos()
     {
-        if (!_mouseAim)
-            Gizmos.DrawRay(_equippedGun.GetChild(0).transform.position, _equippedGun.right);
-        else
+        if (_mouseAim)
             Gizmos.DrawRay(_equippedGun.GetChild(0).transform.position, _main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
 
     }

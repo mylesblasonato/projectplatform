@@ -8,16 +8,22 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour, INewInputSystem
 {
-    public string _horAxis, _verAxis, _runAxis, _jumpAxis, _crouchAxis, _shootAxis;
-    public UnityEventFloat _OnMovePerformed, _OnRunPerformed, _OnJumpPerformed, _OnCrouchPerformed, _OnShootPerformed;
+    public string _horAxis, _verAxis, _runAxis, _jumpAxis, _crouchAxis, _shootAxis, _climbAxis;
+    public UnityEventFloat _OnMovePerformed, _OnRunPerformed, _OnJumpPerformed, _OnCrouchPerformed, _OnShootPerformed, _OnClimbPerformed;
+
+    void Update()
+    {
+        if (GameManager.Instance.IsPaused) return;
+        if (Input.GetAxis(_horAxis) != 0)
+            _OnMovePerformed?.Invoke(Input.GetAxis(_horAxis));
+        if (Input.GetAxis(_climbAxis) != 0)
+            _OnClimbPerformed?.Invoke(Input.GetAxis(_climbAxis));
+    }
 
     public void MovePerformed(InputAction.CallbackContext ctx) 
     { 
         if (GameManager.Instance.IsPaused) return;
-        if(Input.GetAxis(_horAxis) > 0)
-            _OnMovePerformed?.Invoke(Input.GetAxis(_horAxis));
-        else
-            _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x);
+        _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x);
     
     }
     public void RunInputActionPerformed(InputAction.CallbackContext ctx) 
@@ -42,6 +48,12 @@ public class InputManager : MonoBehaviour, INewInputSystem
     { 
         if (GameManager.Instance.IsPaused) return; 
         _OnShootPerformed?.Invoke(ctx.ReadValue<float>()); 
+    }
+
+    public void OnClimbPerformed(InputAction.CallbackContext ctx)
+    {
+        if (GameManager.Instance.IsPaused) return;
+        _OnClimbPerformed?.Invoke(ctx.ReadValue<float>());
     }
 
     // NOT USED

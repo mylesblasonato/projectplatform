@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platformer2DCrouch : MonoBehaviour
 {
-    [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold, _slopeGravity;
+    [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold, _crouchSlowDownSpeed, _slopeGravity;
     [SerializeField] BoxCollider2D _boxColliderStand, _boxColliderCrouch;
     [SerializeField] GameObject _playerSpriteTop;
     [SerializeField] Transform _crouchPos;
@@ -40,10 +40,10 @@ public class Platformer2DCrouch : MonoBehaviour
     // Slows down the player when crouching
     void ManualFriction()
     {
-        if (_rb.velocity.x < 0)
-            _rb.velocity = new Vector2(_rb.velocity.x + 0.05f, 0);
-        if (_rb.velocity.x > 0)
-            _rb.velocity = new Vector2(_rb.velocity.x - 0.05f, 0);
+        if (Mathf.Abs(_rb.velocity.x) > 0.2f)
+            _rb.velocity = new Vector2(_rb.velocity.x + (-transform.right.normalized.x * _crouchSlowDownSpeed.Value), 0);
+        else
+            _rb.velocity = Vector2.zero;
     }
 
     void SlopeRaycastAndCheck()
@@ -71,23 +71,31 @@ public class Platformer2DCrouch : MonoBehaviour
         if (slopeAngle > 0 && !_isSloping)
         {
             _isSloping = true;
-            if (transform.rotation.y < 0)
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 45);
-            else
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45);
-
-            if (transform.rotation.y == 0 && transform.eulerAngles.z == 45)
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45);
+            transform.right.Normalize();
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45 * transform.right.x);
         }
     }
 
     void FixedUpdate()
     {
-        if (_jumpMechanic._isGrounded && _canCrouchDash && _moveMechanic._isRunning && _isCrouching && _moveMechanic._isMoving && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
+        if (_jumpMechanic._isGrounded && 
+            _canCrouchDash && 
+            _moveMechanic._isRunning && 
+            _isCrouching && 
+            _moveMechanic._isMoving 
+            && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
         {
             _rb.velocity = Vector2.zero;
             _rb.AddForce(transform.right * _dashCrouchForce.Value, ForceMode2D.Impulse);
             _canCrouchDash = false;
+        }
+
+        if (_isSloping)
+        {
+            transform.right.Normalize();
+            transform.eulerAngles = (transform.right.x > 0) ?
+                new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45) :
+                new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 45);
         }
     }
 
@@ -111,11 +119,13 @@ public class Platformer2DCrouch : MonoBehaviour
         if (_moveMechanic._isRunning)
             _rb.drag = _crouchDrag.Value;
         else
-            ManualFriction();
+            if(_isCrouching)
+                ManualFriction();
     }
 
     public void Crouch(float isCrouching)
     {
+        if (!_jumpMechanic._isGrounded) return;
         _crouchAxis = isCrouching;
         _isCrouching = (isCrouching >= _crouchThreshold.Value);      
         if (!_isCrouching)
@@ -125,8 +135,8 @@ public class Platformer2DCrouch : MonoBehaviour
     #region HELPERS
     private void OnDrawGizmos()
     {
-        if (_slope)
-            Gizmos.DrawLine(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
+        //if (_slope)
+            //Gizmos.DrawLine(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
     }
     #endregion
 }

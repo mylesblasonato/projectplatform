@@ -8,6 +8,11 @@ public class GameManager : MonoSingleton<GameManager>
     private bool _isPaused = false;
     public bool IsPaused => _isPaused;
 
+    void Start()
+    {
+        _pauseScreen.SetActive(false);
+    }
+
     public void Pause()
     {
         _isPaused = !_isPaused;
