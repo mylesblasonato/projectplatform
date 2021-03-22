@@ -12,6 +12,7 @@ public class Platformer2DMovement : MonoBehaviour
     Platformer2DCrouch _platformerCrouch;
     Platformer2DJump _platformerJump;
     Platformer2DShooting _platformerShoot;
+    Platformer2DClimb _platformerClimb;
 
     float _velocity;
     Rigidbody2D _rb;
@@ -28,6 +29,7 @@ public class Platformer2DMovement : MonoBehaviour
         _platformerJump = GetComponent<Platformer2DJump>();
         _platformerCrouch = GetComponent<Platformer2DCrouch>();
         _platformerShoot = GetComponent<Platformer2DShooting>();
+        _platformerClimb = GetComponent<Platformer2DClimb>();
         _velocity = _speed.Value;
     }
 
@@ -42,6 +44,7 @@ public class Platformer2DMovement : MonoBehaviour
 
     void FlipCharacter()
     {
+        if (_platformerClimb._isClimbing) return;
         if (transform.eulerAngles.y == 180)
             _lookingLeft = true;
         if (transform.eulerAngles.y == 0)
@@ -62,7 +65,7 @@ public class Platformer2DMovement : MonoBehaviour
 
     void PlayAnimations()
     {
-        if (_platformerJump._isJumping) return;
+        if (_platformerJump._isJumping || _platformerClimb._isClimbing) return;
         if (!_platformerCrouch._isCrouching && Mathf.Abs(_inputDirection.Value) > _moveThreshold.Value)
         {
             if (_isWalking)
@@ -99,10 +102,10 @@ public class Platformer2DMovement : MonoBehaviour
         if (!_platformerJump._isJumping)
             PlayAnimations();
 
-        if(_inputDirection.Value > _moveThreshold.Value)
+        if(_inputDirection.Value > _moveThreshold.Value && !_platformerClimb._isClimbing)
             _rb.AddForce(new Vector2(1 * _velocity, 0));
         
-        if (_inputDirection.Value < -_moveThreshold.Value)
+        if (_inputDirection.Value < -_moveThreshold.Value && !_platformerClimb._isClimbing)
             _rb.AddForce(new Vector2(-1 * _velocity, 0));
 
         if (Mathf.Abs(_rb.velocity.x) == 0f && !_platformerJump._isJumping)
