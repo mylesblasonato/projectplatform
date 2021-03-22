@@ -9,28 +9,28 @@ public class PlatformerAnimationController : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Instance._OnIdle += IdleAnimation;
-        EventManager.Instance._OnWalk += WalkAnimation;
-        EventManager.Instance._OnRun += RunAnimation;
-        EventManager.Instance._OnJump += JumpAnimation;
-        EventManager.Instance._OnLand += LandAnimation;
-        EventManager.Instance._OnCrouch += CrouchAnimation;
-        EventManager.Instance._OnStand += StandAnimation;
-        EventManager.Instance._OnShoot += ShootAnimation;
-        EventManager.Instance._OnStopShoot += StopShootAnimation;
+        EventManager.Instance.AddListener("OnIdle", IdleAnimation);
+        EventManager.Instance.AddListener("OnWalk", WalkAnimation);
+        EventManager.Instance.AddListener("OnRun", RunAnimation);
+        EventManager.Instance.AddListener("OnJump", JumpAnimation);
+        EventManager.Instance.AddListener("OnLand", LandAnimation);
+        EventManager.Instance.AddListener("OnCrouch", CrouchAnimation);
+        EventManager.Instance.AddListener("OnStand", StandAnimation);
+        EventManager.Instance.AddListener("OnShoot", ShootAnimation);
+        EventManager.Instance.AddListener("OnStopShoot", StopShootAnimation);
     }
   
     private void OnDestroy()
     {
-        EventManager.Instance._OnIdle -= IdleAnimation;
-        EventManager.Instance._OnWalk -= WalkAnimation;
-        EventManager.Instance._OnRun -= RunAnimation;
-        EventManager.Instance._OnJump -= JumpAnimation;
-        EventManager.Instance._OnLand -= LandAnimation;
-        EventManager.Instance._OnCrouch -= CrouchAnimation;
-        EventManager.Instance._OnStand -= StandAnimation;
-        EventManager.Instance._OnShoot -= ShootAnimation;
-        EventManager.Instance._OnStopShoot += StopShootAnimation;
+        EventManager.Instance.RemoveListener("OnIdle", IdleAnimation);
+        EventManager.Instance.RemoveListener("OnWalk", WalkAnimation);
+        EventManager.Instance.RemoveListener("OnRun", RunAnimation);
+        EventManager.Instance.RemoveListener("OnJump", JumpAnimation);
+        EventManager.Instance.RemoveListener("OnLand", LandAnimation);
+        EventManager.Instance.RemoveListener("OnCrouch", CrouchAnimation);
+        EventManager.Instance.RemoveListener("OnStand", StandAnimation);
+        EventManager.Instance.RemoveListener("OnShoot", ShootAnimation);
+        EventManager.Instance.RemoveListener("OnStopShoot", StopShootAnimation);
     }
 
     void IdleAnimation()

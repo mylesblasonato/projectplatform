@@ -242,6 +242,8 @@ MonoBehaviour:
   _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
   _isMoving: 0
   _isRunning: 0
+  _isWalking: 0
+  _isWalkMode: 0
 --- !u!114 &8263903942245583533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,8 +290,9 @@ MonoBehaviour:
   _dashCrouchForce: {fileID: 11400000, guid: 2ae28bbf27e6dd24cb310d20f1df6451, type: 2}
   _crouchDashSpeedThreshold: {fileID: 11400000, guid: da9267357dc1b4f4a996d0c9057b90bb, type: 2}
   _crouchThreshold: {fileID: 11400000, guid: a231f187b7bc5fd4a922039cce256ec3, type: 2}
-  _crouchSlowDownSpeed: {fileID: 0}
+  _crouchSlowDownSpeed: {fileID: 11400000, guid: 1503ef17ff3334f47a7e29d3a28d1f5e, type: 2}
   _slopeGravity: {fileID: 11400000, guid: 0392b7d1cabe08642964573f9f493815, type: 2}
+  _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
   _boxColliderStand: {fileID: 2546452017022610105}
   _boxColliderCrouch: {fileID: 4270269119357015490}
   _playerSpriteTop: {fileID: 2546452018349504515}
@@ -325,11 +328,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equippedGun: {fileID: 2546452017850011751}
   _lineRendererPrefab: {fileID: 3666559609776911502, guid: 24fe13e18fa3d8c468a4a6a7ee709af8, type: 3}
-  _bloodVfxPrefab: {fileID: 0}
-  _dustVfxPrefab: {fileID: 0}
+  _bloodVfxPrefab: {fileID: 2031753999975559478, guid: b61ebad38e7afb94aa112e631ff112de, type: 3}
+  _dustVfxPrefab: {fileID: 2031753999975559478, guid: 74805d4577293954db260756ff4aee68, type: 3}
+  _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
   _mouseAim: 0
   _mouseFlip: 0
-  _inputDirection: {fileID: 11400000, guid: 8dd180b24cdb1924580b61d3d1da29c2, type: 2}
 --- !u!114 &927300417965856534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,17 +361,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _horAxis: Horizontal
-  _verAxis: 
-  _runAxis: 
-  _jumpAxis: 
-  _crouchAxis: 
-  _shootAxis: 
+  _verAxis: Vertical
+  _walkAxis: Walk
+  _jumpAxis: Jump
+  _shootAxis: Fire1
+  _climbAxis: Climb
   _OnMovePerformed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2546452017022610107}
         m_TargetAssemblyTypeName: Platformer2DMovement, Assembly-CSharp
-        m_MethodName: Walk
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -378,12 +381,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _OnRunPerformed:
+  _OnWalkPerformed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2546452017022610107}
         m_TargetAssemblyTypeName: Platformer2DMovement, Assembly-CSharp
-        m_MethodName: Run
+        m_MethodName: Walk
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -440,7 +443,19 @@ MonoBehaviour:
         m_CallState: 2
   _OnClimbPerformed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4152589526435935695}
+        m_TargetAssemblyTypeName: Platformer2DClimb, Assembly-CSharp
+        m_MethodName: Climb
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2546452017022610101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +501,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008470879}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: JumpInputActionPerformed
+        m_MethodName: JumpPerformed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -502,7 +517,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008470879}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: RunInputActionPerformed
+        m_MethodName: WalkPerformed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -518,7 +533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008470879}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnShootPerformed
+        m_MethodName: ShootPerformed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -534,7 +549,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008470879}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: CrouchInputActionPerformed
+        m_MethodName: CrouchPerformed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -562,6 +577,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 54fed39d-262e-450b-8304-2482aead06cc
     m_ActionName: Player/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1008470879}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: ClimbPerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f94d51cd-542c-469d-b81a-450a2e7aefc1
+    m_ActionName: Player/Climb[/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player

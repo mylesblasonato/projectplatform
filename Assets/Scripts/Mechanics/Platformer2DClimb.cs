@@ -6,6 +6,7 @@ public class Platformer2DClimb : MonoBehaviour
 {
     public void Climb(float isClimbing)
     {
-        Debug.Log("CLIMBING");
+        if(isClimbing > 0)
+            Debug.Log("CLIMBING");
     }
 }

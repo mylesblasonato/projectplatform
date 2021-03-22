@@ -5,14 +5,16 @@ using UnityEngine;
 public class Platformer2DShooting : MonoBehaviour
 {
     [SerializeField] Transform _equippedGun;
-    [SerializeField] GameObject _lineRendererPrefab, _bloodVfxPrefab, _dustVfxPrefab;
-    [SerializeField] bool _mouseAim = false, _mouseFlip = false;
+    [SerializeField] GameObject _lineRendererPrefab, _bloodVfxPrefab, _dustVfxPrefab;    
     [SerializeField] SoFloat _inputDirection;
+    [SerializeField] bool _mouseAim = false;
 
     LineRenderer _lineRenderer;
     Rigidbody2D _rb;
     Camera _main;
     RaycastHit2D _hitObject;
+
+    public bool _mouseFlip = false;
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class Platformer2DShooting : MonoBehaviour
         if (Mathf.Abs(ctx) >= 1)
         {
             _lineRenderer = GameObject.Instantiate(_lineRendererPrefab).GetComponent<LineRenderer>();
-            EventManager.Instance.Shoot();
+            EventManager.Instance.TriggerEvent("OnShoot");
             _equippedGun.GetChild(0).GetChild(0).GetComponent<ParticleSystem>().Play();
             var origin = _equippedGun.transform.position;
             var dest = new Vector2();
@@ -68,7 +70,7 @@ public class Platformer2DShooting : MonoBehaviour
         }
         else
         {
-            EventManager.Instance.StopShoot();
+            EventManager.Instance.TriggerEvent("OnStopShoot");
         }
     }
 

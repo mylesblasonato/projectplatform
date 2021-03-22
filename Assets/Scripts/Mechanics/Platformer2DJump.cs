@@ -10,11 +10,11 @@ public class Platformer2DJump : MonoBehaviour
     [SerializeField] LayerMask _groundMask;
 
     [HideInInspector] public bool _isJumping = false;
-     public bool _isGrounded = false;
+    public bool _isGrounded = false;
 
     Platformer2DCrouch _crouchMechanic;
     Rigidbody2D _rb;
-    int _currentJumpCount = 0;  
+    int _currentJumpCount = 0;
     float _currentJumpForce;
 
     private void Start()
@@ -25,24 +25,23 @@ public class Platformer2DJump : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {       
+    {
         Jumping();
         GroundCheck();
     }
 
     private void Update()
     {
-        if(_isJumping)
+        if (_isJumping)
             Invoke("StopJump", _jumpTimer.Value);
     }
     public void Jump(float isJumping)
     {
         if (isJumping > 0)
         {
-                _isJumping = true;
-                _crouchMechanic._isCrouching = false;
-                EventManager.Instance.Jump();
-           
+            _isJumping = true;           
+            EventManager.Instance.TriggerEvent("OnJump");
+
         }
         else
             StopJump();
@@ -52,6 +51,7 @@ public class Platformer2DJump : MonoBehaviour
     {
         if (_isJumping)
         {
+            _crouchMechanic.Stand();
             _rb.AddForce(Vector2.up * _currentJumpForce, ForceMode2D.Impulse);
         }
     }
@@ -62,8 +62,8 @@ public class Platformer2DJump : MonoBehaviour
     {
         Invoke("DelayedGroundCheck", 0.1f);
         if (_isGrounded)
-        {          
-            EventManager.Instance.Land();
+        {
+            EventManager.Instance.TriggerEvent("OnLand");
             _currentJumpCount = 0;
             if (Mathf.Abs(_rb.velocity.x) > _dragSensitivity.Value)
                 _rb.drag = _drag.Value;
@@ -85,7 +85,7 @@ public class Platformer2DJump : MonoBehaviour
 
     void DelayedGroundCheck()
     {
-        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, _groundMask);        
+        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, _groundMask);
     }
 
     #region HELPERS

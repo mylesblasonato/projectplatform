@@ -11,6 +11,8 @@ public class Platformer2DMovement : MonoBehaviour
 
     Platformer2DCrouch _platformerCrouch;
     Platformer2DJump _platformerJump;
+    Platformer2DShooting _platformerShoot;
+
     float _velocity;
     Rigidbody2D _rb;
     bool _lookingLeft = false;
@@ -25,54 +27,56 @@ public class Platformer2DMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _platformerJump = GetComponent<Platformer2DJump>();
         _platformerCrouch = GetComponent<Platformer2DCrouch>();
+        _platformerShoot = GetComponent<Platformer2DShooting>();
         _velocity = _speed.Value;
     }
 
-    public void Walk(float inputDirection)
+    public void Move(float inputDirection)
     {
         _inputDirection.Value = inputDirection;
-        RunCheck();
+        PlayAnimations();
 
+        if (_platformerShoot._mouseFlip) return;
+        FlipCharacter();
+    }
+
+    void FlipCharacter()
+    {
         if (transform.eulerAngles.y == 180)
-        {
             _lookingLeft = true;
-        }
-        
         if (transform.eulerAngles.y == 0)
-        {
             _lookingLeft = false;
-        }
 
-        if (inputDirection < -_moveThreshold.Value && !_lookingLeft)
+        if (_inputDirection.Value < -_moveThreshold.Value && !_lookingLeft)
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180, transform.eulerAngles.z);
             _lookingLeft = true;
-        } 
-        
-        if (inputDirection > _moveThreshold.Value && _lookingLeft)
+        }
+
+        if (_inputDirection.Value > _moveThreshold.Value && _lookingLeft)
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
             _lookingLeft = false;
         }
     }
 
-    void RunCheck()
+    void PlayAnimations()
     {
         if (_platformerJump._isJumping) return;
         if (!_platformerCrouch._isCrouching && Mathf.Abs(_inputDirection.Value) > _moveThreshold.Value)
         {
             if (_isWalking)
-                EventManager.Instance.Walk();
+                EventManager.Instance.TriggerEvent("OnWalk");
             if (_isRunning && !_isWalkMode)
-                EventManager.Instance.Run();
+                EventManager.Instance.TriggerEvent("OnRun");
         }
         else
         {
-            EventManager.Instance.Idle();
+            EventManager.Instance.TriggerEvent("OnIdle");
         }
     }
 
-    public void Run(float isWalking)
+    public void Walk(float isWalking)
     {
         if (_platformerJump._isJumping) return;
         if (isWalking == 1)
@@ -93,9 +97,7 @@ public class Platformer2DMovement : MonoBehaviour
         if (_platformerCrouch._isCrouching) return;
 
         if (!_platformerJump._isJumping)
-        {           
-            RunCheck();
-        }
+            PlayAnimations();
 
         if(_inputDirection.Value > _moveThreshold.Value)
             _rb.AddForce(new Vector2(1 * _velocity, 0));
@@ -112,12 +114,12 @@ public class Platformer2DMovement : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        Movement();
         if (Mathf.Abs(_rb.velocity.x) < 0.5f && !_platformerJump._isJumping)
-            EventManager.Instance.Idle();
+            EventManager.Instance.TriggerEvent("OnIdle");
     }
 
-    private void Move()
+    private void Movement()
     {
         if (!_platformerCrouch._isCrouching || !_platformerJump._isJumping)
         {

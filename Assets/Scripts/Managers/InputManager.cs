@@ -8,16 +8,24 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour, INewInputSystem
 {
-    public string _horAxis, _verAxis, _runAxis, _jumpAxis, _crouchAxis, _shootAxis, _climbAxis;
-    public UnityEventFloat _OnMovePerformed, _OnRunPerformed, _OnJumpPerformed, _OnCrouchPerformed, _OnShootPerformed, _OnClimbPerformed;
+    public string _horAxis, _verAxis, _walkAxis, _jumpAxis, _shootAxis, _climbAxis;
+    public UnityEventFloat _OnMovePerformed, _OnWalkPerformed, _OnJumpPerformed, _OnCrouchPerformed, _OnShootPerformed, _OnClimbPerformed;
 
     void Update()
     {
         if (GameManager.Instance.IsPaused) return;
         if (Mathf.Abs(Input.GetAxis(_horAxis)) >= 0)
             _OnMovePerformed?.Invoke(Input.GetAxis(_horAxis));
-        if (Mathf.Abs(Input.GetAxis(_runAxis)) >= 0)
-            _OnRunPerformed?.Invoke(Input.GetAxis(_runAxis));
+        if (Input.GetAxis(_verAxis) < 0)
+            _OnCrouchPerformed?.Invoke(Input.GetAxis(_verAxis));
+        if (Mathf.Abs(Input.GetAxis(_walkAxis)) >= 0)
+            _OnWalkPerformed?.Invoke(Input.GetAxis(_walkAxis));
+        if (Input.GetButtonDown(_jumpAxis))
+            _OnJumpPerformed?.Invoke(Input.GetAxis(_jumpAxis));
+        if (Input.GetButtonDown(_shootAxis))
+            _OnShootPerformed?.Invoke(Input.GetAxis(_shootAxis));
+        if (Input.GetButtonDown(_climbAxis))
+            _OnClimbPerformed?.Invoke(Input.GetAxis(_climbAxis));
     }
 
     public void MovePerformed(InputAction.CallbackContext ctx) 
@@ -26,31 +34,31 @@ public class InputManager : MonoBehaviour, INewInputSystem
         _OnMovePerformed?.Invoke(ctx.ReadValue<Vector2>().x);
     
     }
-    public void RunInputActionPerformed(InputAction.CallbackContext ctx) 
+    public void WalkPerformed(InputAction.CallbackContext ctx) 
     { 
         if (GameManager.Instance.IsPaused) return; 
-        _OnRunPerformed?.Invoke(ctx.ReadValue<float>()); 
+        _OnWalkPerformed?.Invoke(ctx.ReadValue<float>()); 
     
     }
-    public void JumpInputActionPerformed(InputAction.CallbackContext ctx) 
+    public void JumpPerformed(InputAction.CallbackContext ctx) 
     { 
         if (GameManager.Instance.IsPaused) return; 
         _OnJumpPerformed?.Invoke(ctx.ReadValue<float>()); 
     }
 
-    public void CrouchInputActionPerformed(InputAction.CallbackContext ctx) 
+    public void CrouchPerformed(InputAction.CallbackContext ctx) 
     { 
         if (GameManager.Instance.IsPaused) return; 
         _OnCrouchPerformed?.Invoke(ctx.ReadValue<float>()); 
     }
 
-    public void OnShootPerformed(InputAction.CallbackContext ctx) 
+    public void ShootPerformed(InputAction.CallbackContext ctx) 
     { 
         if (GameManager.Instance.IsPaused) return; 
         _OnShootPerformed?.Invoke(ctx.ReadValue<float>()); 
     }
 
-    public void OnClimbPerformed(InputAction.CallbackContext ctx)
+    public void ClimbPerformed(InputAction.CallbackContext ctx)
     {
         if (GameManager.Instance.IsPaused) return;
         _OnClimbPerformed?.Invoke(ctx.ReadValue<float>());

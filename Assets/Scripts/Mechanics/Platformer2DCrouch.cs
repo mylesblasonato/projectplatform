@@ -36,15 +36,23 @@ public class Platformer2DCrouch : MonoBehaviour
         Stand();
     }
 
-    //
-
-    // Slows down the player when crouching
-    void ManualFriction()
+    void FixedUpdate()
     {
-        if (Mathf.Abs(_rb.velocity.x) > 0.2f)
-            _rb.velocity = new Vector2(_rb.velocity.x + (-transform.right.normalized.x * _crouchSlowDownSpeed.Value), 0);
-        else
-            _rb.velocity = Vector2.zero;
+        Slide();
+        SlopeRotation();
+    }
+
+    void Slide()
+    {
+        if (_jumpMechanic._isGrounded &&
+            _isCrouching &&
+            _canCrouchDash &&
+            _moveMechanic._isMoving
+            && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
+        {
+            _rb.AddForce(new Vector2((_rb.velocity.x + _dashCrouchForce.Value) * _inputDirection.Value, 0), ForceMode2D.Impulse);
+            _canCrouchDash = false;
+        }
     }
 
     void SlopeRaycastAndCheck()
@@ -65,30 +73,8 @@ public class Platformer2DCrouch : MonoBehaviour
         }
     }
 
-    void Slope()
+    void SlopeRotation() // change rot of player when on slope
     {
-        _rb.gravityScale = _slopeGravity.Value;
-        float slopeAngle = Vector2.Angle(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
-        if (slopeAngle > 0 && !_isSloping)
-        {
-            _isSloping = true;
-            transform.right.Normalize();
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -45 * transform.right.x);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (_jumpMechanic._isGrounded && 
-            _isCrouching &&
-            _canCrouchDash &&
-            _moveMechanic._isMoving 
-            && Mathf.Abs(_rb.velocity.x) > _crouchDashSpeedThreshold.Value)
-        {
-            _rb.AddForce(new Vector2(_inputDirection.Value * (_moveMechanic._isRunning ? _dashCrouchForce.Value * 2f : _dashCrouchForce.Value), 0), ForceMode2D.Impulse);
-            _canCrouchDash = false;
-        }
-
         if (_isSloping)
         {
             transform.right.Normalize();
@@ -98,13 +84,27 @@ public class Platformer2DCrouch : MonoBehaviour
         }
     }
 
+    void Slope()
+    {
+        _rb.gravityScale = _slopeGravity.Value;
+        float slopeAngle = Vector2.Angle(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
+        if (slopeAngle > 0 && !_isSloping)
+        {
+            Invoke("IsSloping", 0.2f);
+            transform.right.Normalize();
+        }
+    }
+
+    void IsSloping() => _isSloping = true;
+
     public void Stand()
     {
-        if (_isCrouching) return;
+        if (_isCrouching && _jumpMechanic._isGrounded) return;
+        _isCrouching = false;
         _boxColliderStand.enabled = true;
         _boxColliderCrouch.enabled = false;
         _playerSpriteTop.transform.localPosition = Vector3.zero;
-        EventManager.Instance.Stand();
+        EventManager.Instance.TriggerEvent("OnStand");
     }
 
     public void CrouchDown()
@@ -114,24 +114,19 @@ public class Platformer2DCrouch : MonoBehaviour
         _boxColliderCrouch.enabled = true;
         _playerSpriteTop.transform.position = _crouchPos.position;
         _playerSpriteTop.transform.localRotation = _crouchPos.localRotation;
-        EventManager.Instance.Crouch();
+        EventManager.Instance.TriggerEvent("OnCrouch");
         _rb.drag = _crouchDrag.Value;
     }
 
     public void Crouch(float isCrouching)
     {
         if (!_jumpMechanic._isGrounded) return;
-        _crouchAxis = isCrouching;
-        _isCrouching = (isCrouching >= _crouchThreshold.Value);
+        _crouchAxis = Mathf.Abs(isCrouching);
+        _isCrouching = (_crouchAxis >= _crouchThreshold.Value);
         if (!_isCrouching)
             _canCrouchDash = true;
     }
 
     #region HELPERS
-    private void OnDrawGizmos()
-    {
-        //if (_slope)
-            //Gizmos.DrawLine(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
-    }
     #endregion
 }

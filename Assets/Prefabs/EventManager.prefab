@@ -43,3 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5811f840ed9844abe8fa2e25566a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventList:
+  - _eventName: OnIdle
+  - _eventName: OnWalk
+  - _eventName: OnRun
+  - _eventName: OnJump
+  - _eventName: OnLand
+  - _eventName: OnCrouch
+  - _eventName: OnStand
+  - _eventName: OnShoot
+  - _eventName: OnStopShoot
