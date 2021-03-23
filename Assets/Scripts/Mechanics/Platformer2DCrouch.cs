@@ -90,7 +90,7 @@ public class Platformer2DCrouch : MonoBehaviour
         float slopeAngle = Vector2.Angle(_slope.point, _slope.normal + new Vector2(transform.position.x, transform.position.y));
         if (slopeAngle > 0 && !_isSloping)
         {
-            Invoke("IsSloping", 0.2f);
+            Invoke("IsSloping", 0);
             transform.right.Normalize();
         }
     }

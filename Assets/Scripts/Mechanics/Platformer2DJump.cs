@@ -13,6 +13,7 @@ public class Platformer2DJump : MonoBehaviour
     public bool _isGrounded = false;
 
     Platformer2DCrouch _crouchMechanic;
+    Platformer2DClimb _climbMechanic;
     Rigidbody2D _rb;
     int _currentJumpCount = 0;
     float _currentJumpForce;
@@ -21,6 +22,7 @@ public class Platformer2DJump : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _crouchMechanic = GetComponent<Platformer2DCrouch>();
+        _climbMechanic = GetComponent<Platformer2DClimb>();
         _currentJumpForce = _jumpForce.Value;
     }
 
@@ -39,7 +41,9 @@ public class Platformer2DJump : MonoBehaviour
     {
         if (isJumping > 0)
         {
-            _isJumping = true;           
+            _isJumping = true;
+            _climbMechanic._isClimbing = false;
+            _climbMechanic._isHoldingClimb = false;
             EventManager.Instance.TriggerEvent("OnJump");
 
         }
@@ -63,13 +67,17 @@ public class Platformer2DJump : MonoBehaviour
         Invoke("DelayedGroundCheck", 0.1f);
         if (_isGrounded)
         {
+            _climbMechanic._isHoldingClimb = false;
+        }
+        if (_isGrounded || _climbMechanic._isClimbing)
+        {
             EventManager.Instance.TriggerEvent("OnLand");
             _currentJumpCount = 0;
             if (Mathf.Abs(_rb.velocity.x) > _dragSensitivity.Value)
                 _rb.drag = _drag.Value;
             else
                 _rb.drag = 0f;
-            _currentJumpForce = _jumpForce.Value;
+            _currentJumpForce = _jumpForce.Value;            
         }
         else
         {

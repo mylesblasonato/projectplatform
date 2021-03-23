@@ -5,8 +5,13 @@ using UnityEngine;
 public class Platformer2DClimb : MonoBehaviour
 {
     [SerializeField] SoFloat _gravityScale;
+    [SerializeField] Transform _grabPoint;
+    [SerializeField] LayerMask _layerMask;
+    [SerializeField] float _range;
 
     Rigidbody2D _rb;
+    RaycastHit2D _hitObject;
+    public bool _isHoldingClimb = false;
     
     public bool _isClimbing = false;
 
@@ -15,19 +20,58 @@ public class Platformer2DClimb : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (_isClimbing)
-            _rb.gravityScale = 0;
+        if (_isHoldingClimb)
+            ClimbRaycast();
         else
-            _rb.gravityScale = _gravityScale.Value;
+        {
+            Drop();
+        }
+    }
+
+    void Drop()
+    {
+        _isClimbing = false;
+        _rb.gravityScale = _gravityScale.Value;
+    }
+
+    void ClimbRaycast()
+    {
+        var origin = _grabPoint.position;
+        var dest = _grabPoint.right;
+
+        RaycastHit2D hitObject = Physics2D.Raycast(
+            origin,
+            dest,
+            _range,
+            _layerMask);
+
+        if (hitObject)
+        {
+            _hitObject = hitObject;
+            _isClimbing = true;
+            _rb.velocity = Vector2.zero;
+            _rb.gravityScale = 0;
+        }
+        else
+        {
+            Drop();
+        }
     }
 
     public void Climb(float isClimbing)
     {
         if (isClimbing > 0)
-            _isClimbing = true;
+            _isHoldingClimb = true;
         else
-            _isClimbing = false;
+            _isHoldingClimb = false;
     }
+
+    #region HELPERS
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(_grabPoint.position, _grabPoint.right * _range);
+    }
+    #endregion
 }

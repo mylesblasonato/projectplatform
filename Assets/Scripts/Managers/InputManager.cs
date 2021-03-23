@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour, INewInputSystem
             _OnJumpPerformed?.Invoke(Input.GetAxis(_jumpAxis));
         if (Input.GetButtonDown(_shootAxis))
             _OnShootPerformed?.Invoke(Input.GetAxis(_shootAxis));
-        if (Input.GetButtonDown(_climbAxis))
+        if (Input.GetAxis(_climbAxis) > 0)
             _OnClimbPerformed?.Invoke(Input.GetAxis(_climbAxis));
     }
 
