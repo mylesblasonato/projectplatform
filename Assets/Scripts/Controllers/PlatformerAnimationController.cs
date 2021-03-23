@@ -60,6 +60,9 @@ public class PlatformerAnimationController : MonoBehaviour
         _animatorTop.SetFloat("JumpShoot", 0);
         _animatorBottom.SetFloat("JumpShoot", 0);
 
+        _animatorTop.SetFloat("HangBlend", 0);
+        _animatorBottom.SetFloat("HangBlend", 0);
+
         _animatorTop.SetTrigger("Jump");
         _animatorBottom.SetTrigger("Jump");
     }
@@ -101,11 +104,22 @@ public class PlatformerAnimationController : MonoBehaviour
 
         _animatorTop.SetFloat("JumpShoot", 1);
         _animatorBottom.SetFloat("JumpShoot", 1);
+
+        _animatorTop.SetFloat("HangBlend", 1);
+        _animatorBottom.SetFloat("HangBlend", 1);
     }
 
     void StopShootAnimation()
     {
         _animatorTop.SetFloat("JumpShoot", 0);
         _animatorBottom.SetFloat("JumpShoot", 0);
+
+        StopGrabShooting();
+    }
+
+    void StopGrabShooting()
+    {
+        _animatorTop.SetFloat("HangBlend", 0);
+        _animatorBottom.SetFloat("HangBlend", 0);
     }
 }

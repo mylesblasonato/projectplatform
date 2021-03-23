@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781114891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.344, z: 0}
+  m_LocalPosition: {x: 0.063, y: 0.405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2546452017022610104}
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 927300417965856534}
   - component: {fileID: 1008470879}
   - component: {fileID: 2546452017022610101}
+  - component: {fileID: 1458993582}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -346,11 +347,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gravityScale: {fileID: 11400000, guid: 07db99a0e8cb1744cbd3a885a086946e, type: 2}
-  _grabPoint: {fileID: 0}
+  _hangOffset: {fileID: 11400000, guid: 34f99321a59e99b49b7621a0551c632d, type: 2}
+  _grabPoint: {fileID: 1781114892}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
-  _range: 1
+  _range: 0.05
+  _isHoldingClimb: 0
   _isClimbing: 0
 --- !u!114 &2546452017022610100
 MonoBehaviour:
@@ -636,6 +639,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &1458993582
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546452017022610111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2546452017566659734
 GameObject:
   m_ObjectHideFlags: 0
