@@ -32,6 +32,9 @@ TextureImporter:
   - first:
       213: -4022144044996426325
     second: DarkTop_9
+  - first:
+      213: -9213299095453894445
+    second: DarkTop_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -350,6 +353,27 @@ TextureImporter:
       bones: []
       spriteID: ba509822d497e28c0800000000000000
       internalID: -4022144044996426325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkTop_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8fa0e6949c32080800000000000000
+      internalID: -9213299095453894445
       vertices: []
       indices: 
       edges: []

@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: -3891344993946560270
     second: DarkBottom_10
+  - first:
+      213: -1883022703249548703
+    second: DarkBottom_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -374,6 +377,27 @@ TextureImporter:
       bones: []
       spriteID: 2f81251685a2ff9c0800000000000000
       internalID: -3891344993946560270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkBottom_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a90dcf3d82ed5e0800000000000000
+      internalID: -1883022703249548703
       vertices: []
       indices: 
       edges: []

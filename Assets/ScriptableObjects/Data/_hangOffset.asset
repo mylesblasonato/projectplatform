@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9faf2d29b68acd34d8793398fac090d2, type: 3}
-  m_Name: _jumpForce
+  m_Name: _hangOffset
   m_EditorClassIdentifier: 
-  _value: 15
+  _value: 0.2

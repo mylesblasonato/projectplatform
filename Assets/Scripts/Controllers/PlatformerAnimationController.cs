@@ -13,6 +13,8 @@ public class PlatformerAnimationController : MonoBehaviour
         EventManager.Instance.AddListener("OnWalk", WalkAnimation);
         EventManager.Instance.AddListener("OnRun", RunAnimation);
         EventManager.Instance.AddListener("OnJump", JumpAnimation);
+        EventManager.Instance.AddListener("OnHang", HangAnimation);
+        EventManager.Instance.AddListener("OnFall", FallAnimation);
         EventManager.Instance.AddListener("OnLand", LandAnimation);
         EventManager.Instance.AddListener("OnCrouch", CrouchAnimation);
         EventManager.Instance.AddListener("OnStand", StandAnimation);
@@ -26,6 +28,8 @@ public class PlatformerAnimationController : MonoBehaviour
         EventManager.Instance.RemoveListener("OnWalk", WalkAnimation);
         EventManager.Instance.RemoveListener("OnRun", RunAnimation);
         EventManager.Instance.RemoveListener("OnJump", JumpAnimation);
+        EventManager.Instance.RemoveListener("OnHang", HangAnimation);
+        EventManager.Instance.RemoveListener("OnFall", FallAnimation);
         EventManager.Instance.RemoveListener("OnLand", LandAnimation);
         EventManager.Instance.RemoveListener("OnCrouch", CrouchAnimation);
         EventManager.Instance.RemoveListener("OnStand", StandAnimation);
@@ -58,6 +62,18 @@ public class PlatformerAnimationController : MonoBehaviour
 
         _animatorTop.SetTrigger("Jump");
         _animatorBottom.SetTrigger("Jump");
+    }
+
+    void HangAnimation()
+    {
+        _animatorTop.SetBool("Hang", true);
+        _animatorBottom.SetBool("Hang", true);
+    }
+
+    void FallAnimation()
+    {
+        _animatorTop.SetBool("Hang", false);
+        _animatorBottom.SetBool("Hang", false);
     }
 
     void LandAnimation()
