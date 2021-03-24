@@ -65,6 +65,9 @@ public class PlatformerAnimationController : MonoBehaviour
 
         _animatorTop.SetTrigger("Jump");
         _animatorBottom.SetTrigger("Jump");
+
+        _animatorTop.SetBool("Land", false);
+        _animatorBottom.SetBool("Land", false);
     }
 
     void HangAnimation()
@@ -81,8 +84,8 @@ public class PlatformerAnimationController : MonoBehaviour
 
     void LandAnimation()
     {
-        _animatorTop.SetTrigger("Land");
-        _animatorBottom.SetTrigger("Land");
+        _animatorTop.SetBool("Land", true);
+        _animatorBottom.SetBool("Land", true);
     }
 
     void CrouchAnimation()
