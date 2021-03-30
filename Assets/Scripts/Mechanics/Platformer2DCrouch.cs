@@ -6,10 +6,10 @@ public class Platformer2DCrouch : MonoBehaviour
 {
     [SerializeField] SoFloat _crouchDrag, _dashCrouchForce, _crouchDashSpeedThreshold, _crouchThreshold, _crouchSlowDownSpeed, _slopeGravity;
     [SerializeField] SoFloat _inputDirection;
-    [SerializeField] BoxCollider2D _boxColliderStand, _boxColliderCrouch;
+    [SerializeField] Collider2D _boxColliderStand, _boxColliderCrouch;
     [SerializeField] GameObject _playerSpriteTop;
     [SerializeField] Transform _crouchPos;
-    [SerializeField] LayerMask _slopeMask;
+    [SerializeField] LayerMask _slopeMask, _slideMask;
 
     Platformer2DMovement _moveMechanic;
     Platformer2DJump _jumpMechanic;
@@ -33,6 +33,7 @@ public class Platformer2DCrouch : MonoBehaviour
         SlopeRaycastAndCheck();
         if (!_jumpMechanic._isGrounded) return;
         CrouchDown();
+        SlideRaycastUp();
         Stand();
     }
 
@@ -71,6 +72,18 @@ public class Platformer2DCrouch : MonoBehaviour
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
             _isSloping = false;
         }
+    }
+
+    void SlideRaycastUp()
+    {
+        var objectAbove = Physics2D.Raycast(
+            Vector2.zero + new Vector2(transform.localPosition.x, transform.localPosition.y),
+            new Vector2(0, 1),
+            2f,
+            _slideMask);
+
+        if(objectAbove)
+            _rb.AddForce(new Vector2((_rb.velocity.x + _dashCrouchForce.Value) * _inputDirection.Value, 0), ForceMode2D.Impulse);
     }
 
     void SlopeRotation() // change rot of player when on slope

@@ -150,6 +150,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8778026171369780879, guid: 3b296f6441b2ea541882a3136e06fafc, type: 3}
   m_PrefabInstance: {fileID: 8778026170857629421}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &611266114 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4293162066773183047, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+  m_PrefabInstance: {fileID: 3415763440379570179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &611266118 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 737500416579966515, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+  m_PrefabInstance: {fileID: 3415763440379570179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753779996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7951136516363516635, guid: e81e974701d884b4caf549c3d83f0661, type: 3}
@@ -528,6 +538,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 715bc240fa1db414fad592ec1ab0a825, type: 2}
+    - target: {fileID: 737500416579966515, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 737500416579966515, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 737500416579966515, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 2546452017022610101, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -580,6 +602,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4293162066773183047, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293162066773183047, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595988829903466675, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _boxColliderStand
+      value: 
+      objectReference: {fileID: 611266114}
+    - target: {fileID: 8595988829903466675, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _slideMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595988829903466675, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
+      propertyPath: _boxColliderCrouch
+      value: 
+      objectReference: {fileID: 611266118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c0baf1cef4e86441ba3e662c055cd4e, type: 3}
 --- !u!114 &4229766330716142096
