@@ -1,85 +1,82 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlatformerMovement : MonoBehaviour
 {
+    [SerializeField] string _horizontalAxis;
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
-    [SerializeField] LayerMask _groundLayer;
-    [SerializeField] float _acceleration, _speed, _deceleration, _jumpForce, _jumpHightMax, _groundCheckDistance, _airDrag;
+    [SerializeField] SoFloat _acceleration, _maxSpeed, _deceleration;
 
-    bool _changeDirection = false;
-    bool _groundCheck = false;
-    bool _isJumping = false;
+    Vector2 _direction;
+    bool _facingRight = true;
+    bool _isGrounded = false;
 
-    void FixedUpdate()
+    private void Start()
     {
-        //if (_groundCheck)
-            Jump();          
-        Move();
+        EventManager.Instance.AddListener("OnGrounded", () => _isGrounded = true);
+        EventManager.Instance.AddListener("OnJump", () => _isGrounded = false);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.RemoveListener("OnGrounded", () => _isGrounded = true);
+        EventManager.Instance.RemoveListener("OnJump", () => _isGrounded = false);
     }
 
     void Update()
     {
-        GroundCheck();
+        _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
     }
 
-    void GroundCheck()
-    {
-        _groundCheck = Physics2D.Raycast(
-          new Vector2(transform.localPosition.x, transform.localPosition.y),
-          new Vector2(0, _groundCheckDistance),
-          Mathf.Abs(_groundCheckDistance),
-          _groundLayer);
-
-        if (_groundCheck)
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0);
-            _isJumping = false;
-        }
+    void FixedUpdate()
+    {    
+        Move(_direction.x);
+        ModifyPhysics();
     }
 
-    void Jump()
+    void Move(float horizontal)
     {
-        if (Input.GetButton("Fire1"))
+        _rb.AddForce(Vector2.right * _direction.x * _acceleration.Value);
+        if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
+            Flip();
+        if (Mathf.Abs(_rb.velocity.x) > _maxSpeed.Value)
+            _rb.velocity = new Vector2(Mathf.Sign(_rb.velocity.x) * _maxSpeed.Value, _rb.velocity.y);
+        
+        if(_isGrounded)
+            _animator.SetFloat("Move", Mathf.Abs(_direction.x));
+    }
+
+    void ModifyPhysics()
+    {
+        var changingDirections = (_direction.x > 0 && _rb.velocity.x < 0) || (_direction.x < 0 && _rb.velocity.x > 0);
+
+        if (_isGrounded)
         {
-            if (_rb.velocity.y < _jumpHightMax && !_isJumping)
-            {
-                _rb.AddForce(new Vector2(0, _jumpForce));
-            }
+            //LandAnimation
+            _animator.SetBool("Grounded", true);
+            if (Mathf.Abs(_direction.x) < 0.4f || changingDirections)
+                _rb.drag = _deceleration.Value;
             else
-            {
-                _rb.drag = _airDrag;
-                _isJumping = true;
-            }
-        }     
+                _rb.drag = 0;
+        }
+        else
+        {
+            _animator.SetBool("Grounded", false);
+            _rb.drag = _deceleration.Value * 0.15f;
+        }
     }
 
-    void Move()
+    void Flip()
     {
-        _animator.SetFloat("Move", Mathf.Abs(Input.GetAxis("Horizontal")));
-        if (Mathf.Abs(_rb.velocity.x) < _speed)
-        {
-            _rb.AddForce(new Vector2((_rb.velocity.x + (Input.GetAxis("Horizontal") * _acceleration)), 0));
-             _rb.drag = 0;
-            _changeDirection = false;
-            //rotation
-            if (Input.GetAxis("Horizontal") > 0.02f)
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            else if (Input.GetAxis("Horizontal") < -0.02f)
-                transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) < 1)
-            _rb.drag = _deceleration;
-        if (Mathf.Abs(_rb.velocity.x) == 0)
-            _changeDirection = true;
+        _facingRight = !_facingRight;
+        transform.rotation = Quaternion.Euler(0, _facingRight ? 0 : 180, 0);
     }
 
     #region HELPERS
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(new Vector2(transform.localPosition.x, transform.localPosition.y), new Vector2(0, _groundCheckDistance));
+        //Gizmos.DrawRay(new Vector2(transform.localPosition.x, transform.localPosition.y), new Vector2(0, _groundCheckDistance));
     }
     #endregion
 }

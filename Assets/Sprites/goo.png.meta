@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -7671877405851984578
     second: goo_2
+  - first:
+      213: -7258955049455995787
+    second: goo_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -182,6 +185,27 @@ TextureImporter:
       bones: []
       spriteID: e3dd8df8524088590800000000000000
       internalID: -7671877405851984578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goo_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574b5a497d2034b90800000000000000
+      internalID: -7258955049455995787
       vertices: []
       indices: 
       edges: []
