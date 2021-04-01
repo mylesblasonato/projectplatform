@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformerMovement : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlatformerMovement : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] SoFloat _acceleration, _maxSpeed, _deceleration;
+    [SerializeField] UnityEvent _onJumpFunc;
 
     Vector2 _direction;
     bool _facingRight = true;
@@ -14,7 +16,7 @@ public class PlatformerMovement : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Instance.AddListener("OnGrounded", () => _isGrounded = true);
+        EventManager.Instance.AddListener("OnGrounded", _onJumpFunc);
         EventManager.Instance.AddListener("OnJump", () => _isGrounded = false);
     }
 

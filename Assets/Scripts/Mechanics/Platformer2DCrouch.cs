@@ -17,6 +17,8 @@ public class Platformer2DCrouch : MonoBehaviour
     bool _canCrouchDash = false;
     RaycastHit2D _slope;
     bool _isSloping = false;
+    bool _objectAbove = false;
+    bool _slidingUnderObject = false;
 
     public float _crouchAxis = 0;
     public bool _isCrouching = false;
@@ -30,10 +32,10 @@ public class Platformer2DCrouch : MonoBehaviour
 
     void Update()
     {
+        SlideRaycastUp();
         SlopeRaycastAndCheck();
         if (!_jumpMechanic._isGrounded) return;
         CrouchDown();
-        SlideRaycastUp();
         Stand();
     }
 
@@ -41,6 +43,18 @@ public class Platformer2DCrouch : MonoBehaviour
     {
         Slide();
         SlopeRotation();
+
+        if (_objectAbove && _isCrouching)
+        {
+            _slidingUnderObject = true;
+            _rb.AddForce(new Vector2((_rb.velocity.x + _dashCrouchForce.Value) * _inputDirection.Value, 0), ForceMode2D.Impulse);
+        }
+
+        if (_slidingUnderObject && !_objectAbove)
+        {
+            _rb.velocity = Vector2.zero;
+            _slidingUnderObject = false;
+        }       
     }
 
     void Slide()
@@ -76,14 +90,11 @@ public class Platformer2DCrouch : MonoBehaviour
 
     void SlideRaycastUp()
     {
-        var objectAbove = Physics2D.Raycast(
+        _objectAbove = Physics2D.Raycast(
             Vector2.zero + new Vector2(transform.localPosition.x, transform.localPosition.y),
             new Vector2(0, 1),
             2f,
             _slideMask);
-
-        if(objectAbove)
-            _rb.AddForce(new Vector2((_rb.velocity.x + _dashCrouchForce.Value) * _inputDirection.Value, 0), ForceMode2D.Impulse);
     }
 
     void SlopeRotation() // change rot of player when on slope
