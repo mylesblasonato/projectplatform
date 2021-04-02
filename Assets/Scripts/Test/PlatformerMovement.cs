@@ -8,7 +8,6 @@ public class PlatformerMovement : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] SoFloat _acceleration, _maxSpeed, _deceleration;
-    [SerializeField] UnityEvent _onJumpFunc;
 
     Vector2 _direction;
     bool _facingRight = true;
@@ -16,7 +15,7 @@ public class PlatformerMovement : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Instance.AddListener("OnGrounded", _onJumpFunc);
+        EventManager.Instance.AddListener("OnGrounded", () => _isGrounded = true);
         EventManager.Instance.AddListener("OnJump", () => _isGrounded = false);
     }
 
@@ -39,7 +38,7 @@ public class PlatformerMovement : MonoBehaviour
 
     void Move(float horizontal)
     {
-        _rb.AddForce(Vector2.right * _direction.x * _acceleration.Value);
+        _rb.AddForce((Vector2.right * _direction.x) * _acceleration.Value);
         if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
             Flip();
         if (Mathf.Abs(_rb.velocity.x) > _maxSpeed.Value)

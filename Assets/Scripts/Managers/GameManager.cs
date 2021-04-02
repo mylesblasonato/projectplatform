@@ -8,6 +8,14 @@ public class GameManager : MonoSingleton<GameManager>
     private bool _isPaused = false;
     public bool IsPaused => _isPaused;
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Pause();
+        }
+    }
+
     void Start()
     {
         _pauseScreen.SetActive(false);
