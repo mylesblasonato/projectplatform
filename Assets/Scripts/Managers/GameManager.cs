@@ -19,6 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     void Start()
     {
         _pauseScreen.SetActive(false);
+        Cursor.visible = false;
     }
 
     public void Pause()
