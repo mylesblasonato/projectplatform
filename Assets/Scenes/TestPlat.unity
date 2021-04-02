@@ -11443,7 +11443,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 149777565}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2c08463b863f690448d03b8e9db85ed5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11748,7 +11748,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2c08463b863f690448d03b8e9db85ed5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -16980,7 +16980,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.12}
-  m_Size: {x: 0.82, y: 0.58}
+  m_Size: {x: 0.51, y: 0.58}
   m_Direction: 1
 --- !u!114 &1812094612
 MonoBehaviour:
@@ -17003,8 +17003,8 @@ MonoBehaviour:
   _jumpForce: {fileID: 11400000, guid: afb3edb1578088a43a38a30372a404a2, type: 2}
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
   _fallMultiplier: {fileID: 11400000, guid: 581b4a5d8a435c548849d91d12d304e2, type: 2}
-  _groundCheckDistance: -0.51
-  _groundCheckOffset: 0.32
+  _groundCheckDistance: -0.47
+  _groundCheckOffset: 0.23
 --- !u!1 &1879528918
 GameObject:
   m_ObjectHideFlags: 0
@@ -17078,9 +17078,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7951136515219954529, guid: e81e974701d884b4caf549c3d83f0661, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 7951136516363516635, guid: e81e974701d884b4caf549c3d83f0661, type: 3}
       propertyPath: m_Name
       value: PauseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951136516363516635, guid: e81e974701d884b4caf549c3d83f0661, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951136516363516647, guid: e81e974701d884b4caf549c3d83f0661, type: 3}
       propertyPath: m_Pivot.x
