@@ -29,10 +29,8 @@ public class PlatformerJump : MonoBehaviour
 
     void Jump()
     {
-        EventManager.Instance.TriggerEvent("OnJump");
-        _rb.velocity = new Vector2(_rb.velocity.x, 0);
+
         _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
-        _animator.SetBool("Jumping", true);
     }
 
     void GroundCheck()
@@ -48,6 +46,12 @@ public class PlatformerJump : MonoBehaviour
           new Vector2(0, _groundCheckDistance),
           Mathf.Abs(_groundCheckDistance),
           _groundLayer);
+
+        if (_groundCheckLeft || _groundCheckRight)
+            EventManager.Instance.TriggerEvent("OnGrounded");
+
+        if(!_groundCheckLeft && !_groundCheckRight)
+            EventManager.Instance.TriggerEvent("OnJump");
     }
 
     void ChangeGravity()
@@ -55,37 +59,22 @@ public class PlatformerJump : MonoBehaviour
         if (_groundCheckLeft || _groundCheckRight)
         {
             _rb.gravityScale = 0;
-            EventManager.Instance.TriggerEvent("OnGrounded");
         }
-
-        if (!_groundCheckLeft && !_groundCheckRight)
+        else if (!_groundCheckLeft && !_groundCheckRight)
         {
-            _rb.gravityScale = _gravity.Value;
+            _rb.gravityScale = _gravity.Value * (_fallMultiplier.Value / 2f);
             JumpHeightController();
         }
     }
 
     void FallingCheck()
     {
-        if (!_groundCheckLeft && !_groundCheckRight)
-        {
-            if (_rb.velocity.y <= 0)
-                _animator.SetBool("Jumping", false);
-            else
-                _animator.SetBool("Jumping", true);
-        }
+        _animator.SetFloat("VelocityY", _rb.velocity.y);
     }
 
     void JumpHeightController()
     {
-        if (_rb.velocity.y < 0)
-        {
-            _rb.gravityScale = _gravity.Value * (_fallMultiplier.Value / 2f);
-        }
-        else if (_rb.velocity.y > 0 && !Input.GetButton(_jumpAxis))
-        {
-            _rb.gravityScale = _gravity.Value * _fallMultiplier.Value;
-        }
+
     }
 
     #region HELPERS
