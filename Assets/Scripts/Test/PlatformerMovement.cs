@@ -39,7 +39,7 @@ public class PlatformerMovement : MonoBehaviour
 
     void Move(float horizontal)
     {
-        _rb.velocity +=  new Vector2(horizontal * _acceleration.Value, 0);
+        _rb.AddForce(new Vector2(horizontal * _acceleration.Value, 0));
        
         if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
             Flip();
@@ -59,13 +59,17 @@ public class PlatformerMovement : MonoBehaviour
         {
             //LandAnimation         
             if (Mathf.Abs(_direction.x) < 0.4f || changingDirections)
-                _rb.drag = _deceleration.Value;
+            {
+                _rb.drag = _deceleration.Value + 25f;
+            }
             else
+            {
                 _rb.drag = 0;
+            }
         }
         else
         {
-            _rb.drag = _deceleration.Value * 0.5f;
+            _rb.drag = _deceleration.Value;
         }
     }
 

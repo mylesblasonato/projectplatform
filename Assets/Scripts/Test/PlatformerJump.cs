@@ -10,11 +10,11 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] SoFloat _jumpForce, _gravity, _fallMultiplier;
     [SerializeField] float _groundCheckDistance, _groundCheckOffset;
 
-    bool _groundCheckLeft = false, _groundCheckRight = false;
+    bool _groundCheckLeft = false, _groundCheckRight = false, _grounded = false;
 
     void FixedUpdate()
     {
-        if (Input.GetButton(_jumpAxis) && (_groundCheckLeft || _groundCheckRight))
+        if (Input.GetButton(_jumpAxis) && _grounded)
         {
             Jump();
         }
@@ -29,7 +29,6 @@ public class PlatformerJump : MonoBehaviour
 
     void Jump()
     {
-
         _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
     }
 
@@ -52,13 +51,19 @@ public class PlatformerJump : MonoBehaviour
 
         if(!_groundCheckLeft && !_groundCheckRight)
             EventManager.Instance.TriggerEvent("OnJump");
+
+        if (_groundCheckLeft || _groundCheckRight)
+            _grounded = true;
+        else if (!_groundCheckLeft && !_groundCheckRight)
+            _grounded = false;
+
     }
 
     void ChangeGravity()
     {
         if (_groundCheckLeft || _groundCheckRight)
         {
-            _rb.gravityScale = 0;
+            _rb.gravityScale = _gravity.Value;
         }
         else if (!_groundCheckLeft && !_groundCheckRight)
         {
