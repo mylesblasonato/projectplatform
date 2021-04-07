@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6403706054907210285}
   - component: {fileID: 6403706054907210286}
   - component: {fileID: 6403706054907210284}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: goo_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6403706054953194353}
   - component: {fileID: 6403706054953194359}
   - component: {fileID: 6403706054953194352}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4880,7 +4880,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4921,9 +4921,9 @@ GameObject:
   - component: {fileID: 6403706056028345751}
   - component: {fileID: 6403706056028345750}
   - component: {fileID: 6403706056028345749}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5018,8 +5018,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _jumpForce: {fileID: 11400000, guid: afb3edb1578088a43a38a30372a404a2, type: 2}
+  _jumpHold: {fileID: 11400000, guid: 27cf66d7db3b9944882703b2c6da6bcd, type: 2}
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
   _fallMultiplier: {fileID: 11400000, guid: 581b4a5d8a435c548849d91d12d304e2, type: 2}
+  _cyoteTime: {fileID: 11400000, guid: c5470641f1ad2bb468b5a2a42b9be169, type: 2}
   _groundCheckDistance: -0.47
   _groundCheckOffset: 0.2
 --- !u!114 &6403706056028345750

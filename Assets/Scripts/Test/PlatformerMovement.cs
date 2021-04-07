@@ -28,49 +28,31 @@ public class PlatformerMovement : MonoBehaviour
     void Update()
     {
         _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
-        _animator.SetBool("Grounded", _isGrounded);
+        _animator.SetBool("Grounded", _isGrounded); // land anim
+        ModifyPhysics();
     }
 
     void FixedUpdate()
-    {    
+    {
         Move(_direction.x);
-        ModifyPhysics();
     }
 
     void Move(float horizontal)
     {
         _rb.AddForce(new Vector2(horizontal * _acceleration.Value, 0));
-       
         if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
             Flip();
-        
         if (Mathf.Abs(_rb.velocity.x) > _maxSpeed.Value)
             _rb.velocity = new Vector2(Mathf.Sign(_rb.velocity.x) * _maxSpeed.Value, _rb.velocity.y);
-
         if (_isGrounded)
-            _animator.SetFloat("Move", Mathf.Abs(_direction.x));
+            _animator.SetFloat("Move", Mathf.Abs(_direction.x)); // move anim
     }
 
     void ModifyPhysics()
     {
         var changingDirections = (_direction.x > 0 && _rb.velocity.x < 0) || (_direction.x < 0 && _rb.velocity.x > 0);
-
-        if (_rb.velocity.y == 0)
-        {
-            //LandAnimation         
-            if (Mathf.Abs(_direction.x) < 0.4f || changingDirections)
-            {
-                _rb.drag = _deceleration.Value + 25f;
-            }
-            else
-            {
-                _rb.drag = 0;
-            }
-        }
-        else
-        {
+        if (Mathf.Abs(_direction.x) < 1f || changingDirections)
             _rb.drag = _deceleration.Value;
-        }
     }
 
     void Flip()
