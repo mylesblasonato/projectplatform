@@ -7,8 +7,8 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] LayerMask _groundLayer;
-    [SerializeField] SoFloat _jumpForce, _jumpHold, _gravity, _fallMultiplier, _cyoteTime;
     [SerializeField] float _groundCheckDistance, _groundCheckOffset;
+    [SerializeField] SoFloat _jumpForce, _jumpHold, _gravity, _fallMultiplier, _cyoteTime;   
 
     bool _groundCheckLeft = false, _groundCheckRight = false, _grounded = false, _jumping = false;
 
@@ -47,13 +47,11 @@ public class PlatformerJump : MonoBehaviour
     {
         _groundCheckLeft = SingleGroundCheck(transform.localPosition.x - _groundCheckOffset);
         _groundCheckRight = SingleGroundCheck(transform.localPosition.x + _groundCheckOffset);
-
         if (_groundCheckLeft || _groundCheckRight)
         {
             _grounded = true;
-            EventManager.Instance.TriggerEvent("OnGrounded");
+            EventManager.Instance.TriggerEvent("OnGrounded"); // land anim
         }
-
         if (!_groundCheckLeft && !_groundCheckRight)
         {
             Invoke("CyoteTime", _cyoteTime.Value);
@@ -63,7 +61,7 @@ public class PlatformerJump : MonoBehaviour
     void CyoteTime()
     {
         _grounded = false;
-        EventManager.Instance.TriggerEvent("OnJump");
+        EventManager.Instance.TriggerEvent("OnJump"); // jump anim
     }
 
     bool SingleGroundCheck(float xPos)
