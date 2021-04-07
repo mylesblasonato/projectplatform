@@ -13,8 +13,13 @@ public class PlatformerJump : MonoBehaviour
     bool _groundCheckLeft = false, _groundCheckRight = false, _grounded = false, _jumping = false;
 
     void FixedUpdate()
-    {       
-        Jump();
+    {
+        if (_jumping)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, 0);
+            Jump();
+            Invoke("JumpHeightController", _jumpHold.Value);
+        }
     }
 
     void Update()
@@ -29,18 +34,13 @@ public class PlatformerJump : MonoBehaviour
     {
         if (Input.GetButton(_jumpAxis) && _grounded)
             _jumping = true;
-        if (Input.GetButtonUp(_jumpAxis) && !_grounded)
+        if (Input.GetButtonUp(_jumpAxis))
             _jumping = false;
     }
 
     void Jump()
     {
-        if (_jumping)
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0);
-            _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
-            Invoke("JumpHeightController", _jumpHold.Value);
-        }
+        _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
     }
 
     void GroundCheck()
@@ -92,7 +92,8 @@ public class PlatformerJump : MonoBehaviour
 
     void JumpHeightController()
     {
-        _jumping = false;
+        if(_jumping)
+            _jumping = false;
     }
 
     #region HELPERS
