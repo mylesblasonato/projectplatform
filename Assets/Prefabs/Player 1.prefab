@@ -36,7 +36,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6403706054907210285
 Transform:
   m_ObjectHideFlags: 0
@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
-  _animator: {fileID: 1017112140}
+  _animator: {fileID: 6403706054907210284}
   _rb: {fileID: 6403706056028345745}
   _acceleration: {fileID: 11400000, guid: f156cfcdff369d34a837c3baf89502c8, type: 2}
   _maxSpeed: {fileID: 11400000, guid: b3daf809869fb6e4c97bb9be499569cd, type: 2}
@@ -5032,7 +5032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpAxis: Jump
-  _animator: {fileID: 1017112140}
+  _animator: {fileID: 6403706054907210284}
   _rb: {fileID: 6403706056028345745}
   _groundLayer:
     serializedVersion: 2
@@ -5271,7 +5271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1431127951740720689, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
       propertyPath: m_Layer
