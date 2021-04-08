@@ -4445,18 +4445,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000}
-    - target: {fileID: 6403706054953194354, guid: d893f008e6b63a141a9fd71975390973, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6403706056028345740, guid: d893f008e6b63a141a9fd71975390973, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6403706056028345746, guid: d893f008e6b63a141a9fd71975390973, type: 3}
-      propertyPath: _acceleration
-      value: 
-      objectReference: {fileID: 11400000, guid: f156cfcdff369d34a837c3baf89502c8, type: 2}
     - target: {fileID: 6403706056028345747, guid: d893f008e6b63a141a9fd71975390973, type: 3}
       propertyPath: m_RootOrder
       value: 6
