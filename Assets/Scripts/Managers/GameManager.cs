@@ -5,44 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    #region VARS
+    [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] GameObject _pauseScreen;
     [SerializeField] Transform _startingPosition;
     [SerializeField] GameObject _player;
     [SerializeField] bool _showCursor = false;
-    private bool _isPaused = false;
-    public bool IsPaused => _isPaused;
+
+    [Header("---EVENTS---", order = 1)] //EVENTS
+    [SerializeField] GameEvent _OnLoseLife;
+    #endregion
 
     void Start()
     {
         _pauseScreen.SetActive(false);
         _player.transform.position = _startingPosition.position;
-
-        EventManager.Instance.AddListener("OnDeath", Death);
-        EventManager.Instance.AddListener("OnTimeUp", Death);
-    }
-
-    void OnDestroy()
-    {
-        EventManager.Instance.RemoveListener("OnDeath", Death);
-        EventManager.Instance.RemoveListener("OnTimeUp", Death);
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
-        {
             Pause();
-        }
-
         Cursor.visible = _showCursor;
     }
 
-    void Death()
+    public void Death()
     {
         _player.transform.position = _startingPosition.position;
-        EventManager.Instance.TriggerEvent("OnLoseLife");
+        _OnLoseLife?.Invoke();
     }
 
+    private bool _isPaused = false;
+    public bool IsPaused => _isPaused;
     public void Pause()
     {
         _isPaused = !_isPaused;

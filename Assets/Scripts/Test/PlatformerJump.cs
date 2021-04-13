@@ -3,33 +3,27 @@ using UnityEngine;
 
 public class PlatformerJump : MonoBehaviour
 {
+    #region VARS
+    [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _jumpAxis;
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] LayerMask _groundLayer;
     [SerializeField] float _groundCheckDistance, _groundCheckOffset;
-    [SerializeField] SoFloat _jumpForce, _jumpHold, _gravity, _fallMultiplier, _cyoteTime;   
 
-    bool _groundCheckLeft = false, _groundCheckRight = false, _grounded = false, _jumping = false;
+    [Header("---SHARED---", order = 1)] //Scriptable Object Floats
+    [SerializeField] SoFloat _jumpForce;
+    [SerializeField] SoFloat _jumpHold;
+    [SerializeField] SoFloat _gravity;
+    [SerializeField] SoFloat _fallMultiplier;
+    [SerializeField] SoFloat _cyoteTime;
 
-    void FixedUpdate()
-    {
-        if (_jumping)
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0);
-            Jump();
-            Invoke("JumpHeightController", _jumpHold.Value);
-        }
-    }
+    [Header("---EVENTS---", order = 2)] //EVENTS
+    [SerializeField] GameEvent _OnGrounded;
+    [SerializeField] GameEvent _OnJump;    
+    #endregion
 
-    void Update()
-    {
-        InputCheck();
-        GroundCheck();
-        ChangeGravity();
-        FallingCheck();
-    }
-
+    bool _jumping = false;
     void InputCheck()
     {
         if (Input.GetButton(_jumpAxis) && _grounded)
@@ -38,11 +32,7 @@ public class PlatformerJump : MonoBehaviour
             _jumping = false;
     }
 
-    void Jump()
-    {
-        _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
-    }
-
+    bool _grounded = false, _groundCheckLeft = false, _groundCheckRight = false;
     void GroundCheck()
     {
         _groundCheckLeft = SingleGroundCheck(transform.localPosition.x - _groundCheckOffset);
@@ -50,22 +40,14 @@ public class PlatformerJump : MonoBehaviour
         if (_groundCheckLeft || _groundCheckRight)
         {
             _grounded = true;
-            EventManager.Instance.TriggerEvent("OnGrounded"); // land anim
+            _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
-        {
             Invoke("CyoteTime", _cyoteTime.Value);
-        }
-    }
-
-    void CyoteTime()
-    {
-        _grounded = false;
-        EventManager.Instance.TriggerEvent("OnJump"); // jump anim
     }
 
     bool SingleGroundCheck(float xPos)
-    { 
+    {
         return Physics2D.Raycast(
           new Vector2(xPos, transform.localPosition.y),
           new Vector2(0, _groundCheckDistance),
@@ -76,27 +58,37 @@ public class PlatformerJump : MonoBehaviour
     void ChangeGravity()
     {
         if (_groundCheckLeft || _groundCheckRight)
-        {
             _rb.gravityScale = 0;
-        }
         else if (!_groundCheckLeft && !_groundCheckRight)
-        {
             _rb.gravityScale = _gravity.Value * _fallMultiplier.Value;
-        }
     }
 
-    void FallingCheck()
+    #region UNITY
+    void FixedUpdate()
     {
-        _animator.SetFloat("VelocityY", _rb.velocity.y);
+        if (!_jumping) return;
+        _rb.velocity = new Vector2(_rb.velocity.x, 0);
+        Jump();
+        Invoke("JumpHeightController", _jumpHold.Value);
     }
 
-    void JumpHeightController()
+    void Update()
     {
-        if(_jumping)
-            _jumping = false;
+        InputCheck();
+        GroundCheck();
+        ChangeGravity();
+        FallingCheck();
     }
+    #endregion
 
     #region HELPERS
+    void Jump() => _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
+    void JumpHeightController() { if (_jumping) _jumping = false; }
+    void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
+    void CyoteTime() { _grounded = false; _OnJump.Invoke(); } //jump anim
+    #endregion
+
+    #region GIZMOS
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(new Vector2(transform.localPosition.x - _groundCheckOffset, transform.localPosition.y), new Vector2(0, _groundCheckDistance));

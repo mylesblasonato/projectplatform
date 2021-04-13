@@ -4,36 +4,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LivesController : MonoBehaviour
-{
+{   
+    #region VARS
+    [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] GameObject _livesPrefab;
     [SerializeField] int _startingLives = 3;
-    [SerializeField] SoFloat _currentLives;
 
-    Queue<GameObject> _livesUIList;
+    [Header("---SHARED---", order = 1)] //Scriptable Object Floats
+    [SerializeField] SoFloat _currentLives;
+    #endregion
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Initialize();
-    }
+    void Start() => Initialize();
 
-    void OnDestroy()
-    {
-        EventManager.Instance.RemoveListener("OnGainLife", AddLife);
-        EventManager.Instance.RemoveListener("OnLoseLife", RemoveLife);
-    }
-
+    Queue<GameObject> _livesUIList;
     void Initialize()
     {
         _livesUIList = new Queue<GameObject>();
         _currentLives.Value = 0;
         for (int i = 0; i < _startingLives; i++)
-        {
             AddLife();
-        }
-
-        EventManager.Instance.AddListener("OnGainLife", AddLife);
-        EventManager.Instance.AddListener("OnLoseLife", RemoveLife);
     }
 
     public void AddLife()
@@ -46,7 +36,6 @@ public class LivesController : MonoBehaviour
     {
         _currentLives.Value--;
         Destroy(_livesUIList.Dequeue());
-
         if (_currentLives.Value <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

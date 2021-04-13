@@ -5,13 +5,16 @@ using TMPro;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TimerController : MonoBehaviour
-{   
+{
+    #region VARS
+    [Header("---SHARED---", order = 0)] //Scriptable Object Floats
     [SerializeField] SoFloat _duration;
+
+    [Header("---EVENTS---", order = 1)] //EVENTS
+    [SerializeField] GameEvent _OnTimeUp;
+    #endregion
+
     TextMeshProUGUI _textUI;
-
-    float _minutes;
-    float _seconds;
-
     float _elapsedTime = 0;
     public float ElapsedTime 
     { 
@@ -21,22 +24,24 @@ public class TimerController : MonoBehaviour
             _elapsedTime = value;
             var zeroBefore10Mins = _minutes <= 9 ? "0" : "";
             var zeroBefore10Secs = _seconds <= 9 ? "0" : "";
-            _textUI.text = $"TIME: {zeroBefore10Mins}{Mathf.Floor(_minutes).ToString()}:{zeroBefore10Secs}{Mathf.Ceil(_seconds).ToString()}";
+            _textUI.text = $"TIME: " +
+                $"{zeroBefore10Mins}" +
+                $"{Mathf.Floor(_minutes).ToString()}" + $":" +
+                $"{zeroBefore10Secs}{Mathf.Ceil(_seconds).ToString()}";
         } 
     }
-    
+
+    float _minutes;
+    float _seconds;
     bool _countingDown = false;
-
-    void Awake()
+    void CountDown()
     {
-        _textUI = GetComponent<TextMeshProUGUI>();
+        if (!_countingDown) return;
+        ElapsedTime -= Time.deltaTime;
+        _seconds = (_seconds >= 0) ? _seconds - Time.deltaTime : UpdateMinute();
+        if (_minutes <= 0 && _seconds <= 0)
+            _OnTimeUp?.Invoke();
     }
-
-    void Start()
-    {
-        StartTime();
-    }
-
     public void StartTime()
     {
         ElapsedTime = _duration.Value;
@@ -45,18 +50,13 @@ public class TimerController : MonoBehaviour
         _countingDown = true;
     }
 
-    void Update()
-    {
-        if (!_countingDown) return;
-        ElapsedTime -= Time.deltaTime;
-        _seconds = (_seconds >= 0) ? _seconds - Time.deltaTime : UpdateMinute();
-        if (_minutes <= 0 && _seconds <= 0)
-            EventManager.Instance.TriggerEvent("OnTimeUp");
-    }
+    #region UNITY
+    void Awake() => _textUI = GetComponent<TextMeshProUGUI>();
+    void Start() => StartTime();
+    void Update() => CountDown();
+    #endregion
 
-    float UpdateMinute()
-    {
-        _minutes--;
-        return _seconds = 59f;
-    }
+    #region HELPER
+    float UpdateMinute() { _minutes--; return _seconds = 59f; }
+    #endregion
 }

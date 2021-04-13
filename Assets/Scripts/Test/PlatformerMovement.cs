@@ -4,42 +4,30 @@ using UnityEngine.Events;
 
 public class PlatformerMovement : MonoBehaviour
 {
+    #region VARS
+    [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _horizontalAxis;
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
-    [SerializeField] SoFloat _acceleration, _maxSpeed, _deceleration;
+
+    [Header("---SHARED---", order = 1)] //Scriptable Object Floats
+    [SerializeField] SoFloat _acceleration;
+    [SerializeField] SoFloat _maxSpeed;
+    [SerializeField] SoFloat _deceleration;
+    #endregion
 
     Vector2 _direction;
-    bool _facingRight = true;
-    bool _isGrounded = false;
-
-    private void Start()
-    {
-        EventManager.Instance.AddListener("OnGrounded", () => _isGrounded = true);
-        EventManager.Instance.AddListener("OnJump", () => _isGrounded = false);
-    }
-
-    private void OnDestroy()
-    {
-        EventManager.Instance.RemoveListener("OnGrounded", () => _isGrounded = true);
-        EventManager.Instance.RemoveListener("OnJump", () => _isGrounded = false);
-    }
-
     void Update()
     {
         _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
         _animator.SetBool("Grounded", _isGrounded); // land anim
         ModifyPhysics();
     }
-
-    void FixedUpdate()
-    {
-        Move(_direction.x);
-    }
-
+    
     void Move(float horizontal)
     {
-        _rb.AddForce(new Vector2(horizontal * _acceleration.Value, 0));
+        if (Mathf.Abs(horizontal) > 0.2f)
+            _rb.AddForce(new Vector2(horizontal * _acceleration.Value, 0));
         if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
             Flip();
         if (Mathf.Abs(_rb.velocity.x) > _maxSpeed.Value)
@@ -55,13 +43,24 @@ public class PlatformerMovement : MonoBehaviour
             _rb.drag = _deceleration.Value;
     }
 
+    bool _facingRight = true;
     void Flip()
     {
         _facingRight = !_facingRight;
         transform.rotation = Quaternion.Euler(0, _facingRight ? 0 : 180, 0);
     }
 
+    #region UNITY
+    void FixedUpdate() => Move(_direction.x);
+    #endregion
+
     #region HELPERS
+    bool _isGrounded = false;
+    public void OnGrounded() => _isGrounded = true;
+    public void OnJump() => _isGrounded = false;
+    #endregion
+
+    #region GIZMOS
     private void OnDrawGizmos()
     {
         //Gizmos.DrawRay(new Vector2(transform.localPosition.x, transform.localPosition.y), new Vector2(0, _groundCheckDistance));
