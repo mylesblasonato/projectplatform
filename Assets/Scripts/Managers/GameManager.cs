@@ -7,19 +7,24 @@ public class GameManager : MonoSingleton<GameManager>
 {
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
-    [SerializeField] GameObject _pauseScreen;
-    [SerializeField] Transform _startingPosition;
-    [SerializeField] GameObject _player;
+    [SerializeField] string _pauseScreenName;
+    [SerializeField] string _startingPositionName;
+    [SerializeField] string _playerName;
     [SerializeField] bool _showCursor = false;
 
     [Header("---EVENTS---", order = 1)] //EVENTS
     [SerializeField] GameEvent _OnLoseLife;
     #endregion
 
-    void Start()
+    GameObject _player;
+    GameObject _pauseScreen;
+    void Awake()
     {
+        _pauseScreen = GameObject.FindGameObjectWithTag(_pauseScreenName);
         _pauseScreen.SetActive(false);
-        _player.transform.position = _startingPosition.position;
+        _player = GameObject.FindGameObjectWithTag(_playerName);
+        _startingPosition = GameObject.FindGameObjectWithTag(_startingPositionName).transform;
+        _player.transform.position = _startingPosition.transform.position;
     }
 
     void Update()
@@ -29,6 +34,7 @@ public class GameManager : MonoSingleton<GameManager>
         Cursor.visible = _showCursor;
     }
 
+    Transform _startingPosition;
     public void Death()
     {
         _player.transform.position = _startingPosition.position;
