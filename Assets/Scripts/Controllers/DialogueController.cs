@@ -9,7 +9,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textMesh;
     [SerializeField] Button _nextBtn; 
     [SerializeField] string _nextBtnAxis;
-    [SerializeField] string _nameColour = "#FF0000";
 
     DialogueSequence _currentDialogueSequence;
     int _currentIndex = 0;
@@ -32,12 +31,12 @@ public class DialogueController : MonoBehaviour
         _currentDialogueSequence._currentIndex = 0;
         RunDialogue();
     }
-
+    
     void RunDialogue()
     {
         _isDialogueComplete = false;
         _currentIndex = _currentDialogueSequence._currentIndex;
-        _textMesh.text = $"<color=#{_nameColour}>{_currentDialogueSequence._dialogue[_currentIndex < _currentDialogueSequence._dialogue.Length - 1 ? _currentIndex : _currentDialogueSequence._dialogue.Length - 1]._name}</color>: ";
+        _textMesh.text = $"{_currentDialogueSequence._dialogue[_currentIndex]._name}";
         _currentDuration = _currentDialogueSequence._dialogue[_currentIndex]._duration / _currentDialogueSequence._dialogue[_currentIndex]._text.Length;
         _textMesh.gameObject.transform.parent.parent.transform.position = GameObject.Find(_currentDialogueSequence._dialogue[_currentIndex]._gameObjectName).transform.position;
         _nextBtn.gameObject.SetActive(true);

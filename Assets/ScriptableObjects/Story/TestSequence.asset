@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: TestSequence
   m_EditorClassIdentifier: 
   _dialogue:
-  - _name: WIZ
+  - _name: '<color=#BD0000>WIZ: </color>'
     _text: Hey! Stop! I need your help...
     _gameObjectName: Blobby Wizard
     _duration: 0.5
-  - _name: SLI
+  - _name: '<color=#8FFF8F>SLI: </color>'
     _text: What do you want??
     _gameObjectName: PlayerGoo
     _duration: 0.5
-  - _name: WIZ
+  - _name: '<color=#BD0000>WIZ: </color>'
     _text: I need you to go find...
     _gameObjectName: Blobby Wizard
     _duration: 0.5
-  - _name: WIZ
+  - _name: '<color=#BD0000>WIZ: </color>'
     _text: ...a treasure to the east.
     _gameObjectName: Blobby Wizard
     _duration: 0.5
-  - _name: SLI
+  - _name: '<color=#8FFF8F>SLI: </color>'
     _text: Okay, I'll help you. Cya.
     _gameObjectName: PlayerGoo
     _duration: 0.5
-  _currentIndex: 0
+  _currentIndex: 4

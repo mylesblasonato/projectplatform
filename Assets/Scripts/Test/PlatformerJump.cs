@@ -9,6 +9,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] string _jumpAxis;
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
+    [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] LayerMask _groundLayer;
     [SerializeField] float _groundCheckDistance, _groundCheckOffset;
 
@@ -41,6 +42,8 @@ public class PlatformerJump : MonoBehaviour
         if (_groundCheckLeft || _groundCheckRight)
         {
             SetGrounded(true);
+            _gooVfx.gameObject.SetActive(true);
+            _gooVfx.enableEmission = true;
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
@@ -89,7 +92,7 @@ public class PlatformerJump : MonoBehaviour
     #endregion
 
     #region HELPERS
-    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
+    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _gooVfx.enableEmission = false; _gooVfx.gameObject.SetActive(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
     void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); } //jump anim
