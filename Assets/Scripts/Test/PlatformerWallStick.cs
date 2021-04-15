@@ -82,7 +82,11 @@ public class PlatformerWallStick : MonoBehaviour
             _gooVfx.enableEmission = true;
             _wallSplatVfx.enableEmission = false;
             _animator.SetBool("WallStick", false);
-            transform.rotation = Quaternion.Euler(0, _rb.velocity.x < 0f ? 180 : 0, 0);
+
+            if(_rb.velocity.x < -0.1f)
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            else if (_rb.velocity.x > 0.1f)
+                transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
