@@ -84,7 +84,8 @@ public class DialogueController : MonoBehaviour
     public void ClearDialogue()
     {
         _currentIndex = 0;
-        _currentDialogueSequence._currentIndex = 0;
+        if (_currentDialogueSequence != null)
+            _currentDialogueSequence._currentIndex = 0;
         _textMesh.text = "";
         _isDialogueComplete = true;
     }

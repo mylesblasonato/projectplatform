@@ -20,7 +20,6 @@ public class PlatformerMovement : MonoBehaviour
     void Update()
     {
         _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
-        _animator.SetBool("Grounded", _isGrounded); // land anim
         ModifyPhysics();
     }
     
@@ -33,7 +32,9 @@ public class PlatformerMovement : MonoBehaviour
         if (Mathf.Abs(_rb.velocity.x) > _maxSpeed.Value)
             _rb.velocity = new Vector2(Mathf.Sign(_rb.velocity.x) * _maxSpeed.Value, _rb.velocity.y);
         if (_isGrounded)
+        {
             _animator.SetFloat("Move", Mathf.Abs(_direction.x)); // move anim
+        }
     }
 
     void ModifyPhysics()

@@ -5,6 +5,7 @@ public class PlatformerJump : MonoBehaviour
 {
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
+    [SerializeField] string _moveAxis;
     [SerializeField] string _jumpAxis;
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
@@ -39,11 +40,17 @@ public class PlatformerJump : MonoBehaviour
         _groundCheckRight = SingleGroundCheck(transform.localPosition.x + _groundCheckOffset);
         if (_groundCheckLeft || _groundCheckRight)
         {
-            _grounded = true;
+            SetGrounded(true);
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
             Invoke("CyoteTime", _cyoteTime.Value);
+    }
+
+    public void SetGrounded(bool isGrounded) 
+    {
+        _grounded = isGrounded;
+        _animator.SetBool("Grounded", _grounded); // land anim
     }
 
     bool SingleGroundCheck(float xPos)
@@ -82,10 +89,10 @@ public class PlatformerJump : MonoBehaviour
     #endregion
 
     #region HELPERS
-    void Jump() => _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
+    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
-    void CyoteTime() { _grounded = false; _OnJump.Invoke(); } //jump anim
+    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); } //jump anim
     #endregion
 
     #region GIZMOS
