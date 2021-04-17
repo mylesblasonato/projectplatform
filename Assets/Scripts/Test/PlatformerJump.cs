@@ -29,9 +29,17 @@ public class PlatformerJump : MonoBehaviour
     void InputCheck()
     {
         if (Input.GetButton(_jumpAxis) && _grounded)
+        {
             _jumping = true;
+        }
         if (Input.GetButtonUp(_jumpAxis))
+        {
             _jumping = false;
+        }
+
+        if(_grounded)
+            _gooVfx.enableEmission = true;
+            
     }
 
     bool _grounded = false, _groundCheckLeft = false, _groundCheckRight = false;
@@ -42,12 +50,12 @@ public class PlatformerJump : MonoBehaviour
         if (_groundCheckLeft || _groundCheckRight)
         {
             SetGrounded(true);
-            _gooVfx.gameObject.SetActive(true);
-            _gooVfx.enableEmission = true;
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
+        {
             Invoke("CyoteTime", _cyoteTime.Value);
+        }
     }
 
     public void SetGrounded(bool isGrounded) 
@@ -92,10 +100,10 @@ public class PlatformerJump : MonoBehaviour
     #endregion
 
     #region HELPERS
-    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _gooVfx.enableEmission = false; _gooVfx.gameObject.SetActive(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
+    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
-    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); } //jump anim
+    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _gooVfx.enableEmission = false; } //jump anim
     #endregion
 
     #region GIZMOS

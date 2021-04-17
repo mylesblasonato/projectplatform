@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -667,7 +667,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.51, y: 0, z: 1}
+    m_Scale: {x: 0.51, y: 0, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4852,7 +4852,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5669,7 +5669,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9648,7 +9648,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2616901682225363376}
   serializedVersion: 7
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -9723,7 +9723,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9776,7 +9776,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10275,7 +10275,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.51, y: 0, z: 1}
+    m_Scale: {x: 0.5, y: 0, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -14388,7 +14388,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_RenderMode: 0
-  m_SortMode: 0
+  m_SortMode: 1
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
@@ -14402,7 +14402,7 @@ ParticleSystemRenderer:
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
-  m_ApplyActiveColorSpace: 1
+  m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
@@ -14626,10 +14626,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7fed6507c1b0f4e91b85603d11a754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveAxis: 
+  _moveAxis: Horizontal
   _jumpAxis: Jump
   _animator: {fileID: 2616901682246303982}
   _rb: {fileID: 2616901683300319059}
+  _gooVfx: {fileID: 2616901682225363381}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -14661,12 +14662,10 @@ MonoBehaviour:
   _wallLayer:
     serializedVersion: 2
     m_Bits: 16384
-  _wallGrabPlatform: {fileID: 0}
   _gooVfx: {fileID: 2616901682225363381}
   _wallSplatVfx: {fileID: 484699266}
   _wallSplatExplosionVfx: {fileID: 493949710}
-  _platformMoveOffset: {fileID: 11400000, guid: e3a79240cc1316c48be332d669d90990, type: 2}
-  _platformYoffset: {fileID: 11400000, guid: 29c4c3885decfa0439d6c15535498a17, type: 2}
+  _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
   _wallCheckDistanceYoffset: {fileID: 11400000, guid: 7a3bcf1549c6e384b9517fd72594590c, type: 2}
   _wallCheckDistance: {fileID: 11400000, guid: e9d1648e14d78514fa1fff88a2d7f0c3, type: 2}
   _wallBackCheckDistance: {fileID: 11400000, guid: 4d2d34ba11c888148830c759efd3d9b8, type: 2}

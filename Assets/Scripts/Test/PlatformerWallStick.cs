@@ -10,14 +10,12 @@ public class PlatformerWallStick : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] LayerMask _wallLayer;
-    [SerializeField] Transform _wallGrabPlatform;
     [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] ParticleSystem _wallSplatVfx;
     [SerializeField] ParticleSystem _wallSplatExplosionVfx;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
-    [SerializeField] SoFloat _platformMoveOffset;
-    [SerializeField] SoFloat _platformYoffset;
+    [SerializeField] SoFloat _gravity;
     [SerializeField] SoFloat _wallCheckDistanceYoffset;
     [SerializeField] SoFloat _wallCheckDistance;
     [SerializeField] SoFloat _wallBackCheckDistance;
@@ -64,10 +62,8 @@ public class PlatformerWallStick : MonoBehaviour
         WallCheck();
 
         if (_wallCheck)
-        {
-            _wallGrabPlatform.gameObject.SetActive(true);
+        {          
             _wallSplatExplosionVfx.Play();
-            _wallGrabPlatform.position = new Vector2(_wallHit.point.x, _rb.gameObject.transform.position.y - _platformYoffset.Value);
             _rb.gameObject.transform.eulerAngles = new Vector3(0, _rb.gameObject.transform.eulerAngles.y == 0 ? 180 : 0, 0);
             _OnWall.Invoke();
         }
@@ -75,6 +71,11 @@ public class PlatformerWallStick : MonoBehaviour
         if (!_backCheck)
         {
             _grounded = false;
+        }
+        else
+        {
+            _rb.velocity = Vector2.zero;
+            _rb.gravityScale = 0;
         }
 
         if (!_wallCheck && !_backCheck)
@@ -93,11 +94,6 @@ public class PlatformerWallStick : MonoBehaviour
             _gooVfx.enableEmission = false;
             _wallSplatVfx.enableEmission = true;
             _animator.SetBool("WallStick", true);  
-        }
-
-        if (Input.GetButtonDown(_jumpAxis))
-        {
-            _wallGrabPlatform.gameObject.SetActive(false);
         }
     }
     #endregion
