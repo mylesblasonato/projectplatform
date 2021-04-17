@@ -13,12 +13,15 @@ public class PlatformerWallStick : MonoBehaviour
     [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] ParticleSystem _wallSplatVfx;
     [SerializeField] ParticleSystem _wallSplatExplosionVfx;
+    [SerializeField] float _originalGroundCheckDistance; 
+    [SerializeField] float _groundCheckDistanceOffset;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _gravity;
     [SerializeField] SoFloat _wallCheckDistanceYoffset;
     [SerializeField] SoFloat _wallCheckDistance;
     [SerializeField] SoFloat _wallBackCheckDistance;
+    [SerializeField] SoFloat _groundCheckDistance;
 
     [Header("---EVENTS---", order = 2)] //EVENTS
     [SerializeField] GameEvent _OnWall;
@@ -76,12 +79,14 @@ public class PlatformerWallStick : MonoBehaviour
         {
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 0;
+            _groundCheckDistance.Value = _groundCheckDistanceOffset;
         }
 
         if (!_wallCheck && !_backCheck)
         {
             _gooVfx.enableEmission = true;
             _wallSplatVfx.enableEmission = false;
+            _groundCheckDistance.Value = _originalGroundCheckDistance;
             _animator.SetBool("WallStick", false);
 
             if(_rb.velocity.x < -0.1f)

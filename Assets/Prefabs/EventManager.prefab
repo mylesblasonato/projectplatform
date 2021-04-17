@@ -78,10 +78,10 @@ RectTransform:
   m_Father: {fileID: 79501169940653756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 924.00006, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 292.14005, y: -45.004997}
+  m_SizeDelta: {x: 924.00006, y: 34.009995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &968290887764468994
 CanvasRenderer:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WIZ: Hey! Stop! I need your help...ssssssssssssssssssssssssssssssssssssssssssssssssss'
+  m_text: 'WIZ: Hey! Stop! I need your help...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b4f76a24328b254796d163161c82eb8, type: 2}
   m_sharedMaterial: {fileID: 150505586504094057, guid: 3b4f76a24328b254796d163161c82eb8, type: 2}
@@ -414,7 +414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &968290888556552853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -454,7 +454,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &968290888556552851
 MonoBehaviour:
@@ -533,8 +533,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 121.96}
-  m_SizeDelta: {x: 651.52, y: 0}
+  m_AnchoredPosition: {x: 0, y: 120.12}
+  m_SizeDelta: {x: 569.28, y: 114.009995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7453807980742468828
 CanvasRenderer:
@@ -587,10 +587,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -910
+    m_Left: -901
     m_Right: -916
-    m_Top: 44
-    m_Bottom: 42
+    m_Top: 28
+    m_Bottom: 52
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 0

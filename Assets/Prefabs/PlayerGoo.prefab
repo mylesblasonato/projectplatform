@@ -9655,7 +9655,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9723,7 +9723,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10473,7 +10473,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -14634,13 +14634,13 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundCheckDistance: -0.47
   _groundCheckOffset: 0.2
   _jumpForce: {fileID: 11400000, guid: afb3edb1578088a43a38a30372a404a2, type: 2}
   _jumpHold: {fileID: 11400000, guid: 27cf66d7db3b9944882703b2c6da6bcd, type: 2}
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
   _fallMultiplier: {fileID: 11400000, guid: 581b4a5d8a435c548849d91d12d304e2, type: 2}
   _cyoteTime: {fileID: 11400000, guid: c5470641f1ad2bb468b5a2a42b9be169, type: 2}
+  _groundCheckDistance: {fileID: 11400000, guid: d4598af45deb10548a3bec915965b99a, type: 2}
   _OnGrounded: {fileID: 11400000, guid: 1085da1041e9b6b48b3f10518cc2ff95, type: 2}
   _OnJump: {fileID: 11400000, guid: 5e5a3105b9335364ba0fac76e2c2250d, type: 2}
 --- !u!114 &4553973600082229868
@@ -14665,10 +14665,13 @@ MonoBehaviour:
   _gooVfx: {fileID: 2616901682225363381}
   _wallSplatVfx: {fileID: 484699266}
   _wallSplatExplosionVfx: {fileID: 493949710}
+  _originalGroundCheckDistance: -0.47
+  _groundCheckDistanceOffset: -100
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
   _wallCheckDistanceYoffset: {fileID: 11400000, guid: 7a3bcf1549c6e384b9517fd72594590c, type: 2}
   _wallCheckDistance: {fileID: 11400000, guid: e9d1648e14d78514fa1fff88a2d7f0c3, type: 2}
   _wallBackCheckDistance: {fileID: 11400000, guid: 4d2d34ba11c888148830c759efd3d9b8, type: 2}
+  _groundCheckDistance: {fileID: 11400000, guid: d4598af45deb10548a3bec915965b99a, type: 2}
   _OnWall: {fileID: 11400000, guid: 593dfcabe36956f43800a6a32c09353e, type: 2}
 --- !u!114 &2616901683300319060
 MonoBehaviour:

@@ -11,7 +11,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] LayerMask _groundLayer;
-    [SerializeField] float _groundCheckDistance, _groundCheckOffset;
+    [SerializeField] float _groundCheckOffset;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _jumpForce;
@@ -19,6 +19,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] SoFloat _gravity;
     [SerializeField] SoFloat _fallMultiplier;
     [SerializeField] SoFloat _cyoteTime;
+    [SerializeField] SoFloat _groundCheckDistance;
 
     [Header("---EVENTS---", order = 2)] //EVENTS
     [SerializeField] GameEvent _OnGrounded;
@@ -37,9 +38,16 @@ public class PlatformerJump : MonoBehaviour
             _jumping = false;
         }
 
-        if(_grounded)
+        if (_grounded)
+        {
+            _gooVfx.Play();
             _gooVfx.enableEmission = true;
-            
+        }
+        else
+        {
+            //_gooVfx.Stop();
+        }
+
     }
 
     bool _grounded = false, _groundCheckLeft = false, _groundCheckRight = false;
@@ -68,8 +76,8 @@ public class PlatformerJump : MonoBehaviour
     {
         return Physics2D.Raycast(
           new Vector2(xPos, transform.localPosition.y),
-          new Vector2(0, _groundCheckDistance),
-          Mathf.Abs(_groundCheckDistance),
+          new Vector2(0, _groundCheckDistance.Value),
+          Mathf.Abs(_groundCheckDistance.Value),
           _groundLayer);
     }
 
@@ -103,14 +111,14 @@ public class PlatformerJump : MonoBehaviour
     void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
-    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _gooVfx.enableEmission = false; } //jump anim
+    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _gooVfx.Stop(); } //jump anim
     #endregion
 
     #region GIZMOS
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(new Vector2(transform.localPosition.x - _groundCheckOffset, transform.localPosition.y), new Vector2(0, _groundCheckDistance));
-        Gizmos.DrawRay(new Vector2(transform.localPosition.x + _groundCheckOffset, transform.localPosition.y), new Vector2(0, _groundCheckDistance));
+        Gizmos.DrawRay(new Vector2(transform.localPosition.x - _groundCheckOffset, transform.localPosition.y), new Vector2(0, _groundCheckDistance.Value));
+        Gizmos.DrawRay(new Vector2(transform.localPosition.x + _groundCheckOffset, transform.localPosition.y), new Vector2(0, _groundCheckDistance.Value));
     }
     #endregion
 }
