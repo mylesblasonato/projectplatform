@@ -58,8 +58,14 @@ public class PlatformerWallStick : MonoBehaviour
     #region UNITY
     void Start()
     {
-        _wallSplatExplosionVfx.Pause();
+        _wallSplatVfx.Pause();
     }
+    void FixedUpdate()
+    { 
+        if(_backCheck)
+            _wallSplatVfx.Play();
+    }
+
     void Update()
     {
         WallCheck();
@@ -74,20 +80,19 @@ public class PlatformerWallStick : MonoBehaviour
 
         if (!_backCheck)
         {
+            _wallSplatVfx.Pause();
             _grounded = false;
         }
         else
         {
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 0;
-            _wallSplatVfx.Play();
             _gooVfx.Pause();
             _groundCheckDistance.Value = _groundCheckDistanceOffset;
         }
 
         if (!_wallCheck && !_backCheck)
         {
-            _wallSplatVfx.Pause();
             _groundCheckDistance.Value = _originalGroundCheckDistance;
             _animator.SetBool("WallStick", false);
 
