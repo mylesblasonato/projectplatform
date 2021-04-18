@@ -51,7 +51,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.043869585}
+  m_Offset: {x: -0.50382507, y: 0.043869615}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -62,7 +62,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0877392}
+  m_Size: {x: 2.0076501, y: 1.0877392}
   m_EdgeRadius: 0
 --- !u!114 &2428470848043133425
 MonoBehaviour:
@@ -115,10 +115,10 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: PlayDialogue
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: d11e3cb3b9636a741a0a2f325fc8ab3e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueSequence, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 2222
@@ -268,4 +268,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8160f7a315797fc4f97b70b14cf0cd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yOffset: 1
+  _xOffset: 0.5
+  _yOffset: 1.2

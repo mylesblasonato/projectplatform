@@ -58,7 +58,7 @@ public class PlatformerWallStick : MonoBehaviour
     #region UNITY
     void Start()
     {
-        _wallSplatVfx.enableEmission = false;
+        _wallSplatExplosionVfx.Pause();
     }
     void Update()
     {
@@ -67,6 +67,7 @@ public class PlatformerWallStick : MonoBehaviour
         if (_wallCheck)
         {          
             _wallSplatExplosionVfx.Play();
+            _gooVfx.Pause();
             _rb.gameObject.transform.eulerAngles = new Vector3(0, _rb.gameObject.transform.eulerAngles.y == 0 ? 180 : 0, 0);
             _OnWall.Invoke();
         }
@@ -79,13 +80,14 @@ public class PlatformerWallStick : MonoBehaviour
         {
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 0;
+            _wallSplatVfx.Play();
+            _gooVfx.Pause();
             _groundCheckDistance.Value = _groundCheckDistanceOffset;
         }
 
         if (!_wallCheck && !_backCheck)
         {
-            _gooVfx.enableEmission = true;
-            _wallSplatVfx.enableEmission = false;
+            _wallSplatVfx.Pause();
             _groundCheckDistance.Value = _originalGroundCheckDistance;
             _animator.SetBool("WallStick", false);
 
@@ -96,8 +98,6 @@ public class PlatformerWallStick : MonoBehaviour
         }
         else
         {
-            _gooVfx.enableEmission = false;
-            _wallSplatVfx.enableEmission = true;
             _animator.SetBool("WallStick", true);  
         }
     }

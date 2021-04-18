@@ -10,6 +10,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] ParticleSystem _gooVfx;
+    [SerializeField] ParticleSystem _jumpExplosionGooVfx;
     [SerializeField] LayerMask _groundLayer;
     [SerializeField] float _groundCheckOffset;
 
@@ -23,12 +24,22 @@ public class PlatformerJump : MonoBehaviour
 
     [Header("---EVENTS---", order = 2)] //EVENTS
     [SerializeField] GameEvent _OnGrounded;
-    [SerializeField] GameEvent _OnJump;    
+    [SerializeField] GameEvent _OnJump;
     #endregion
 
+    bool _wasJumping = false;
     bool _jumping = false;
     void InputCheck()
     {
+        if (_grounded)
+        {
+            _gooVfx.Play();
+        }
+        else
+        {
+            _gooVfx.Pause();
+        }
+
         if (Input.GetButton(_jumpAxis) && _grounded)
         {
             _jumping = true;
@@ -37,17 +48,6 @@ public class PlatformerJump : MonoBehaviour
         {
             _jumping = false;
         }
-
-        if (_grounded)
-        {
-            _gooVfx.Play();
-            _gooVfx.enableEmission = true;
-        }
-        else
-        {
-            //_gooVfx.Stop();
-        }
-
     }
 
     bool _grounded = false, _groundCheckLeft = false, _groundCheckRight = false;
@@ -57,6 +57,12 @@ public class PlatformerJump : MonoBehaviour
         _groundCheckRight = SingleGroundCheck(transform.localPosition.x + _groundCheckOffset);
         if (_groundCheckLeft || _groundCheckRight)
         {
+            if(_wasJumping && _groundCheckDistance.Value > -1)
+            {
+                _jumpExplosionGooVfx.Play();
+                _wasJumping = false;
+            }
+
             SetGrounded(true);
             _OnGrounded.Invoke();
         }
@@ -93,6 +99,7 @@ public class PlatformerJump : MonoBehaviour
     void FixedUpdate()
     {
         if (!_jumping) return;
+        _gooVfx.Pause();
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
         Jump();
         Invoke("JumpHeightController", _jumpHold.Value);
@@ -111,7 +118,7 @@ public class PlatformerJump : MonoBehaviour
     void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
-    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _gooVfx.Stop(); } //jump anim
+    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _wasJumping = true; } //jump anim
     #endregion
 
     #region GIZMOS
