@@ -31,15 +31,6 @@ public class PlatformerJump : MonoBehaviour
     bool _jumping = false;
     void InputCheck()
     {
-        if (_grounded)
-        {
-            _gooVfx.Play();
-        }
-        else
-        {
-            _gooVfx.Pause();
-        }
-
         if (Input.GetButton(_jumpAxis) && _grounded)
         {
             _jumping = true;
@@ -50,7 +41,7 @@ public class PlatformerJump : MonoBehaviour
         }
     }
 
-    bool _grounded = false, _groundCheckLeft = false, _groundCheckRight = false;
+    bool _grounded = true, _groundCheckLeft = false, _groundCheckRight = false;
     void GroundCheck()
     {
         _groundCheckLeft = SingleGroundCheck(transform.localPosition.x - _groundCheckOffset);
@@ -98,6 +89,15 @@ public class PlatformerJump : MonoBehaviour
     #region UNITY
     void FixedUpdate()
     {
+        if (_grounded)
+        {
+            _gooVfx.Play();
+        }
+        else
+        {
+            _gooVfx.Pause();
+        }
+
         if (!_jumping) return;
         _gooVfx.Pause();
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
