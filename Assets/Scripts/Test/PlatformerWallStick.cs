@@ -60,11 +60,6 @@ public class PlatformerWallStick : MonoBehaviour
     {
         _wallSplatVfx.Pause();
     }
-    void FixedUpdate()
-    { 
-        if(_backCheck)
-            _wallSplatVfx.Play();
-    }
 
     void Update()
     {
@@ -85,6 +80,7 @@ public class PlatformerWallStick : MonoBehaviour
         }
         else
         {
+            _wallSplatVfx.Play();
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 0;
             _gooVfx.Pause();
