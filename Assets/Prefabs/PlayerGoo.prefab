@@ -9608,6 +9608,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &522008598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522008599}
+  m_Layer: 11
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522008599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522008598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.403, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2616901683300319057}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860323919
 GameObject:
   m_ObjectHideFlags: 0
@@ -19332,6 +19362,7 @@ GameObject:
   - component: {fileID: 2616901683300319056}
   - component: {fileID: 2616901683300319061}
   - component: {fileID: 4553973600082229868}
+  - component: {fileID: 753096442934727752}
   - component: {fileID: 2616901683300319060}
   - component: {fileID: 2616901683300319063}
   - component: {fileID: 8975553719521135901}
@@ -19352,7 +19383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2616901683300319054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.04, y: -0.588, z: 0}
+  m_LocalPosition: {x: -14.476, y: -0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2616901682246303983}
@@ -19361,6 +19392,7 @@ Transform:
   - {fileID: 493949708}
   - {fileID: 484699264}
   - {fileID: 1860323920}
+  - {fileID: 522008599}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19479,6 +19511,27 @@ MonoBehaviour:
   _wallBackCheckDistance: {fileID: 11400000, guid: 4d2d34ba11c888148830c759efd3d9b8, type: 2}
   _groundCheckDistance: {fileID: 11400000, guid: d4598af45deb10548a3bec915965b99a, type: 2}
   _OnWall: {fileID: 11400000, guid: 593dfcabe36956f43800a6a32c09353e, type: 2}
+--- !u!114 &753096442934727752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616901683300319054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15de66fb3c8fdbf4598f7b301f2c4845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootAxis: Fire
+  _animator: {fileID: 2616901682246303982}
+  _rb: {fileID: 2616901683300319059}
+  _currentWeapon: {fileID: 11400000, guid: 16fb5ea3bcb7aa042a4ba4f302745d0c, type: 2}
+  _bulletPool: {fileID: 0}
+  _gunMuzzle: {fileID: 522008599}
+  _maxBulletsInPool: {fileID: 11400000, guid: e8f2b95cb8048d247a6e8780ed72e304, type: 2}
+  _OnFire: {fileID: 11400000, guid: a08ae2faae11cb640a5f0d3cb8a2889b, type: 2}
+  _OnReload: {fileID: 11400000, guid: a0d5fd04715cc0b4abdba4c83758ad83, type: 2}
 --- !u!114 &2616901683300319060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19963,13 +20016,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
---- !u!4 &3894665117551287824 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
-  m_PrefabInstance: {fileID: 3568566380783647227}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4415623195404502186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
+  m_PrefabInstance: {fileID: 3568566380783647227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3894665117551287824 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82af6b101f9e8a342b8a419128e8fa25, type: 3}
   m_PrefabInstance: {fileID: 3568566380783647227}
   m_PrefabAsset: {fileID: 0}

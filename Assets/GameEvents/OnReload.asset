@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9faf2d29b68acd34d8793398fac090d2, type: 3}
-  m_Name: _groundCheckDistance
+  m_Script: {fileID: 11500000, guid: 7f8f232ba7d5dfe4ea237db83d3a5351, type: 3}
+  m_Name: OnReload
   m_EditorClassIdentifier: 
-  _value: -0.47

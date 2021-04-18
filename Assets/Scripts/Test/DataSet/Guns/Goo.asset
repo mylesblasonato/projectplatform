@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe65aa880ceb0345b7bc7c3f283ce44, type: 3}
+  m_Name: Goo
+  m_EditorClassIdentifier: 
+  _name: Goo
+  _sprite: {fileID: -2011438508082198933, guid: 8581f6491c6a7e34cb12d5b0946a7a8f, type: 3}
+  _bulletPrefab: {fileID: 9013741222647810841, guid: ed2751cfa0364e24d918f514e051645c, type: 3}
+  _poolParent: BulletPool
+  _shootExplosionVfx: {fileID: 4315193338796936299, guid: da21bf10258896e4faf2d87a82675b2f, type: 3}
+  _enemyMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _power: 100
+  _fireRate: 0.1
+  _reloadSpeed: 1
+  _maxClips: 3
+  _clipSize: 12

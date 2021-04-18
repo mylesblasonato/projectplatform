@@ -56,10 +56,7 @@ public class PlatformerWallStick : MonoBehaviour
     public void OnGrounded() => _grounded = true;
 
     #region UNITY
-    void Start()
-    {
-        _wallSplatVfx.Pause();
-    }
+    void Start() => _wallSplatVfx.Pause();   
 
     void Update()
     {
