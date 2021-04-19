@@ -21,7 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _power: 100
-  _fireRate: 0.1
+  _fireRate: 0.3
   _reloadSpeed: 1
   _maxClips: 3
   _clipSize: 12
