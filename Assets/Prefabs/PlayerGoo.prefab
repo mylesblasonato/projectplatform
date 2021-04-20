@@ -19506,6 +19506,7 @@ MonoBehaviour:
   _originalGroundCheckDistance: -0.43
   _groundCheckDistanceOffset: -1000
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
+  _jumpHorForce: {fileID: 11400000, guid: ca24d18cd5c050549b2db3ea9c38c71d, type: 2}
   _wallCheckDistanceYoffset: {fileID: 11400000, guid: 7a3bcf1549c6e384b9517fd72594590c, type: 2}
   _wallCheckDistance: {fileID: 11400000, guid: e9d1648e14d78514fa1fff88a2d7f0c3, type: 2}
   _wallBackCheckDistance: {fileID: 11400000, guid: 4d2d34ba11c888148830c759efd3d9b8, type: 2}

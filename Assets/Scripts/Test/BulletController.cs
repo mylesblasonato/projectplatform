@@ -39,7 +39,7 @@ public class BulletController : MonoBehaviour
     #endregion
 
     #region HELPERS
-    public void ResetDirection() => _direction = transform.right;
+    public void ResetDirection(Vector2 dir) => _direction = dir;
     #endregion
 
     #region GIZMOS

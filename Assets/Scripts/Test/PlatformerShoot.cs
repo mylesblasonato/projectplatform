@@ -23,7 +23,7 @@ public class PlatformerShoot : MonoBehaviour
     void Fire()
     {
         var bull = _bulletPool.InstantiateObject(_gunMuzzle);
-        bull.GetComponent<BulletController>().ResetDirection();
+        bull.GetComponent<BulletController>().ResetDirection(transform.right);
         _OnFire?.Invoke();
     }
 

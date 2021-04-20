@@ -1,0 +1,20 @@
+<color=#BD0000>WIZ: </color>|
+Hey! Stop! I need your help...|
+Blobby Wizard|
+0.5;
+<color=#8FFF8F>SLI: </color>|
+What do you want??|
+PlayerGoo|
+0.5;
+<color=#BD0000>WIZ: </color>|
+I need you to go find...|
+Blobby Wizard|
+0.5;
+<color=#BD0000>WIZ: </color>|
+...a treasure to the east.|
+Blobby Wizard|
+0.5;
+<color=#8FFF8F>SLI: </color>|
+Okay, I'll help you. Cya.|
+PlayerGoo|
+0.5;

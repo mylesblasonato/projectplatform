@@ -18,6 +18,7 @@ public class PlatformerWallStick : MonoBehaviour
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _gravity;
+    [SerializeField] SoFloat _jumpHorForce;
     [SerializeField] SoFloat _wallCheckDistanceYoffset;
     [SerializeField] SoFloat _wallCheckDistance;
     [SerializeField] SoFloat _wallBackCheckDistance;
@@ -54,9 +55,20 @@ public class PlatformerWallStick : MonoBehaviour
 
     bool _grounded = false;
     public void OnGrounded() => _grounded = true;
+    void JumpHorizontally() => _rb.AddForce(transform.right * _jumpHorForce.Value, ForceMode2D.Impulse);
 
     #region UNITY
-    void Start() => _wallSplatVfx.Pause();   
+    void Start() => _wallSplatVfx.Pause();
+
+    bool _jumpHor = false;
+    void FixedUpdate()
+    {
+        if(_jumpHor)
+        {
+            JumpHorizontally();
+            _jumpHor = false;
+        }
+    }
 
     void Update()
     {
@@ -82,6 +94,11 @@ public class PlatformerWallStick : MonoBehaviour
             _rb.gravityScale = 0;
             _gooVfx.Pause();
             _groundCheckDistance.Value = _groundCheckDistanceOffset;
+
+            if (Input.GetButton(_jumpAxis))
+            {
+                _jumpHor = true;
+            }
         }
 
         if (!_wallCheck && !_backCheck)

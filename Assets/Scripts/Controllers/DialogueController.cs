@@ -20,7 +20,7 @@ public class DialogueController : MonoBehaviour
     {
         if (!_isDialogueComplete && Input.GetButtonDown(_nextBtnAxis))
         {
-            if (_currentIndex < _currentDialogueSequence._dialogue.Length - 1)
+            if (_currentIndex < _currentDialogueSequence._dialogue.Count - 1)
                 NextDialogue();
         }
     }
@@ -46,9 +46,9 @@ public class DialogueController : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (_currentIndex <= (_currentDialogueSequence._dialogue.Length - 1))
+        if (_currentIndex <= (_currentDialogueSequence._dialogue.Count - 1))
         {
-            if (_currentIndex == (_currentDialogueSequence._dialogue.Length - 1))
+            if (_currentIndex == (_currentDialogueSequence._dialogue.Count - 1))
             {
                 _isDialogueComplete = true;
             }
@@ -76,7 +76,7 @@ public class DialogueController : MonoBehaviour
         }
         _isPrinting = false;
 
-        if (_currentIndex == (_currentDialogueSequence._dialogue.Length - 1))
+        if (_currentIndex == (_currentDialogueSequence._dialogue.Count - 1))
             _nextBtn.gameObject.SetActive(false);
     }
 
