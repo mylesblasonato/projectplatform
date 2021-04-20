@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class CountUpTimerController : MonoBehaviour
@@ -16,35 +17,28 @@ public class CountUpTimerController : MonoBehaviour
 
     TextMeshProUGUI _textUI;
     float _elapsedTime = 0;
-    public float ElapsedTime 
+    public float ElapsedTime
     { 
         get => _elapsedTime;
         set
         { 
             _elapsedTime = value;
-            var zeroBefore10Mins = _minutes <= 9 ? "0" : "";
-            var zeroBefore10Secs = _seconds <= 9 ? "0" : "";
-            _textUI.text = $"" +
-                $"{zeroBefore10Mins}" +
-                $"{Mathf.Floor(_minutes).ToString()}" + $":" +
-                $"{zeroBefore10Secs}{Mathf.Ceil(_seconds).ToString()}";
+            TimeSpan timeSpan = TimeSpan.FromSeconds(_elapsedTime);
+            string timeText = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+            _textUI.text = timeText;
         } 
     }
 
-    float _minutes;
-    float _seconds;
     bool _countingUp = false;
     void CountUp()
     {
         if (!_countingUp) return;
         ElapsedTime += Time.deltaTime;
-        _seconds = (_seconds >= 0) ? _seconds + Time.deltaTime : UpdateMinute();
     }
     public void StartTime()
     {
         ElapsedTime = 0;
-        _minutes = 0;
-        _seconds = 0;
+        TimeSpan timeSpan = TimeSpan.FromSeconds(0);
         _countingUp = true;
     }
 
@@ -55,6 +49,5 @@ public class CountUpTimerController : MonoBehaviour
     #endregion
 
     #region HELPER
-    float UpdateMinute() { _minutes--; return _seconds = 59f; }
     #endregion
 }
