@@ -26,6 +26,7 @@ public class PlatformerWallStick : MonoBehaviour
 
     [Header("---EVENTS---", order = 2)] //EVENTS
     [SerializeField] GameEvent _OnWall;
+    [SerializeField] GameEvent _OnOffWall;
     #endregion
 
     RaycastHit2D _wallHit;
@@ -104,6 +105,7 @@ public class PlatformerWallStick : MonoBehaviour
         if (!_wallCheck && !_backCheck)
         {
             _groundCheckDistance.Value = _originalGroundCheckDistance;
+            _OnOffWall?.Invoke();
             _animator.SetBool("WallStick", false);
 
             if(_rb.velocity.x < -0.1f)
@@ -113,7 +115,7 @@ public class PlatformerWallStick : MonoBehaviour
         }
         else
         {
-            _animator.SetBool("WallStick", true);  
+            _animator.SetBool("WallStick", true);
         }
     }
     #endregion

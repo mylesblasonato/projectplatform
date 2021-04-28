@@ -9632,7 +9632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522008598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.403, y: 0, z: 0}
+  m_LocalPosition: {x: 1.934, y: 1.642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2616901683300319057}
@@ -19369,6 +19369,7 @@ GameObject:
   - component: {fileID: 8975553719521135901}
   - component: {fileID: 8975553719521135906}
   - component: {fileID: 5784253394667445529}
+  - component: {fileID: 1408262813}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -19432,8 +19433,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0050382614, y: -0.051471412}
-  m_Size: {x: 0.5550842, y: 0.7077743}
+  m_Offset: {x: 0.017354965, y: 0.7770463}
+  m_Size: {x: 0.44421387, y: 2.3648098}
   m_Direction: 0
 --- !u!114 &1858488377356648740
 MonoBehaviour:
@@ -19447,6 +19448,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5e109909638644883d05ba32f1e02b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 8295350960912820696}
+  _animatorParameters:
+  - _name: Move
+    _type: 0
+  - _name: VelocityY
+    _type: 0
+  - _name: Grounded
+    _type: 1
+  - _name: WallStick
+    _type: 1
 --- !u!114 &2616901683300319056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19526,6 +19537,7 @@ MonoBehaviour:
   _wallBackCheckDistance: {fileID: 11400000, guid: 4d2d34ba11c888148830c759efd3d9b8, type: 2}
   _groundCheckDistance: {fileID: 11400000, guid: d4598af45deb10548a3bec915965b99a, type: 2}
   _OnWall: {fileID: 11400000, guid: 593dfcabe36956f43800a6a32c09353e, type: 2}
+  _OnOffWall: {fileID: 11400000, guid: edde1cff9aaa4314f804c9497bf94e62, type: 2}
 --- !u!114 &753096442934727752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19539,7 +19551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootAxis: Fire
-  _animator: {fileID: 8295350960912820696}
+  _animator: {fileID: 0}
   _rb: {fileID: 2616901683300319059}
   _currentWeapon: {fileID: 11400000, guid: 16fb5ea3bcb7aa042a4ba4f302745d0c, type: 2}
   _bulletPool: {fileID: 0}
@@ -19665,7 +19677,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2616901683300319061}
         m_TargetAssemblyTypeName: PlatformerJump, Assembly-CSharp
-        m_MethodName: SetGrounded
+        m_MethodName: SetOnWall
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19674,6 +19686,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1408262813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616901683300319054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d065bb3af0d84a977ae6d5095d8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: edde1cff9aaa4314f804c9497bf94e62, type: 2}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2616901683300319061}
+        m_TargetAssemblyTypeName: PlatformerJump, Assembly-CSharp
+        m_MethodName: SetOnWall
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &8975553719784770702
 Animator:
@@ -19731,7 +19771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f6ab35209fd09f48a8f7738ac573946, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.44299984
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f6ab35209fd09f48a8f7738ac573946, type: 3}
       propertyPath: m_LocalPosition.z

@@ -23,7 +23,7 @@ public class BulletController : MonoBehaviour
         _direction = _player.transform.right;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (_elapsedTime > 0)
         {
@@ -34,6 +34,7 @@ public class BulletController : MonoBehaviour
         {
             _bulletPool.DestroyObject(this.gameObject);
             _elapsedTime = _duration;
+            _direction = _player.transform.right;
         }
     }
     #endregion

@@ -63,10 +63,17 @@ public class PlatformerJump : MonoBehaviour
         }
     }
 
+    bool _isOnWall = false;
+    public void SetOnWall(bool isOnWall)
+    {
+        _isOnWall = isOnWall;
+    }
+
     public void SetGrounded(bool isGrounded) 
     {
         _grounded = isGrounded;
-        _animator.SetBool("Grounded", _grounded); // land anim
+        if (_isOnWall) _animator.SetBool("Grounded", false);
+        else _animator.SetBool("Grounded", _grounded); // land anim
     }
 
     bool SingleGroundCheck(float xPos)
