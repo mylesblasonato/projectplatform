@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 58690bd9ae0290042ac538ae8cf3605b
+guid: 747d4ccd73b0cea4b8938866c9951201
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: run1
+    second: Take 001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -23,15 +23,23 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Rig:hair_base' has scale animation that
-      will be discarded.\n\t'Rig:bang1' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'Rig:Scapula_R' has translation
-      animation that will be discarded.\n\t'Rig:Scapula_R' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'Rig:ShoulderPart2_R'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Rig:Scapula_L'
-      has translation animation that will be discarded.\n\t'Rig:Scapula_L' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'Rig:ShoulderPart2_L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+      to improve retargeting quality.\n\t'Rig:Head_M' has translation animation that
+      will be discarded.\n\t'Rig:Scapula_R' has translation animation that will be
+      discarded.\n\t'Rig:Scapula_R' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'Rig:ShoulderPart1_R' has translation
+      animation that will be discarded.\n\t'Rig:ShoulderPart2_R' has translation
+      animation that will be discarded.\n\t'Rig:ShoulderPart2_R' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Rig:Elbow_R'
+      has translation animation that will be discarded.\n\t'Rig:Wrist_R' has translation
+      animation that will be discarded.\n\t'Rig:Scapula_L' has translation animation
+      that will be discarded.\n\t'Rig:Scapula_L' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Rig:ShoulderPart2_L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Rig:Knee_R'
+      has translation animation that will be discarded.\n\t'Rig:Ankle_R' has translation
+      animation that will be discarded.\n\t'Rig:Toes_R' has translation animation
+      that will be discarded.\n\t'Rig:Knee_L' has translation animation that will
+      be discarded.\n\t'Rig:Ankle_L' has translation animation that will be discarded.\n\t'Rig:Toes_L'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -45,11 +53,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: run1
+      name: Take 001
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 26
+      lastFrame: 95
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
