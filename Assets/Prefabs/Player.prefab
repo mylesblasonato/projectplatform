@@ -19551,7 +19551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootAxis: Fire
-  _animator: {fileID: 0}
+  _animator: {fileID: 8295350960912820696}
   _rb: {fileID: 2616901683300319059}
   _currentWeapon: {fileID: 11400000, guid: 16fb5ea3bcb7aa042a4ba4f302745d0c, type: 2}
   _bulletPool: {fileID: 0}
