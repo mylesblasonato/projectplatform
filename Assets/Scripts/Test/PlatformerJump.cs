@@ -63,28 +63,6 @@ public class PlatformerJump : MonoBehaviour
         }
     }
 
-    bool _isOnWall = false;
-    public void SetOnWall(bool isOnWall)
-    {
-        _isOnWall = isOnWall;
-    }
-
-    public void SetGrounded(bool isGrounded) 
-    {
-        _grounded = isGrounded;
-        if (_isOnWall) _animator.SetBool("Grounded", false);
-        else _animator.SetBool("Grounded", _grounded); // land anim
-    }
-
-    bool SingleGroundCheck(float xPos)
-    {
-        return Physics2D.Raycast(
-          new Vector2(xPos, transform.localPosition.y),
-          new Vector2(0, _groundCheckDistance.Value),
-          Mathf.Abs(_groundCheckDistance.Value),
-          _groundLayer);
-    }
-
     void ChangeGravity()
     {
         if (_groundCheckLeft || _groundCheckRight)
@@ -126,6 +104,28 @@ public class PlatformerJump : MonoBehaviour
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
     void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _wasJumping = true; } //jump anim
+
+    bool _isOnWall = false;
+    public void SetOnWall(bool isOnWall)
+    {
+        _isOnWall = isOnWall;
+    }
+
+    public void SetGrounded(bool isGrounded)
+    {
+        _grounded = isGrounded;
+        if (_isOnWall) _animator.SetBool("Grounded", false);
+        else _animator.SetBool("Grounded", _grounded); // land anim
+    }
+
+    bool SingleGroundCheck(float xPos)
+    {
+        return Physics2D.Raycast(
+          new Vector2(xPos, transform.localPosition.y),
+          new Vector2(0, _groundCheckDistance.Value),
+          Mathf.Abs(_groundCheckDistance.Value),
+          _groundLayer);
+    }
     #endregion
 
     #region GIZMOS
