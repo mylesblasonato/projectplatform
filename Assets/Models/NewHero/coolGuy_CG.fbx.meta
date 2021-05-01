@@ -2,23 +2,11 @@ fileFormatVersion: 2
 guid: 1f6ab35209fd09f48a8f7738ac573946
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CoolGuy1
-    second: {fileID: 2100000, guid: 4f4fe9898ef3691418b496eaa3f75066, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bits
-    second: {fileID: 2100000, guid: 4fe1fbef20d631c49a3eda41fadf2f19, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: cea7ea978d6f5204cac86c0eacd2ec3e, type: 2}
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -29,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: Rig:DeformationSystem/Rig:root_M
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -45,7 +33,230 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rig:DeformationSystem
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L/Rig:Ankle_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L/Rig:Ankle_L/Rig:Toes_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L/Rig:Ankle_L/Rig:Toes_L/Rig:ToesEnd_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R/Rig:Ankle_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R/Rig:Ankle_R/Rig:Toes_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R/Rig:Ankle_R/Rig:Toes_R/Rig:ToesEnd_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5/Rig:bang6
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5/Rig:bang6/Rig:curve7
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_L/Rig:EyeEnd_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_R/Rig:EyeEnd_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still/Rig:hair_onemore
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still/Rig:hair_onemore/Rig:hair_end
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:HeadEnd_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Jaw_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Jaw_M/Rig:JawEnd_M
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Smear_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:IndexFinger1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:IndexFinger1_L/Rig:IndexFinger2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:IndexFinger1_L/Rig:IndexFinger2_L/Rig:IndexFinger3_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:IndexFinger1_L/Rig:IndexFinger2_L/Rig:IndexFinger3_L/Rig:IndexFinger4_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:MiddleFinger1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:MiddleFinger1_L/Rig:MiddleFinger2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:MiddleFinger1_L/Rig:MiddleFinger2_L/Rig:MiddleFinger3_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:MiddleFinger1_L/Rig:MiddleFinger2_L/Rig:MiddleFinger3_L/Rig:MiddleFinger4_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:PinkyFinger1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:PinkyFinger1_L/Rig:PinkyFinger2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:PinkyFinger1_L/Rig:PinkyFinger2_L/Rig:PinkyFinger3_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:PinkyFinger1_L/Rig:PinkyFinger2_L/Rig:PinkyFinger3_L/Rig:PinkyFinger4_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:RingFinger1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:RingFinger1_L/Rig:RingFinger2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:RingFinger1_L/Rig:RingFinger2_L/Rig:RingFinger3_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:RingFinger1_L/Rig:RingFinger2_L/Rig:RingFinger3_L/Rig:RingFinger4_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:ThumbFinger1_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:ThumbFinger1_L/Rig:ThumbFinger2_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:ThumbFinger1_L/Rig:ThumbFinger2_L/Rig:ThumbFinger3_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:ThumbFinger1_L/Rig:ThumbFinger2_L/Rig:ThumbFinger3_L/Rig:ThumbFinger4_L
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L/Rig:ShoulderPart1_L/Rig:ShoulderPart2_L/Rig:Elbow_L/Rig:Wrist_L/Rig:Wep_L_jnt
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Smear_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:IndexFinger1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:IndexFinger1_R/Rig:IndexFinger2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:IndexFinger1_R/Rig:IndexFinger2_R/Rig:IndexFinger3_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:IndexFinger1_R/Rig:IndexFinger2_R/Rig:IndexFinger3_R/Rig:IndexFinger4_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:MiddleFinger1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:MiddleFinger1_R/Rig:MiddleFinger2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:MiddleFinger1_R/Rig:MiddleFinger2_R/Rig:MiddleFinger3_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:MiddleFinger1_R/Rig:MiddleFinger2_R/Rig:MiddleFinger3_R/Rig:MiddleFinger4_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:PinkyFinger1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:PinkyFinger1_R/Rig:PinkyFinger2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:PinkyFinger1_R/Rig:PinkyFinger2_R/Rig:PinkyFinger3_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:PinkyFinger1_R/Rig:PinkyFinger2_R/Rig:PinkyFinger3_R/Rig:PinkyFinger4_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:RingFinger1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:RingFinger1_R/Rig:RingFinger2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:RingFinger1_R/Rig:RingFinger2_R/Rig:RingFinger3_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:RingFinger1_R/Rig:RingFinger2_R/Rig:RingFinger3_R/Rig:RingFinger4_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:ThumbFinger1_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:ThumbFinger1_R/Rig:ThumbFinger2_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:ThumbFinger1_R/Rig:ThumbFinger2_R/Rig:ThumbFinger3_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:ThumbFinger1_R/Rig:ThumbFinger2_R/Rig:ThumbFinger3_R/Rig:ThumbFinger4_R
+        weight: 1
+      - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:Wep_R_jnt
+        weight: 1
+      - path: Rig:Geometry
+        weight: 1
+      - path: Rig:Geometry/Rig:coolGuy
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -91,8 +302,925 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Rig:pelvis_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Spine2_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ShoulderPart1_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ShoulderPart1_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:hair_base
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:bang2
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:IndexFinger3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:MiddleFinger3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:RingFinger3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:PinkyFinger3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rig:Chest_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: CoolGuy_CG(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Geometry
+      parentName: CoolGuy_CG(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:coolGuy
+      parentName: Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:DeformationSystem
+      parentName: CoolGuy_CG(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:root_M
+      parentName: Rig:DeformationSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:pelvis_M
+      parentName: Rig:root_M
+      position: {x: -1.9709482e-17, y: 1.1026996, z: -0.025241114}
+      rotation: {x: 0.50664765, y: -0.49326277, z: -0.50664765, w: 0.49326277}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Hip_R
+      parentName: Rig:pelvis_M
+      position: {x: 0.04030734, y: 0.023236135, z: -0.07585852}
+      rotation: {x: 0.02626246, y: 0.9978478, z: -0.042710282, w: -0.042260386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Knee_R
+      parentName: Rig:Hip_R
+      position: {x: -0.49137545, y: 3.5527136e-17, z: -2.9487523e-15}
+      rotation: {x: 1.484872e-16, y: -1.1713428e-16, z: 0.023307435, w: 0.9997284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Ankle_R
+      parentName: Rig:Knee_R
+      position: {x: -0.4442848, y: -2.3092638e-16, z: 4.1961101e-13}
+      rotation: {x: -0.035366282, y: -0.042322773, z: -0.06252467, w: 0.9965183}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Toes_R
+      parentName: Rig:Ankle_R
+      position: {x: -0.113169245, y: 0.15644374, z: -8.5047347e-10}
+      rotation: {x: -0.024041371, y: 0.016313149, z: -0.6560142, w: 0.7541892}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ToesEnd_R
+      parentName: Rig:Toes_R
+      position: {x: -0.0626901, y: 7.5495166e-17, z: 1.2434498e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Spine1_M
+      parentName: Rig:pelvis_M
+      position: {x: -0.06563341, y: -3.5527136e-17, z: -1.4452223e-17}
+      rotation: {x: 1.3950242e-16, y: -5.3664384e-17, z: -0.013272151, w: 0.99991196}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Spine2_M
+      parentName: Rig:Spine1_M
+      position: {x: -0.09987883, y: 1.9539925e-16, z: -9.52979e-18}
+      rotation: {x: 1.4174898e-16, y: -4.7413278e-17, z: -0.031167198, w: 0.9995142}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Chest_M
+      parentName: Rig:Spine2_M
+      position: {x: -0.07344761, y: 3.5527135e-16, z: -1.0362123e-17}
+      rotation: {x: -2.6274863e-17, y: -3.093961e-17, z: 0.14153685, w: 0.989933}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Scapula_L
+      parentName: Rig:Chest_M
+      position: {x: -0.17662492, y: -0.037793685, z: 0.045613255}
+      rotation: {x: 0.7027946, y: -0.07860061, z: 0.70268106, w: 0.07836443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Shoulder_L
+      parentName: Rig:Scapula_L
+      position: {x: 0.095873594, y: 6.5725204e-16, z: 9.947598e-15}
+      rotation: {x: 0.0060384152, y: -0.16129886, z: 0.01787494, w: 0.9867253}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ShoulderPart1_L
+      parentName: Rig:Shoulder_L
+      position: {x: 0.07670786, y: -2.893685e-14, z: 7.673861e-15}
+      rotation: {x: 0.00000009266656, y: 0.12649004, z: -0.014918464, w: 0.9918557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ShoulderPart2_L
+      parentName: Rig:ShoulderPart1_L
+      position: {x: 0.07670786, y: -2.8919087e-14, z: 8.2422955e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Elbow_L
+      parentName: Rig:ShoulderPart2_L
+      position: {x: 0.07670786, y: -2.8919087e-14, z: 7.389644e-15}
+      rotation: {x: 0.0021497717, y: 0.021712132, z: -0.040410686, w: 0.99894494}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Wrist_L
+      parentName: Rig:Elbow_L
+      position: {x: 0.29066408, y: -1.0997425e-13, z: -9.038103e-14}
+      rotation: {x: 0.00907316, y: -0.08001963, z: -0.027024543, w: 0.9963856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Wep_L_jnt
+      parentName: Rig:Wrist_L
+      position: {x: 7.105427e-17, y: -2.6645352e-17, z: 2.842171e-16}
+      rotation: {x: 1.3877785e-16, y: -3.551687e-23, z: -4.57967e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger1_L
+      parentName: Rig:Wrist_L
+      position: {x: 0.11576207, y: -6.488143e-14, z: -1.6484591e-14}
+      rotation: {x: -0.007962038, y: -0.0693744, z: 0.015157557, w: 0.9974438}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger2_L
+      parentName: Rig:MiddleFinger1_L
+      position: {x: 0.038550243, y: -3.1583622e-14, z: -4.263256e-15}
+      rotation: {x: 0.00032001536, y: -0.04038811, z: -0.000004530851, w: 0.999184}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger3_L
+      parentName: Rig:MiddleFinger2_L
+      position: {x: 0.03742108, y: -3.121059e-14, z: -3.126388e-15}
+      rotation: {x: 0.00045954797, y: -0.038959414, z: -0.000025801151, w: 0.99924064}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger4_L
+      parentName: Rig:MiddleFinger3_L
+      position: {x: 0.037276402, y: -3.165468e-14, z: -3.410605e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger1_L
+      parentName: Rig:Wrist_L
+      position: {x: 0.04018624, y: -0.030374166, z: 0.024344642}
+      rotation: {x: 0.77654153, y: -0.250496, z: 0.22317976, w: -0.5333159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger2_L
+      parentName: Rig:ThumbFinger1_L
+      position: {x: 0.057432316, y: 3.410605e-14, z: -3.1121773e-14}
+      rotation: {x: -0.002003967, y: -0.019782133, z: -0.029879022, w: 0.99935573}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger3_L
+      parentName: Rig:ThumbFinger2_L
+      position: {x: 0.033514343, y: 1.9326763e-14, z: -2.0392576e-14}
+      rotation: {x: 0.013317699, y: -0, z: -0, w: 0.9999113}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger4_L
+      parentName: Rig:ThumbFinger3_L
+      position: {x: 0.020328946, y: 0.00000003627953, z: 0.000000024568964}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger1_L
+      parentName: Rig:Wrist_L
+      position: {x: 0.109275855, y: -0.02872624, z: 0.0051707006}
+      rotation: {x: -0.14757787, y: -0.07968705, z: -0.00818504, w: 0.9858011}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger2_L
+      parentName: Rig:IndexFinger1_L
+      position: {x: 0.043673206, y: -2.8279601e-14, z: -1.563194e-14}
+      rotation: {x: -0.0000000745058, y: -0.039818425, z: 0.0000005308538, w: 0.99920696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger3_L
+      parentName: Rig:IndexFinger2_L
+      position: {x: 0.030078966, y: -2.0676793e-14, z: -8.668622e-15}
+      rotation: {x: -0.014027516, y: -0.038393367, z: 0.00086821336, w: 0.9991639}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger4_L
+      parentName: Rig:IndexFinger3_L
+      position: {x: 0.027503433, y: -1.9397817e-14, z: -9.663381e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger1_L
+      parentName: Rig:Wrist_L
+      position: {x: 0.11258312, y: 0.026572665, z: 0.0024791153}
+      rotation: {x: 0.03920869, y: -0.06423514, z: 0.014825039, w: 0.99705404}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger2_L
+      parentName: Rig:RingFinger1_L
+      position: {x: 0.04208888, y: -3.6006754e-14, z: -4.2632563e-16}
+      rotation: {x: -0.0024871184, y: -0.039706826, z: 0.000030672167, w: 0.99920833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger3_L
+      parentName: Rig:RingFinger2_L
+      position: {x: 0.025079843, y: -2.0730084e-14, z: -1.2079227e-15}
+      rotation: {x: 0.0049279146, y: -0.039028812, z: -0.0002387258, w: 0.9992259}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger4_L
+      parentName: Rig:RingFinger3_L
+      position: {x: 0.027338464, y: -2.1582735e-14, z: 1.0658141e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger1_L
+      parentName: Rig:Wrist_L
+      position: {x: 0.10650905, y: 0.04398138, z: 0.008579637}
+      rotation: {x: 0.044472333, y: -0.061602272, z: 0.02303154, w: 0.99684346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger2_L
+      parentName: Rig:PinkyFinger1_L
+      position: {x: 0.031941544, y: -2.692957e-14, z: 5.684342e-16}
+      rotation: {x: 0.0024010832, y: -0.035696667, z: -0.000020984555, w: 0.9993598}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger3_L
+      parentName: Rig:PinkyFinger2_L
+      position: {x: 0.016744783, y: -1.3038459e-14, z: 1.847411e-15}
+      rotation: {x: 0.01875749, y: -0.036228087, z: -0.0006064073, w: 0.9991673}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger4_L
+      parentName: Rig:PinkyFinger3_L
+      position: {x: 0.01779234, y: -1.23279166e-14, z: 1.9984014e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Smear_L
+      parentName: Rig:Elbow_L
+      position: {x: 7.105427e-17, y: 3.5527136e-17, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Scapula_R
+      parentName: Rig:Chest_M
+      position: {x: -0.17662492, y: -0.037793685, z: -0.045613255}
+      rotation: {x: -0.07860061, y: -0.7027946, z: -0.07836443, w: 0.70268106}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Shoulder_R
+      parentName: Rig:Scapula_R
+      position: {x: -0.095873594, y: -5.1514347e-16, z: -9.379164e-15}
+      rotation: {x: 0.0060384152, y: -0.16129877, z: 0.01787494, w: 0.98672533}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ShoulderPart1_R
+      parentName: Rig:Shoulder_R
+      position: {x: -0.07670786, y: 2.2024781e-11, z: -4.8316907e-15}
+      rotation: {x: -0, y: 0.12649004, z: -0.014918485, w: 0.99185574}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ShoulderPart2_R
+      parentName: Rig:ShoulderPart1_R
+      position: {x: -0.07670786, y: 2.2024818e-11, z: -4.8316907e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Elbow_R
+      parentName: Rig:ShoulderPart2_R
+      position: {x: -0.07670786, y: 2.2024835e-11, z: -4.8316907e-15}
+      rotation: {x: 0.0021497547, y: 0.021711977, z: -0.040410656, w: 0.9989449}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Wrist_R
+      parentName: Rig:Elbow_R
+      position: {x: -0.29066408, y: 8.345749e-11, z: 6.139089e-14}
+      rotation: {x: 0.009073108, y: -0.080019735, z: -0.027024563, w: 0.9963856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Wep_R_jnt
+      parentName: Rig:Wrist_R
+      position: {x: 7.105427e-17, y: 4.4408918e-17, z: -5.684342e-16}
+      rotation: {x: -0.000000038812885, y: 5.7646127e-15, z: -0.00000014880085, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger1_R
+      parentName: Rig:Wrist_R
+      position: {x: -0.11576207, y: 2.220446e-16, z: -5.684342e-16}
+      rotation: {x: -0.00796202, y: -0.06937331, z: 0.015157824, w: 0.9974438}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger2_R
+      parentName: Rig:MiddleFinger1_R
+      position: {x: -0.038550243, y: -1.4210854e-16, z: 1.847411e-15}
+      rotation: {x: 0.00032001536, y: -0.04038811, z: -0.000004530851, w: 0.999184}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger3_R
+      parentName: Rig:MiddleFinger2_R
+      position: {x: -0.03742108, y: -1.4210854e-16, z: -4.2632563e-16}
+      rotation: {x: 0.00045959753, y: -0.03895891, z: -0.000026260735, w: 0.9992407}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:MiddleFinger4_R
+      parentName: Rig:MiddleFinger3_R
+      position: {x: -0.037276402, y: 5.3290704e-17, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger1_R
+      parentName: Rig:Wrist_R
+      position: {x: -0.04018624, y: 0.030374166, z: -0.024344642}
+      rotation: {x: 0.7765416, y: -0.2504958, z: 0.2231793, w: -0.5333162}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger2_R
+      parentName: Rig:ThumbFinger1_R
+      position: {x: -0.057432316, y: -5.684342e-16, z: -7.105427e-17}
+      rotation: {x: -0.0020038774, y: -0.019781036, z: -0.029879406, w: 0.9993558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger3_R
+      parentName: Rig:ThumbFinger2_R
+      position: {x: -0.033514343, y: -8.5265126e-16, z: -7.105427e-17}
+      rotation: {x: 0.013317699, y: 0.000000023767083, z: 0.000000016095386, w: 0.9999113}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ThumbFinger4_R
+      parentName: Rig:ThumbFinger3_R
+      position: {x: -0.020328946, y: -0.00000003627952, z: -0.000000024568978}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger1_R
+      parentName: Rig:Wrist_R
+      position: {x: -0.11258312, y: -0.026572665, z: -0.0024791153}
+      rotation: {x: 0.039208755, y: -0.064234406, z: 0.014825336, w: 0.9970541}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger2_R
+      parentName: Rig:RingFinger1_R
+      position: {x: -0.04208888, y: 2.842171e-16, z: -1.4210854e-16}
+      rotation: {x: -0.0024870548, y: -0.039710205, z: 0.00003077787, w: 0.99920815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger3_R
+      parentName: Rig:RingFinger2_R
+      position: {x: -0.025079843, y: -4.6185276e-16, z: 7.105427e-16}
+      rotation: {x: 0.004927946, y: -0.03902358, z: -0.00023944862, w: 0.99922615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:RingFinger4_R
+      parentName: Rig:RingFinger3_R
+      position: {x: -0.027338464, y: -5.506706e-16, z: -2.4868996e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger1_R
+      parentName: Rig:Wrist_R
+      position: {x: -0.109275855, y: 0.02872624, z: -0.0051707006}
+      rotation: {x: -0.14757773, y: -0.07968673, z: -0.00818482, w: 0.98580116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger2_R
+      parentName: Rig:IndexFinger1_R
+      position: {x: -0.043673206, y: 1.4210854e-16, z: 1.4210854e-15}
+      rotation: {x: -0.00000007450579, y: -0.039819475, z: 0.00000023655588, w: 0.9992069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger3_R
+      parentName: Rig:IndexFinger2_R
+      position: {x: -0.030078966, y: -3.5527135e-16, z: -1.847411e-15}
+      rotation: {x: -0.014027692, y: -0.0383912, z: 0.000867905, w: 0.9991639}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:IndexFinger4_R
+      parentName: Rig:IndexFinger3_R
+      position: {x: -0.027503433, y: -1.065814e-15, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger1_R
+      parentName: Rig:Wrist_R
+      position: {x: -0.10650905, y: -0.04398138, z: -0.008579637}
+      rotation: {x: 0.044472083, y: -0.061601207, z: 0.023031214, w: 0.9968436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger2_R
+      parentName: Rig:PinkyFinger1_R
+      position: {x: -0.031941544, y: 3.5527136e-17, z: -1.4210854e-16}
+      rotation: {x: 0.0024011198, y: -0.035693042, z: -0.00002198479, w: 0.9993599}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger3_R
+      parentName: Rig:PinkyFinger2_R
+      position: {x: -0.016744783, y: -6.750156e-16, z: -7.81597e-16}
+      rotation: {x: 0.018757163, y: -0.036236864, z: -0.0006059988, w: 0.99916697}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:PinkyFinger4_R
+      parentName: Rig:PinkyFinger3_R
+      position: {x: -0.01779234, y: -4.6185276e-16, z: 8.359979e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Smear_R
+      parentName: Rig:Elbow_R
+      position: {x: 7.105427e-17, y: -1.7763568e-17, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -9.7144415e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Neck_M
+      parentName: Rig:Chest_M
+      position: {x: -0.2096863, y: -7.105427e-17, z: 5.4155994e-16}
+      rotation: {x: 1.3900778e-16, y: -5.4932892e-17, z: -0.1979844, w: 0.9802052}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Head_M
+      parentName: Rig:Neck_M
+      position: {x: -0.10779292, y: 1.1368684e-15, z: -8.869093e-17}
+      rotation: {x: 1.4424873e-16, y: -3.9154717e-17, z: 0.087897055, w: 0.9961296}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:HeadEnd_M
+      parentName: Rig:Head_M
+      position: {x: -0.19205864, y: -1.5987211e-16, z: 1.8475665e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Eye_R
+      parentName: Rig:Head_M
+      position: {x: -0.053615186, y: 0.105188005, z: -0.03423012}
+      rotation: {x: 1.3571577e-16, y: 6.262607e-17, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:EyeEnd_R
+      parentName: Rig:Eye_R
+      position: {x: -0.017087016, y: -2.842171e-16, z: 1.7763567e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Jaw_M
+      parentName: Rig:Head_M
+      position: {x: 0.028087981, y: 0.040553443, z: -9.2216854e-17}
+      rotation: {x: 1.3096511e-16, y: 7.203422e-17, z: -0.7551785, w: 0.6555192}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:JawEnd_M
+      parentName: Rig:Jaw_M
+      position: {x: -0.06589659, y: 3.126388e-15, z: 8.9799124e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Eye_L
+      parentName: Rig:Head_M
+      position: {x: -0.053615186, y: 0.105188005, z: 0.03423012}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:EyeEnd_L
+      parentName: Rig:Eye_L
+      position: {x: -0.017087016, y: -2.842171e-16, z: -1.8207657e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_base
+      parentName: Rig:Head_M
+      position: {x: -0.1446257, y: -0.030990979, z: 0.0037555865}
+      rotation: {x: -0.03974742, y: 0.045293897, z: 0.750262, w: 0.65838856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_then
+      parentName: Rig:hair_base
+      position: {x: -0.03919944, y: -1.6653345e-18, z: 8.7040245e-18}
+      rotation: {x: 1.9136537e-24, y: 3.8345303e-16, z: 0.09444082, w: 0.9955305}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_again
+      parentName: Rig:hair_then
+      position: {x: -0.031244544, y: -8.7707615e-17, z: 2.3854532e-17}
+      rotation: {x: -1.3881883e-32, y: 5.1175274e-16, z: 0.046764713, w: 0.99890596}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_still
+      parentName: Rig:hair_again
+      position: {x: -0.03498548, y: 4.440892e-18, z: 3.576865e-17}
+      rotation: {x: 7.516656e-25, y: 5.9702694e-16, z: 0.03180262, w: 0.9994942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_onemore
+      parentName: Rig:hair_still
+      position: {x: -0.036322437, y: 2.842171e-16, z: 4.2188474e-17}
+      rotation: {x: 2.9442295e-26, y: 5.570683e-16, z: -0.014874021, w: 0.9998894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:hair_end
+      parentName: Rig:hair_onemore
+      position: {x: -0.039888017, y: -4.440892e-18, z: 4.4435785e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang1
+      parentName: Rig:Head_M
+      position: {x: -0.102903806, y: 0.13415097, z: -0.016168697}
+      rotation: {x: 0.75347835, y: -0.48845086, z: -0.13096702, w: 0.4201593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang2
+      parentName: Rig:bang1
+      position: {x: -0.046224594, y: 2.842171e-16, z: 1.4210854e-16}
+      rotation: {x: -0.0070040794, y: -0.09972535, z: 0.25858036, w: 0.9608028}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang3
+      parentName: Rig:bang2
+      position: {x: -0.026870321, y: 8.5265126e-16, z: 7.105427e-16}
+      rotation: {x: 0.06265527, y: -0.06724708, z: 0.25966915, w: 0.9613138}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang4
+      parentName: Rig:bang3
+      position: {x: -0.022188766, y: -9.947598e-16, z: -2.842171e-16}
+      rotation: {x: 0.032776278, y: -0.07185865, z: 0.35895872, w: 0.9300058}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang5
+      parentName: Rig:bang4
+      position: {x: -0.029570693, y: -7.105427e-17, z: -1.4210854e-15}
+      rotation: {x: 0.04977477, y: -0.066324875, z: 0.18858872, w: 0.9785488}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:bang6
+      parentName: Rig:bang5
+      position: {x: -0.02414731, y: -5.3290704e-17, z: 1.2079227e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:curve7
+      parentName: Rig:bang6
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Hip_L
+      parentName: Rig:pelvis_M
+      position: {x: 0.04030734, y: 0.023236135, z: 0.07585852}
+      rotation: {x: 0.9978478, y: -0.026262438, z: 0.042260386, w: -0.042710286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Knee_L
+      parentName: Rig:Hip_L
+      position: {x: 0.49137545, y: -2.220446e-16, z: -1.06517815e-11}
+      rotation: {x: 1.484872e-16, y: -1.1713428e-16, z: 0.023307435, w: 0.9997284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Ankle_L
+      parentName: Rig:Knee_L
+      position: {x: 0.4442848, y: 9.237055e-16, z: -1.0042953e-11}
+      rotation: {x: -0.035366282, y: -0.042322773, z: -0.06252468, w: 0.9965183}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:Toes_L
+      parentName: Rig:Ankle_L
+      position: {x: 0.113169245, y: -0.15644374, z: 2.7990635e-10}
+      rotation: {x: -0.024041371, y: 0.016313149, z: -0.6560142, w: 0.7541892}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rig:ToesEnd_L
+      parentName: Rig:Toes_L
+      position: {x: 0.0626901, y: -4.352074e-16, z: -1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -102,7 +1230,7 @@ ModelImporter:
     feetSpacing: 0
     globalScale: 1
     rootMotionBoneName: 
-    hasTranslationDoF: 0
+    hasTranslationDoF: 1
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
