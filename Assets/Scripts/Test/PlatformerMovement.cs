@@ -7,8 +7,6 @@ public class PlatformerMovement : MonoBehaviour
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _horizontalAxis;
-    [SerializeField] Animator _animator;
-    [SerializeField] Rigidbody2D _rb;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _acceleration;
@@ -16,12 +14,7 @@ public class PlatformerMovement : MonoBehaviour
     [SerializeField] SoFloat _deceleration;
     #endregion
 
-    Vector2 _direction;
-    void Update()
-    {
-        _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
-        ModifyPhysics();
-    }
+    
     
     void Move(float horizontal)
     {
@@ -33,7 +26,7 @@ public class PlatformerMovement : MonoBehaviour
             _rb.velocity = new Vector2(Mathf.Sign(_rb.velocity.x) * _maxSpeed.Value, _rb.velocity.y);
         if (_isGrounded)
         {
-            _animator.SetFloat("Move", Mathf.Abs(_direction.x)); // move anim
+            _ac.SetFloat("Move", Mathf.Abs(_direction.x)); // move anim
         }
     }
 
@@ -51,7 +44,20 @@ public class PlatformerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, _facingRight ? 0 : 180, 0);
     }
 
-    #region UNITY
+    #region UNITY   
+    PlatformerAnimatorController _ac;
+    Rigidbody2D _rb;
+    void Awake()
+    {
+        _ac = GetComponent<PlatformerAnimatorController>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
+    Vector2 _direction;
+    void Update()
+    {
+        _direction = new Vector2(Input.GetAxis(_horizontalAxis), Input.GetAxis("Vertical"));
+        ModifyPhysics();
+    }
     void FixedUpdate() => Move(_direction.x);
     #endregion
 

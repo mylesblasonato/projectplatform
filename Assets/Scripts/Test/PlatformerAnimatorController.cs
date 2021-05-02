@@ -14,38 +14,32 @@ public class PlatformerAnimatorController : MonoSingleton<PlatformerAnimatorCont
     public void AddParameters()
     {
         var animatorController = (AnimatorController)_animator.runtimeAnimatorController;
-        if (animatorController.parameters.Length > 0)
+        AnimatorControllerParameter parameter = new AnimatorControllerParameter();
+        foreach (AnimatorParameter para in _animatorParameters)
         {
-            foreach (AnimatorParameter para in _animatorParameters)
-            {
-                foreach (AnimatorControllerParameter animPara in animatorController.parameters)
-                {
-                    if (string.Compare(para.Name, animPara.name) != 0)
-                    {
-                        //AnimatorControllerParameter parameter = new AnimatorControllerParameter();
-                        //parameter.type = para.Type;
-                        //parameter.name = para.Name;
-                        //animatorController.AddParameter(parameter);
-                    }
-                }
-            }
-        }
-        else
-        {
-            AnimatorControllerParameter parameter = new AnimatorControllerParameter();
-            foreach (AnimatorParameter para in _animatorParameters)
-            {
-                parameter.type = para.Type;
-                parameter.name = para.Name;
-                animatorController.AddParameter(parameter);
-            }
+            parameter.type = para.Type;
+            parameter.name = para.Name;
+            animatorController.AddParameter(parameter);
         }
     }
 
-
-    void Play(string stateName)
+    public void RemoveParameters()
     {
-        _animator.Play(stateName);
+        var animatorController = (AnimatorController)_animator.runtimeAnimatorController;
+        for (int i = 0; i <= animatorController.parameters.Length - 1; ++i)
+        {
+                animatorController.RemoveParameter(i);
+        }
+    }
+
+    public void SetFloat(string parameterName, float value)
+    {
+        _animator.SetFloat(parameterName, value);
+    }
+
+    public void SetBool(string parameterName, bool value)
+    {
+        _animator.SetBool(parameterName, value);
     }
 
     #region UNITY

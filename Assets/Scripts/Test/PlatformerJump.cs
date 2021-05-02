@@ -7,8 +7,6 @@ public class PlatformerJump : MonoBehaviour
     [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _moveAxis;
     [SerializeField] string _jumpAxis;
-    [SerializeField] Animator _animator;
-    [SerializeField] Rigidbody2D _rb;
     [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] ParticleSystem _jumpExplosionGooVfx;
     [SerializeField] LayerMask _groundLayer;
@@ -72,6 +70,13 @@ public class PlatformerJump : MonoBehaviour
     }
 
     #region UNITY
+    PlatformerAnimatorController _ac;
+    Rigidbody2D _rb;
+    void Awake()
+    {
+        _ac = GetComponent<PlatformerAnimatorController>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
     void FixedUpdate()
     {
         if (_grounded)
@@ -100,10 +105,10 @@ public class PlatformerJump : MonoBehaviour
     #endregion
 
     #region HELPERS
-    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _animator.SetBool("WallStick", false); _OnJump.Invoke(); }
+    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _ac?.SetBool("WallStick", false); _OnJump.Invoke(); }
     void JumpHeightController() { if (_jumping) _jumping = false; }
-    void FallingCheck() => _animator.SetFloat("VelocityY", _rb.velocity.y);
-    void CyoteTime() { _grounded = false; _animator.SetBool("Grounded", false); _wasJumping = true; } //jump anim
+    void FallingCheck() => _ac?.SetFloat("VelocityY", _rb.velocity.y);
+    void CyoteTime() { _grounded = false; _ac?.SetBool("Grounded", false); _wasJumping = true; } //jump anim
 
     bool _isOnWall = false;
     public void SetOnWall(bool isOnWall)
@@ -114,8 +119,8 @@ public class PlatformerJump : MonoBehaviour
     public void SetGrounded(bool isGrounded)
     {
         _grounded = isGrounded;
-        if (_isOnWall) _animator.SetBool("Grounded", false);
-        else _animator.SetBool("Grounded", _grounded); // land anim
+        if (_isOnWall) _ac?.SetBool("Grounded", false);
+        else _ac?.SetBool("Grounded", _grounded); // land anim
     }
 
     bool SingleGroundCheck(float xPos)

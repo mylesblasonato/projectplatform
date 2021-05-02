@@ -9,9 +9,14 @@ public class PlatformerAnimatorControllerEditor : Editor
         DrawDefaultInspector();
 
         PlatformerAnimatorController pac = (PlatformerAnimatorController)target;
-        if (GUILayout.Button("Update Parameters"))
+        if (GUILayout.Button("Add All Parameters"))
         {
             pac.AddParameters();
+        }
+
+        if (GUILayout.Button("Remove All Parameters"))
+        {
+            pac.RemoveParameters();
         }
     }
 }
