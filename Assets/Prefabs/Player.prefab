@@ -19458,6 +19458,8 @@ MonoBehaviour:
     _type: 1
   - _name: WallStick
     _type: 1
+  - _name: OnShoot
+    _type: 1
 --- !u!114 &2616901683300319056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19471,8 +19473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
-  _animator: {fileID: 8295350960912820696}
-  _rb: {fileID: 2616901683300319059}
   _acceleration: {fileID: 11400000, guid: 7621435ab72622b44a2f0009a58d4a4e, type: 2}
   _maxSpeed: {fileID: 11400000, guid: 83b89ae93cba31f4eb48af0f5cd9345c, type: 2}
   _deceleration: {fileID: 11400000, guid: fde6c1a3b80219840bfcfbdf2e021fe6, type: 2}
@@ -19490,8 +19490,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveAxis: Horizontal
   _jumpAxis: Jump
-  _animator: {fileID: 8295350960912820696}
-  _rb: {fileID: 2616901683300319059}
   _gooVfx: {fileID: 2616901682225363381}
   _jumpExplosionGooVfx: {fileID: 1860323922}
   _groundLayer:
@@ -19520,8 +19518,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveAxis: Horizontal
   _jumpAxis: Jump
-  _animator: {fileID: 8295350960912820696}
-  _rb: {fileID: 2616901683300319059}
   _wallLayer:
     serializedVersion: 2
     m_Bits: 16384
@@ -19551,8 +19547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootAxis: Fire
-  _animator: {fileID: 8295350960912820696}
-  _rb: {fileID: 2616901683300319059}
   _currentWeapon: {fileID: 11400000, guid: 16fb5ea3bcb7aa042a4ba4f302745d0c, type: 2}
   _bulletPool: {fileID: 0}
   _gunMuzzle: {fileID: 522008599}

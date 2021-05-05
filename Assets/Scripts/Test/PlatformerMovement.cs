@@ -13,8 +13,6 @@ public class PlatformerMovement : MonoBehaviour
     [SerializeField] SoFloat _maxSpeed;
     [SerializeField] SoFloat _deceleration;
     #endregion
-
-    
     
     void Move(float horizontal)
     {

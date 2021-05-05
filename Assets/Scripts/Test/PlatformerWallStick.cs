@@ -7,8 +7,6 @@ public class PlatformerWallStick : MonoBehaviour
     [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _moveAxis;
     [SerializeField] string _jumpAxis;
-    [SerializeField] Animator _animator;
-    [SerializeField] Rigidbody2D _rb;
     [SerializeField] LayerMask _wallLayer;
     [SerializeField] ParticleSystem _gooVfx;
     [SerializeField] ParticleSystem _wallSplatVfx;
@@ -59,6 +57,13 @@ public class PlatformerWallStick : MonoBehaviour
     void JumpHorizontally() => _rb.AddForce(transform.right * _jumpHorForce.Value, ForceMode2D.Impulse);
 
     #region UNITY
+    PlatformerAnimatorController _ac;
+    Rigidbody2D _rb;
+    void Awake()
+    {
+        _ac = GetComponent<PlatformerAnimatorController>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
     void Start() => _wallSplatVfx.Pause();
 
     bool _jumpHor = false;
@@ -106,7 +111,7 @@ public class PlatformerWallStick : MonoBehaviour
         {
             _groundCheckDistance.Value = _originalGroundCheckDistance;
             _OnOffWall?.Invoke();
-            _animator.SetBool("WallStick", false);
+            _ac.SetBool("WallStick", false);
 
             if(_rb.velocity.x < -0.1f)
                 transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -115,7 +120,7 @@ public class PlatformerWallStick : MonoBehaviour
         }
         else
         {
-            _animator.SetBool("WallStick", true);
+            _ac.SetBool("WallStick", true);
         }
     }
     #endregion

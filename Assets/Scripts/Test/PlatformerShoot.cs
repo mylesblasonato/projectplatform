@@ -6,8 +6,6 @@ public class PlatformerShoot : MonoBehaviour
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _shootAxis;
-    [SerializeField] Animator _animator;
-    [SerializeField] Rigidbody2D _rb;
     [SerializeField] PlatformerGun _currentWeapon;
     [SerializeField] ObjectPoolingController _bulletPool;
     [SerializeField] Transform _gunMuzzle;
@@ -24,7 +22,7 @@ public class PlatformerShoot : MonoBehaviour
     {
         var bull = _bulletPool.InstantiateObject(_gunMuzzle);
         bull.GetComponent<BulletController>().ResetDirection(transform.right);
-        _animator.SetBool("OnShoot", true);
+        _ac.SetBool("OnShoot", true);
         _OnFire?.Invoke();
     }
 
@@ -35,9 +33,12 @@ public class PlatformerShoot : MonoBehaviour
     }
 
     #region UNITY    
-    void FixedUpdate()
+    PlatformerAnimatorController _ac;
+    Rigidbody2D _rb;
+    void Awake()
     {
-
+        _ac = GetComponent<PlatformerAnimatorController>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
