@@ -5,6 +5,6 @@ using UnityEngine;
 public class DialogueSequence : ScriptableObject
 {
     public TextAsset _dialogueFile;
-    public List<Dialogue> _dialogue;
+    public List<Dialogue> _dialogue;  
     [HideInInspector] public int _currentIndex = 0;
 }

@@ -30,6 +30,7 @@ public class PlatformerShoot : MonoBehaviour
     void FireAgain()
     {
         _canFire = true;
+        _ac.SetBool("OnShoot", false);
     }
 
     #region UNITY    

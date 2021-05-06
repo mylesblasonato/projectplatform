@@ -38,7 +38,7 @@ public class DialogueController : MonoBehaviour
         _currentIndex = _currentDialogueSequence._currentIndex;
         _textMesh.text = $"{_currentDialogueSequence._dialogue[_currentIndex]._name}";
         _currentDuration = _currentDialogueSequence._dialogue[_currentIndex]._duration / _currentDialogueSequence._dialogue[_currentIndex]._text.Length;
-        _textMesh.gameObject.transform.parent.parent.transform.position = GameObject.Find(_currentDialogueSequence._dialogue[_currentIndex]._gameObjectName).transform.position;
+        //_textMesh.gameObject.transform.parent.parent.transform.position = GameObject.Find(_currentDialogueSequence._dialogue[_currentIndex]._gameObjectName).transform.position;
         _nextBtn.gameObject.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(PrintDialogue());
