@@ -56,6 +56,7 @@ public class PlatformerJump : MonoBehaviour
 
             if(_grounded)
                 _jumpDuration = 0;
+
             SetGrounded(true);
             _ac?.SetFloat("HangTime", _jumpDuration);
             _OnGrounded.Invoke();
@@ -106,6 +107,10 @@ public class PlatformerJump : MonoBehaviour
 
     void Update()
     {
+
+        if(_grounded)
+            _jumpDuration += Time.deltaTime;
+
         InputCheck();
         GroundCheck();
         ChangeGravity();
@@ -117,8 +122,8 @@ public class PlatformerJump : MonoBehaviour
     void Jump()
     {
         _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
+        SetGrounded(false);
         _jumpDuration += Time.deltaTime;
-        SetGrounded(false); 
         _ac?.SetBool("WallStick", false); 
         _OnJump.Invoke();
     }
@@ -138,7 +143,7 @@ public class PlatformerJump : MonoBehaviour
     public void SetGrounded(bool isGrounded)
     {
         _grounded = isGrounded;
-        if (_isOnWall) _ac?.SetBool("Grounded", false);
+        if (_isOnWall) _ac?.SetBool("Grounded", false); 
         else _ac?.SetBool("Grounded", _grounded); // land anim
     }
 
