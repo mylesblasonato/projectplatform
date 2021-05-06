@@ -111331,11 +111331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858488377356648740, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
       propertyPath: _animatorParameters.Array.data[5]._name
-      value: LargeJump
+      value: HangTime
       objectReference: {fileID: 0}
     - target: {fileID: 1858488377356648740, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
       propertyPath: _animatorParameters.Array.data[5]._type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2616901683300319054, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
       propertyPath: m_Name

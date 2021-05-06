@@ -57,7 +57,7 @@ public class PlatformerJump : MonoBehaviour
             if(_grounded)
                 _jumpDuration = 0;
             SetGrounded(true);
-            _ac?.SetBool("LargeJump", _jumpDuration > _landingSpeedCheck ? true : false);
+            _ac?.SetFloat("HangTime", _jumpDuration);
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
