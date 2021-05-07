@@ -80,7 +80,7 @@ ModelImporter:
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L/Rig:Ankle_L/Rig:Toes_L
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_L/Rig:Knee_L/Rig:Ankle_L/Rig:Toes_L/Rig:ToesEnd_L
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R
@@ -90,7 +90,7 @@ ModelImporter:
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R/Rig:Ankle_R/Rig:Toes_R
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Hip_R/Rig:Knee_R/Rig:Ankle_R/Rig:Toes_R/Rig:ToesEnd_R
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M
@@ -106,41 +106,41 @@ ModelImporter:
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5/Rig:bang6
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:bang1/Rig:bang2/Rig:bang3/Rig:bang4/Rig:bang5/Rig:bang6/Rig:curve7
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_L
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_L/Rig:EyeEnd_L
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_R
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Eye_R/Rig:EyeEnd_R
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still/Rig:hair_onemore
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:hair_base/Rig:hair_then/Rig:hair_again/Rig:hair_still/Rig:hair_onemore/Rig:hair_end
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:HeadEnd_M
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Jaw_M
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Neck_M/Rig:Head_M/Rig:Jaw_M/Rig:JawEnd_M
-        weight: 1
+        weight: 0
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L
         weight: 1
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_L/Rig:Shoulder_L
@@ -254,11 +254,11 @@ ModelImporter:
       - path: Rig:DeformationSystem/Rig:root_M/Rig:pelvis_M/Rig:Spine1_M/Rig:Spine2_M/Rig:Chest_M/Rig:Scapula_R/Rig:Shoulder_R/Rig:ShoulderPart1_R/Rig:ShoulderPart2_R/Rig:Elbow_R/Rig:Wrist_R/Rig:Wep_R_jnt
         weight: 1
       - path: Rig:Geometry
-        weight: 1
+        weight: 0
       - path: Rig:Geometry/Rig:coolGuy
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: d03cb33b0f76f364bb864c038a767351, type: 2}
       additiveReferencePoseFrame: 16.8
     isReadable: 0
   meshes:
