@@ -22,7 +22,6 @@ public class PlatformerShoot : MonoBehaviour
     {
         var bull = _bulletPool.InstantiateObject(_gunMuzzle);
         bull.GetComponent<BulletController>().ResetDirection(transform.right);
-        _ac.SetBool("OnShoot", true);
         _OnFire?.Invoke();
     }
 
@@ -30,7 +29,6 @@ public class PlatformerShoot : MonoBehaviour
     void FireAgain()
     {
         _canFire = true;
-        _ac.SetBool("OnShoot", false);
     }
 
     #region UNITY    
@@ -42,13 +40,27 @@ public class PlatformerShoot : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
+    bool _isShooting = false;
     void Update()
     {
-        if (Input.GetAxis(_shootAxis) >= 1 && _canFire)
+        if (Input.GetAxis(_shootAxis) != 0 && _canFire)
         {
             _canFire = false;
             Fire();
             Invoke("FireAgain", _currentWeapon.FireRate);
+
+            // ON AXIS DOWN
+            if (!_isShooting)
+            {
+                _ac.SetBool("OnShoot", true);
+                _isShooting = true;
+            }
+        }
+
+        if (Input.GetAxisRaw(_shootAxis) == 0)
+        {
+            _ac.SetBool("OnShoot", false);
+            _isShooting = false;
         }
     }
     #endregion

@@ -19461,6 +19461,8 @@ MonoBehaviour:
     _type: 1
   - _name: OnShoot
     _type: 1
+  - _name: HangTime
+    _type: 0
 --- !u!114 &2616901683300319056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19497,6 +19499,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _groundCheckOffset: 0.2
+  _landingSpeedCheck: 0.1
   _jumpForce: {fileID: 11400000, guid: afb3edb1578088a43a38a30372a404a2, type: 2}
   _jumpHold: {fileID: 11400000, guid: 27cf66d7db3b9944882703b2c6da6bcd, type: 2}
   _gravity: {fileID: 11400000, guid: 24bde061a06913d429e704c1406c609d, type: 2}
@@ -19722,7 +19725,7 @@ GameObject:
   - component: {fileID: 4040546657943807704}
   - component: {fileID: 4040546657943807705}
   - component: {fileID: 4040546657943807702}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: RenderTexturesCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19821,7 +19824,7 @@ GameObject:
   - component: {fileID: 4040546658928762700}
   - component: {fileID: 4040546658928762702}
   - component: {fileID: 4040546658928762703}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PlayerRenderTexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}

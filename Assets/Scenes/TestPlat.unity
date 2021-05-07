@@ -450,51 +450,9 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 59314973}
-    m_ColliderPaths:
-    - - X: 170000000
-        Y: -57187500
-      - X: 165624992
-        Y: -50312500
-      - X: 164062496
-        Y: -50312500
-      - X: 161562496
-        Y: -54687500
-      - X: 160000000
-        Y: -57812500
-      - X: 160000000
-        Y: -60000000
-      - X: 170000000
-        Y: -60000000
-    - - X: 170000000
-        Y: -67187504
-      - X: 165624992
-        Y: -60312500
-      - X: 164062496
-        Y: -60312500
-      - X: 161562496
-        Y: -64687500
-      - X: 160000000
-        Y: -67812496
-      - X: 160000000
-        Y: -70000000
-      - X: 170000000
-        Y: -70000000
+    m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: 16.999971, y: -6}
-      - {x: 16.999996, y: -5.7187443}
-      - {x: 16.562485, y: -5.03125}
-      - {x: 16.406242, y: -5.031264}
-      - {x: 16.15625, y: -5.4687505}
-      - {x: 16, y: -5.781256}
-      - {x: 16.000029, y: -6}
-    - - {x: 16.999971, y: -7}
-      - {x: 16.999996, y: -6.7187443}
-      - {x: 16.562485, y: -6.03125}
-      - {x: 16.406242, y: -6.031264}
-      - {x: 16.15625, y: -6.4687505}
-      - {x: 16, y: -6.7812552}
-      - {x: 16.000029, y: -7}
+    m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &59314975
@@ -574,27 +532,7 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59314971}
   m_Enabled: 1
-  m_Tiles:
-  - first: {x: 16, y: -7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 16, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+  m_Tiles: {}
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -607,8 +545,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 0a4c014242219de4ca504a117da27abf, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -620,30 +558,30 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
-    m_Data: {fileID: -1356731099226492028, guid: 8581f6491c6a7e34cb12d5b0946a7a8f, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 2
+  - m_RefCount: 0
     m_Data:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
+      e00: 2.5244127e-29
+      e01: 3.7633295e+24
+      e02: 2.3925323
+      e03: -0.0000000017321335
+      e10: 8.65e-43
+      e11: 4.5905e-41
+      e12: 8.66e-43
+      e13: 8.63e-43
+      e20: 6e-45
+      e21: -9.772091e+30
+      e22: -9.7715346e+30
+      e23: -9.7715346e+30
       e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
+      e31: 2.97e-43
+      e32: 2.97e-43
+      e33: 2.97e-43
   m_TileColorArray:
-  - m_RefCount: 2
-    m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 2.3925323, g: 2.3925323, b: 2.3925323, a: 2.3925323}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111325,18 +111263,6 @@ PrefabInstance:
       propertyPath: _bulletPool
       value: 
       objectReference: {fileID: 1469274882}
-    - target: {fileID: 1858488377356648740, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: _animatorParameters.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1858488377356648740, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: _animatorParameters.Array.data[5]._name
-      value: HangTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 1858488377356648740, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: _animatorParameters.Array.data[5]._type
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2616901683300319054, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -111385,22 +111311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2616901683300319061, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: _landingSpeedCheck
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4040546657943807703, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4040546657943807704, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1390370418}
-    - target: {fileID: 4040546658928762701, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 401fa60acc12be24986a2182f535a8f8, type: 3}
 --- !u!1001 &5333484001098423992
