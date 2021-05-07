@@ -43,11 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712c7f48403424e4e896e32ecfc0da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogue:
-  - _text: YOOOOOO
-    _transform: {fileID: 0}
-  - _text: 4fgdgdgdgdgdg
-    _transform: {fileID: 0}
   _textMesh: {fileID: 0}
   _nextBtn: {fileID: 0}
   _nextBtnAxis: NextDialogue

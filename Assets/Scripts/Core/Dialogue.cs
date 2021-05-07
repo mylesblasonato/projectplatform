@@ -7,4 +7,6 @@ public class Dialogue
     [TextArea(5, 5)] public string _text;
     public string _gameObjectName;
     public float _duration;
+    public float _dBoxXOffset;
+    public float _dBoxYOffset;
 }

@@ -11,6 +11,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] ParticleSystem _jumpExplosionGooVfx;
     [SerializeField] LayerMask _groundLayer;
     [SerializeField] float _groundCheckOffset;
+    [SerializeField] float _landingSpeedCheck;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _jumpForce;
@@ -27,6 +28,7 @@ public class PlatformerJump : MonoBehaviour
 
     bool _wasJumping = false;
     bool _jumping = false;
+    float _jumpDuration = 0f;
     void InputCheck()
     {
         if (Input.GetButton(_jumpAxis) && _grounded)
@@ -52,7 +54,11 @@ public class PlatformerJump : MonoBehaviour
                 _wasJumping = false;
             }
 
+            if(_grounded)
+                _jumpDuration = 0;
+
             SetGrounded(true);
+            _ac?.SetFloat("HangTime", _jumpDuration);
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
@@ -88,7 +94,11 @@ public class PlatformerJump : MonoBehaviour
             _gooVfx.Pause();
         }
 
-        if (!_jumping) return;
+        if (!_jumping)
+        {
+            return;
+        }
+
         _gooVfx.Pause();
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
         Jump();
@@ -97,6 +107,10 @@ public class PlatformerJump : MonoBehaviour
 
     void Update()
     {
+
+        if(_grounded)
+            _jumpDuration += Time.deltaTime;
+
         InputCheck();
         GroundCheck();
         ChangeGravity();
@@ -105,9 +119,19 @@ public class PlatformerJump : MonoBehaviour
     #endregion
 
     #region HELPERS
-    void Jump() { _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse); SetGrounded(false); _ac?.SetBool("WallStick", false); _OnJump.Invoke(); }
+    void Jump()
+    {
+        _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
+        SetGrounded(false);
+        _jumpDuration += Time.deltaTime;
+        _ac?.SetBool("WallStick", false); 
+        _OnJump.Invoke();
+    }
     void JumpHeightController() { if (_jumping) _jumping = false; }
-    void FallingCheck() => _ac?.SetFloat("VelocityY", _rb.velocity.y);
+    void FallingCheck()
+    {
+        _ac?.SetFloat("VelocityY", _rb.velocity.y);
+    }
     void CyoteTime() { _grounded = false; _ac?.SetBool("Grounded", false); _wasJumping = true; } //jump anim
 
     bool _isOnWall = false;
@@ -119,7 +143,7 @@ public class PlatformerJump : MonoBehaviour
     public void SetGrounded(bool isGrounded)
     {
         _grounded = isGrounded;
-        if (_isOnWall) _ac?.SetBool("Grounded", false);
+        if (_isOnWall) _ac?.SetBool("Grounded", false); 
         else _ac?.SetBool("Grounded", _grounded); // land anim
     }
 
