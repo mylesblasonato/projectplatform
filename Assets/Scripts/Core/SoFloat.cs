@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="New SO Float", menuName ="Scriptable Data Types/Create New Float")]
+[CreateAssetMenu(menuName = "JMF/Mad Tuner/New SoFloat", fileName = "New SoFloat Variable", order = 2)]
 public class SoFloat : ScriptableObject
 {
     [SerializeField] float _value;
