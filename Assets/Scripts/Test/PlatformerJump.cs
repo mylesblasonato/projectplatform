@@ -31,7 +31,7 @@ public class PlatformerJump : MonoBehaviour
     float _jumpDuration = 0f;
     void InputCheck()
     {
-        if (Input.GetButton(_jumpAxis) && _grounded)
+        if (Input.GetButton(_jumpAxis) && _grounded || Input.GetButton(_jumpAxis) && _isOnWall)
         {
             _jumping = true;
         }
