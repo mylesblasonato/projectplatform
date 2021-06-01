@@ -34,7 +34,14 @@ public class PlatformerJump : MonoBehaviour
         if (Input.GetButton(_jumpAxis) && _grounded)
         {
             _jumping = true;
+            _jumpDuration = 0;
         }
+        
+        if (Input.GetButtonDown(_jumpAxis))
+        {
+            _jumpDuration = 0;
+        }
+        
         if (Input.GetButtonUp(_jumpAxis))
         {
             _jumping = false;
@@ -54,11 +61,7 @@ public class PlatformerJump : MonoBehaviour
                 _wasJumping = false;
             }
 
-            if(_grounded)
-                _jumpDuration = 0;
-
             SetGrounded(true);
-            _ac?.SetFloat("HangTime", _jumpDuration);
             _OnGrounded.Invoke();
         }
         if (!_groundCheckLeft && !_groundCheckRight)
@@ -91,6 +94,7 @@ public class PlatformerJump : MonoBehaviour
         }
         else
         {
+            _jumpDuration += Time.deltaTime;
             _gooVfx.Pause();
         }
 
@@ -107,10 +111,7 @@ public class PlatformerJump : MonoBehaviour
 
     void Update()
     {
-
-        if(_grounded)
-            _jumpDuration += Time.deltaTime;
-
+        _ac?.SetFloat("HangTime", _jumpDuration);
         InputCheck();
         GroundCheck();
         ChangeGravity();
@@ -123,7 +124,6 @@ public class PlatformerJump : MonoBehaviour
     {
         _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
         SetGrounded(false);
-        _jumpDuration += Time.deltaTime;
         _ac?.SetBool("WallStick", false); 
         _OnJump.Invoke();
     }
