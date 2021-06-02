@@ -99,7 +99,7 @@ public class PlatformerWallStick : MonoBehaviour
             _rb.velocity = Vector2.zero;
             _rb.gravityScale = 0;
             _gooVfx.Pause();
-            _groundCheckDistance.Value = _groundCheckDistanceOffset;
+            //_groundCheckDistance.Value = _groundCheckDistanceOffset;
 
             if (Input.GetButton(_jumpAxis))
             {
@@ -109,7 +109,7 @@ public class PlatformerWallStick : MonoBehaviour
 
         if (!_wallCheck && !_backCheck)
         {
-            _groundCheckDistance.Value = _originalGroundCheckDistance;
+            //_groundCheckDistance.Value = _originalGroundCheckDistance;
             _OnOffWall?.Invoke();
             _ac.SetBool("WallStick", false);
 
