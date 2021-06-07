@@ -18,7 +18,7 @@ public class MadTunerEditor : EditorWindow
     void OnGUI()
     {        
         _settings = (MadTunerSettings) EditorGUILayout.ObjectField(_settings, typeof(MadTunerSettings), false);
-        if (_settings == null) return;
+        if (_settings == null || _settings._scriptableData.Count == 0 ) return;
         _changeSOFloat = EditorGUILayout.Toggle(new GUIContent("CHANGE FLOATS"), _changeSOFloat);
         _scrollPos = EditorGUILayout.BeginScrollView(_scrollPos, GUIStyle.none, GUI.skin.verticalScrollbar, GUILayout.Width(10), GUILayout.Height(this.position.height - 50));
         EditorGUILayout.BeginVertical(GUILayout.MinWidth(this.position.width));    
