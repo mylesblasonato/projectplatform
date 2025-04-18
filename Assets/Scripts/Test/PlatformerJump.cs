@@ -1,5 +1,6 @@
-using System;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class PlatformerJump : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlatformerJump : MonoBehaviour
     [SerializeField] LayerMask _groundLayer;
     [SerializeField] float _groundCheckOffset;
     [SerializeField] float _landingSpeedCheck;
+    [SerializeField] string _landSound;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _jumpForce;
@@ -35,38 +37,47 @@ public class PlatformerJump : MonoBehaviour
         {
             _jumping = true;
             _jumpDuration = 0;
+            _OnJump.Invoke();
         }
         
         if (Input.GetButtonDown(_jumpAxis))
         {
             _jumpDuration = 0;
         }
-        
+
         if (Input.GetButtonUp(_jumpAxis))
         {
             _jumping = false;
         }
     }
 
-    bool _grounded = true, _groundCheckLeft = false, _groundCheckRight = false;
+    bool _grounded = true, _groundCheckLeft = false, _groundCheckRight = false; bool _hasLanded = false;
     void GroundCheck()
     {
         _groundCheckLeft = SingleGroundCheck(transform.localPosition.x - _groundCheckOffset);
         _groundCheckRight = SingleGroundCheck(transform.localPosition.x + _groundCheckOffset);
+
         if (_groundCheckLeft || _groundCheckRight)
         {
-            if(_wasJumping && _groundCheckDistance.Value > -1)
+            if (_wasJumping && _groundCheckDistance.Value > -1)
             {
                 _jumpExplosionGooVfx.Play();
                 _wasJumping = false;
             }
 
+            if (!_hasLanded) // ✅ Play landing sound/effect only once
+            {
+                _hasLanded = true;
+                _OnGrounded.Invoke(); // Invoke your landing event just once
+                _am.PlaySound2D(_landSound); // Optional: replace with your landing sound
+            }
+
             SetGrounded(true);
-            _OnGrounded.Invoke();
         }
-        if (!_groundCheckLeft && !_groundCheckRight)
+        else
         {
-            Invoke("CyoteTime", _cyoteTime.Value);
+            _hasLanded = false; // You're airborne again, allow future landing sound
+            Invoke(nameof(CyoteTime), _cyoteTime.Value);
         }
     }
 
@@ -81,10 +92,12 @@ public class PlatformerJump : MonoBehaviour
     #region UNITY
     PlatformerAnimatorController _ac;
     Rigidbody2D _rb;
+    AudioManager _am;
     void Awake()
     {
         _ac = GetComponent<PlatformerAnimatorController>();
         _rb = GetComponent<Rigidbody2D>();
+        _am = FindAnyObjectByType<AudioManager>();
     }
     void FixedUpdate()
     {
@@ -125,7 +138,6 @@ public class PlatformerJump : MonoBehaviour
         _rb.AddForce(Vector2.up * _jumpForce.Value, ForceMode2D.Impulse);
         SetGrounded(false);
         _ac?.SetBool("WallStick", false); 
-        _OnJump.Invoke();
     }
     void JumpHeightController() { if (_jumping) _jumping = false; }
     void FallingCheck()

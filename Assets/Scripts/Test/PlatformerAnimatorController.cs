@@ -1,6 +1,9 @@
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor.Animations;
+#endif
 
 [System.Serializable]
 public class PlatformerAnimatorController : MonoSingleton<PlatformerAnimatorController>
@@ -10,10 +13,10 @@ public class PlatformerAnimatorController : MonoSingleton<PlatformerAnimatorCont
     [SerializeField] Animator _animator;
     [SerializeField] List<AnimatorParameter> _animatorParameters;
     #endregion
-
+#if UNITY_EDITOR
     public void AddParameters()
     {
-        var animatorController = (AnimatorController)_animator.runtimeAnimatorController;
+        AnimatorController animatorController = (AnimatorController)_animator.runtimeAnimatorController;
         AnimatorControllerParameter parameter = new AnimatorControllerParameter();
         foreach (AnimatorParameter para in _animatorParameters)
         {
@@ -31,7 +34,7 @@ public class PlatformerAnimatorController : MonoSingleton<PlatformerAnimatorCont
                 animatorController.RemoveParameter(i);
         }
     }
-
+#endif
     public void SetFloat(string parameterName, float value)
     {
         _animator.SetFloat(parameterName, value);

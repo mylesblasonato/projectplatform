@@ -1,0 +1,1859 @@
+fileFormatVersion: 2
+guid: 8581f6491c6a7e34cb12d5b0946a7a8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7052028274263608498
+    second: platformer tileset - Google Search_0
+  - first:
+      213: -4170267798933155365
+    second: platformer tileset - Google Search_1
+  - first:
+      213: 2903471513130943933
+    second: platformer tileset - Google Search_2
+  - first:
+      213: -4907502501580656134
+    second: platformer tileset - Google Search_3
+  - first:
+      213: 1872482916109191127
+    second: platformer tileset - Google Search_4
+  - first:
+      213: -9015094208797466850
+    second: platformer tileset - Google Search_5
+  - first:
+      213: -242844946374122384
+    second: platformer tileset - Google Search_6
+  - first:
+      213: -9207448363808943193
+    second: platformer tileset - Google Search_7
+  - first:
+      213: -8920426347683558890
+    second: platformer tileset - Google Search_8
+  - first:
+      213: -6746900199131597525
+    second: platformer tileset - Google Search_9
+  - first:
+      213: -8918239499170226752
+    second: platformer tileset - Google Search_10
+  - first:
+      213: 7872456180544324272
+    second: platformer tileset - Google Search_11
+  - first:
+      213: 8595546209884192299
+    second: platformer tileset - Google Search_12
+  - first:
+      213: 3220041913891935158
+    second: platformer tileset - Google Search_13
+  - first:
+      213: -3551208118293004889
+    second: platformer tileset - Google Search_14
+  - first:
+      213: -6249800525803768985
+    second: platformer tileset - Google Search_15
+  - first:
+      213: 8232009001308118863
+    second: platformer tileset - Google Search_16
+  - first:
+      213: -8938690991669887351
+    second: platformer tileset - Google Search_17
+  - first:
+      213: -5947827844769194892
+    second: platformer tileset - Google Search_18
+  - first:
+      213: -1647119648835976867
+    second: platformer tileset - Google Search_19
+  - first:
+      213: 7700847012556262554
+    second: platformer tileset - Google Search_20
+  - first:
+      213: 5645395393293338644
+    second: platformer tileset - Google Search_21
+  - first:
+      213: 3953750438835997432
+    second: platformer tileset - Google Search_22
+  - first:
+      213: 1801058152020664434
+    second: platformer tileset - Google Search_23
+  - first:
+      213: -2394996136646371860
+    second: platformer tileset - Google Search_24
+  - first:
+      213: 52712065489105997
+    second: platformer tileset - Google Search_25
+  - first:
+      213: -7200481289486377469
+    second: platformer tileset - Google Search_26
+  - first:
+      213: -2011438508082198933
+    second: platformer tileset - Google Search_27
+  - first:
+      213: -1129795786331230097
+    second: platformer tileset - Google Search_28
+  - first:
+      213: 2282524216197061555
+    second: platformer tileset - Google Search_29
+  - first:
+      213: 3670934866480040380
+    second: platformer tileset - Google Search_30
+  - first:
+      213: -5190618523331707374
+    second: platformer tileset - Google Search_31
+  - first:
+      213: -7119986559540367532
+    second: platformer tileset - Google Search_32
+  - first:
+      213: 1727981725436996418
+    second: platformer tileset - Google Search_33
+  - first:
+      213: 3625080175710922574
+    second: platformer tileset - Google Search_34
+  - first:
+      213: -4113606259068623939
+    second: platformer tileset - Google Search_35
+  - first:
+      213: 6952192175842330733
+    second: platformer tileset - Google Search_36
+  - first:
+      213: 4848974190469822885
+    second: platformer tileset - Google Search_37
+  - first:
+      213: -2649106776773870241
+    second: platformer tileset - Google Search_38
+  - first:
+      213: 4742287265921525211
+    second: platformer tileset - Google Search_39
+  - first:
+      213: -1629177057659537375
+    second: platformer tileset - Google Search_40
+  - first:
+      213: 1680637706177530119
+    second: platformer tileset - Google Search_41
+  - first:
+      213: 4001888247132697820
+    second: platformer tileset - Google Search_42
+  - first:
+      213: 3805793917894839446
+    second: platformer tileset - Google Search_43
+  - first:
+      213: 729880129591200188
+    second: platformer tileset - Google Search_44
+  - first:
+      213: 6585287206825731579
+    second: platformer tileset - Google Search_45
+  - first:
+      213: 7143862965590800579
+    second: platformer tileset - Google Search_46
+  - first:
+      213: 2930864245122636856
+    second: platformer tileset - Google Search_47
+  - first:
+      213: 4320096663480828840
+    second: platformer tileset - Google Search_48
+  - first:
+      213: 1298662771309253408
+    second: platformer tileset - Google Search_49
+  - first:
+      213: 3344597786164590130
+    second: platformer tileset - Google Search_50
+  - first:
+      213: 1144204162893861493
+    second: platformer tileset - Google Search_51
+  - first:
+      213: -8096628996811037524
+    second: platformer tileset - Google Search_52
+  - first:
+      213: -7490523932590991588
+    second: platformer tileset - Google Search_53
+  - first:
+      213: 7554133607007560522
+    second: platformer tileset - Google Search_54
+  - first:
+      213: -3560886254734034378
+    second: platformer tileset - Google Search_55
+  - first:
+      213: 7043177983491956859
+    second: platformer tileset - Google Search_56
+  - first:
+      213: 498344374781898791
+    second: platformer tileset - Google Search_57
+  - first:
+      213: -7701254893585423135
+    second: platformer tileset - Google Search_58
+  - first:
+      213: -1356731099226492028
+    second: platformer tileset - Google Search_59
+  - first:
+      213: 2011973027492064748
+    second: platformer tileset - Google Search_60
+  - first:
+      213: 443872343178078824
+    second: platformer tileset - Google Search_61
+  - first:
+      213: 2943425061410851062
+    second: platformer tileset - Google Search_62
+  - first:
+      213: -2052457658595126410
+    second: platformer tileset - Google Search_63
+  - first:
+      213: 3390574965226425022
+    second: platformer tileset - Google Search_64
+  - first:
+      213: -2695091596447372455
+    second: platformer tileset - Google Search_65
+  - first:
+      213: 831850878192502749
+    second: platformer tileset - Google Search_66
+  - first:
+      213: 4759144098109471581
+    second: platformer tileset - Google Search_67
+  - first:
+      213: 7600459615870402780
+    second: platformer tileset - Google Search_68
+  - first:
+      213: -4052626482214393005
+    second: platformer tileset - Google Search_69
+  - first:
+      213: -4597192632348115268
+    second: platformer tileset - Google Search_70
+  - first:
+      213: -3915247014923004962
+    second: platformer tileset - Google Search_71
+  - first:
+      213: -5707160292305184506
+    second: platformer tileset - Google Search_72
+  - first:
+      213: 7987039144135244558
+    second: platformer tileset - Google Search_73
+  - first:
+      213: -723231392519040861
+    second: platformer tileset - Google Search_74
+  - first:
+      213: -8771086335747551616
+    second: platformer tileset - Google Search_75
+  - first:
+      213: 6675588675954043548
+    second: platformer tileset - Google Search_76
+  - first:
+      213: -5427125416568280939
+    second: platformer tileset - Google Search_77
+  - first:
+      213: -3282370850325109607
+    second: platformer tileset - Google Search_78
+  - first:
+      213: 5049703450022597588
+    second: platformer tileset - Google Search_79
+  - first:
+      213: -103962012827085855
+    second: platformer tileset - Google Search_80
+  - first:
+      213: 8056766259200983055
+    second: platformer tileset - Google Search_81
+  - first:
+      213: 2852037101490538106
+    second: platformer tileset - Google Search_82
+  - first:
+      213: -2060392355439506654
+    second: platformer tileset - Google Search_83
+  - first:
+      213: 8088857161832601577
+    second: platformer tileset - Google Search_84
+  - first:
+      213: 8776090405918976074
+    second: platformer tileset - Google Search_85
+  - first:
+      213: -1797160276170621745
+    second: platformer tileset - Google Search_86
+  - first:
+      213: -7815747218391251081
+    second: platformer tileset - Google Search_87
+  - first:
+      213: 4254658504702666954
+    second: platformer tileset - Google Search_88
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43b186d5a9222e90800000000000000
+      internalID: -7052028274263608498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1d65a288b3026c0800000000000000
+      internalID: -4170267798933155365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5c2ab35f33b4820800000000000000
+      internalID: 2903471513130943933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1b1f2d97c05ebb0800000000000000
+      internalID: -4907502501580656134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d70da69a456cf910800000000000000
+      internalID: 1872482916109191127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f12f3c493f3e280800000000000000
+      internalID: -9015094208797466850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0742fd3decd31acf0800000000000000
+      internalID: -242844946374122384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a39a6b0f72983080800000000000000
+      internalID: -9207448363808943193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a494dcf77443480800000000000000
+      internalID: -8920426347683558890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25bfb7f3023e52a0800000000000000
+      internalID: -6746900199131597525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdd9162d6c0c3480800000000000000
+      internalID: -8918239499170226752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b24c27af25904d60800000000000000
+      internalID: 7872456180544324272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e3a9a9cb3894770800000000000000
+      internalID: 8595546209884192299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3d5676f03efac20800000000000000
+      internalID: 3220041913891935158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad79a1180397bec0800000000000000
+      internalID: -3551208118293004889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763ba6ed88f3449a0800000000000000
+      internalID: -6249800525803768985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fd9c65298fd3270800000000000000
+      internalID: 8232009001308118863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e388cf6e363f380800000000000000
+      internalID: -8938690991669887351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cda5f8612157da0800000000000000
+      internalID: -5947827844769194892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51c09cf7614429e0800000000000000
+      internalID: -1647119648835976867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c4b0d9e87eeda60800000000000000
+      internalID: 7700847012556262554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41840e91339785e40800000000000000
+      internalID: 5645395393293338644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa4d55831b8ed630800000000000000
+      internalID: 3953750438835997432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270630bc8d4aef810800000000000000
+      internalID: 1801058152020664434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce592c4f3b343ced0800000000000000
+      internalID: -2394996136646371860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44fad228554bb000800000000000000
+      internalID: 52712065489105997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e5150ca60c21c90800000000000000
+      internalID: -7200481289486377469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66083e755fe514e0800000000000000
+      internalID: -2011438508082198933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f607efed7b82250f0800000000000000
+      internalID: -1129795786331230097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb17a96ea72daf10800000000000000
+      internalID: 2282524216197061555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb98326cfc7c1f230800000000000000
+      internalID: 3670934866480040380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e304044f737f7b0800000000000000
+      internalID: -5190618523331707374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f6a0982f9b03d90800000000000000
+      internalID: -7119986559540367532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24be90b59360bf710800000000000000
+      internalID: 1727981725436996418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e476f8b963fde4230800000000000000
+      internalID: 3625080175710922574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db32466f6e889e6c0800000000000000
+      internalID: -4113606259068623939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68055b13f52b7060800000000000000
+      internalID: 6952192175842330733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9bdf3d5540b4340800000000000000
+      internalID: 4848974190469822885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d305e0c6b7c3bd0800000000000000
+      internalID: -2649106776773870241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd56c14842dffc140800000000000000
+      internalID: 4742287265921525211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128bcf909100469e0800000000000000
+      internalID: -1629177057659537375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709c6d0e613d25710800000000000000
+      internalID: 1680637706177530119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4b7296820998730800000000000000
+      internalID: 4001888247132697820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cc6748765e0d430800000000000000
+      internalID: 3805793917894839446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb946ec5c1e012a00800000000000000
+      internalID: 729880129591200188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5a5c203d3a36b50800000000000000
+      internalID: 6585287206825731579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8bb147489142360800000000000000
+      internalID: 7143862965590800579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c9d67a0858ca820800000000000000
+      internalID: 2930864245122636856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3002ec60114fb30800000000000000
+      internalID: 4320096663480828840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02399eee8e6c50210800000000000000
+      internalID: 1298662771309253408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236f5e057f56a6e20800000000000000
+      internalID: 3344597786164590130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572dfc7bf9701ef00800000000000000
+      internalID: 1144204162893861493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca463fe33def2af80800000000000000
+      internalID: -8096628996811037524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c171a587b205c0890800000000000000
+      internalID: -7490523932590991588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43a687fd7ca5d860800000000000000
+      internalID: 7554133607007560522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ab10551d0359ec0800000000000000
+      internalID: -3560886254734034378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70e3e34f056eb160800000000000000
+      internalID: 7043177983491956859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_57
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72070ba81997ae600800000000000000
+      internalID: 498344374781898791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e42a1f2a75af1590800000000000000
+      internalID: -7701254893585423135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48331e6e04ceb2de0800000000000000
+      internalID: -1356731099226492028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cede4510fc6fbeb10800000000000000
+      internalID: 2011973027492064748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86aefbc5b83f82600800000000000000
+      internalID: 443872343178078824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_62
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f840689f7529d820800000000000000
+      internalID: 2943425061410851062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_63
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67358e642a43483e0800000000000000
+      internalID: -2052457658595126410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba47a287fdbd0f20800000000000000
+      internalID: 3390574965226425022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platformer tileset - Google Search_65
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b2d94e87c199ad0800000000000000
+      internalID: -2695091596447372455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      platformer tileset - Google Search_0: -7052028274263608498
+      platformer tileset - Google Search_1: -4170267798933155365
+      platformer tileset - Google Search_10: -8918239499170226752
+      platformer tileset - Google Search_11: 7872456180544324272
+      platformer tileset - Google Search_12: 8595546209884192299
+      platformer tileset - Google Search_13: 3220041913891935158
+      platformer tileset - Google Search_14: -3551208118293004889
+      platformer tileset - Google Search_15: -6249800525803768985
+      platformer tileset - Google Search_16: 8232009001308118863
+      platformer tileset - Google Search_17: -8938690991669887351
+      platformer tileset - Google Search_18: -5947827844769194892
+      platformer tileset - Google Search_19: -1647119648835976867
+      platformer tileset - Google Search_2: 2903471513130943933
+      platformer tileset - Google Search_20: 7700847012556262554
+      platformer tileset - Google Search_21: 5645395393293338644
+      platformer tileset - Google Search_22: 3953750438835997432
+      platformer tileset - Google Search_23: 1801058152020664434
+      platformer tileset - Google Search_24: -2394996136646371860
+      platformer tileset - Google Search_25: 52712065489105997
+      platformer tileset - Google Search_26: -7200481289486377469
+      platformer tileset - Google Search_27: -2011438508082198933
+      platformer tileset - Google Search_28: -1129795786331230097
+      platformer tileset - Google Search_29: 2282524216197061555
+      platformer tileset - Google Search_3: -4907502501580656134
+      platformer tileset - Google Search_30: 3670934866480040380
+      platformer tileset - Google Search_31: -5190618523331707374
+      platformer tileset - Google Search_32: -7119986559540367532
+      platformer tileset - Google Search_33: 1727981725436996418
+      platformer tileset - Google Search_34: 3625080175710922574
+      platformer tileset - Google Search_35: -4113606259068623939
+      platformer tileset - Google Search_36: 6952192175842330733
+      platformer tileset - Google Search_37: 4848974190469822885
+      platformer tileset - Google Search_38: -2649106776773870241
+      platformer tileset - Google Search_39: 4742287265921525211
+      platformer tileset - Google Search_4: 1872482916109191127
+      platformer tileset - Google Search_40: -1629177057659537375
+      platformer tileset - Google Search_41: 1680637706177530119
+      platformer tileset - Google Search_42: 4001888247132697820
+      platformer tileset - Google Search_43: 3805793917894839446
+      platformer tileset - Google Search_44: 729880129591200188
+      platformer tileset - Google Search_45: 6585287206825731579
+      platformer tileset - Google Search_46: 7143862965590800579
+      platformer tileset - Google Search_47: 2930864245122636856
+      platformer tileset - Google Search_48: 4320096663480828840
+      platformer tileset - Google Search_49: 1298662771309253408
+      platformer tileset - Google Search_5: -9015094208797466850
+      platformer tileset - Google Search_50: 3344597786164590130
+      platformer tileset - Google Search_51: 1144204162893861493
+      platformer tileset - Google Search_52: -8096628996811037524
+      platformer tileset - Google Search_53: -7490523932590991588
+      platformer tileset - Google Search_54: 7554133607007560522
+      platformer tileset - Google Search_55: -3560886254734034378
+      platformer tileset - Google Search_56: 7043177983491956859
+      platformer tileset - Google Search_57: 498344374781898791
+      platformer tileset - Google Search_58: -7701254893585423135
+      platformer tileset - Google Search_59: -1356731099226492028
+      platformer tileset - Google Search_6: -242844946374122384
+      platformer tileset - Google Search_60: 2011973027492064748
+      platformer tileset - Google Search_61: 443872343178078824
+      platformer tileset - Google Search_62: 2943425061410851062
+      platformer tileset - Google Search_63: -2052457658595126410
+      platformer tileset - Google Search_64: 3390574965226425022
+      platformer tileset - Google Search_65: -2695091596447372455
+      platformer tileset - Google Search_7: -9207448363808943193
+      platformer tileset - Google Search_8: -8920426347683558890
+      platformer tileset - Google Search_9: -6746900199131597525
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

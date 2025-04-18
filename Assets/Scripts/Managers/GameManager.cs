@@ -7,17 +7,20 @@ public class GameManager : MonoSingleton<GameManager>
 {
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
+    [SerializeField] string _mainMusic = "Main";
     [SerializeField] string _pauseScreenName;
     [SerializeField] string _startingPositionName;
     [SerializeField] string _playerName;
     [SerializeField] bool _showCursor = false;
 
     [Header("---EVENTS---", order = 1)] //EVENTS
+    [SerializeField] GameEvent _OnGameStart;
     [SerializeField] GameEvent _OnLoseLife;
     #endregion
 
     GameObject _player;
     GameObject _pauseScreen;
+    AudioManager _audioManager;
     void Awake()
     {
         _pauseScreen = GameObject.FindGameObjectWithTag(_pauseScreenName);
@@ -25,6 +28,13 @@ public class GameManager : MonoSingleton<GameManager>
         _player = GameObject.FindGameObjectWithTag(_playerName);
         _startingPosition = GameObject.FindGameObjectWithTag(_startingPositionName).transform;
         _player.transform.position = _startingPosition.transform.position;
+        _audioManager = FindAnyObjectByType<AudioManager>();
+    }
+
+    void Start()
+    {
+        _OnGameStart?.Invoke();
+        _audioManager.PlayMusic(_mainMusic, 0f);
     }
 
     void Update()

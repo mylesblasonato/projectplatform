@@ -7,13 +7,18 @@ public class PlatformerMovement : MonoBehaviour
     #region VARS
     [Header("---LOCAL---", order = 0)] //Component variables
     [SerializeField] string _horizontalAxis;
+    [SerializeField] float _moveSoundDuration;
+    [SerializeField] string _moveSound;
 
     [Header("---SHARED---", order = 1)] //Scriptable Object Floats
     [SerializeField] SoFloat _acceleration;
     [SerializeField] SoFloat _maxSpeed;
     [SerializeField] SoFloat _deceleration;
+
+    [Header("---EVENTS---", order = 2)] //EVENTS
+    [SerializeField] GameEvent _OnMove;
     #endregion
-    
+
     void Move(float horizontal)
     {
         if (Mathf.Abs(horizontal) > 0.2f)
@@ -26,6 +31,31 @@ public class PlatformerMovement : MonoBehaviour
         {
             _ac.SetFloat("Move", Mathf.Abs(_direction.x)); // move anim
         }
+        if (Mathf.Abs(_rb.velocity.x) > 0.2f)
+        {
+            _OnMove?.Invoke();
+
+            if (!_isInvokingFootsteps)
+            {
+                InvokeRepeating(nameof(Footsteps), 0f, _moveSoundDuration);
+                _isInvokingFootsteps = true;
+            }
+        }
+        else
+        {
+            if (_isInvokingFootsteps)
+            {
+                CancelInvoke("Footsteps");
+                _isInvokingFootsteps = false;
+            }
+
+        }
+    }
+
+    bool _isInvokingFootsteps = false;
+    void Footsteps()
+    {
+        _am.PlaySound2D(_moveSound);
     }
 
     void ModifyPhysics()
@@ -45,10 +75,13 @@ public class PlatformerMovement : MonoBehaviour
     #region UNITY   
     PlatformerAnimatorController _ac;
     Rigidbody2D _rb;
+    AudioManager _am;
+
     void Awake()
     {
         _ac = GetComponent<PlatformerAnimatorController>();
         _rb = GetComponent<Rigidbody2D>();
+        _am = FindAnyObjectByType<AudioManager>();
     }
     Vector2 _direction;
     void Update()
