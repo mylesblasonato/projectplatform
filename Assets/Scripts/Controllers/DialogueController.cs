@@ -6,15 +6,22 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _textMesh;
-    [SerializeField] Button _nextBtn; 
-    [SerializeField] string _nextBtnAxis;
-
+    #region VARS
+    [Header("---LOCAL---", order = 0)] //Component variables
     DialogueSequence _currentDialogueSequence;
     int _currentIndex = 0;
     bool _isPrinting = false;
     bool _isDialogueComplete = true;
     float _currentDuration = 0;
+
+    [Header("---SHARED---", order = 1)] //Component variables
+    [SerializeField] TextMeshProUGUI _textMesh;
+    [SerializeField] Button _nextBtn; 
+    [SerializeField] string _nextBtnAxis;
+
+    [Header("---EVENTS---", order = 2)] //EVENTS
+    [SerializeField] GameEvent _OnStartDialogue, _OnNextDialogue, _OnFinishSequence, _OnEndDialogue;
+    #endregion
 
     void Update()
     {
@@ -29,6 +36,7 @@ public class DialogueController : MonoBehaviour
     {
         _currentDialogueSequence = dialogueSequence;
         _currentDialogueSequence._currentIndex = 0;
+        _OnStartDialogue?.Invoke();
         RunDialogue();
     }
     
@@ -51,12 +59,14 @@ public class DialogueController : MonoBehaviour
             if (_currentIndex == (_currentDialogueSequence._dialogue.Count - 1))
             {
                 _isDialogueComplete = true;
+                _OnEndDialogue?.Invoke();
             }
 
             if (!_isPrinting)
             {
                 _currentIndex++;
                 _currentDialogueSequence._currentIndex = _currentIndex;
+                _OnNextDialogue?.Invoke();
                 RunDialogue();
             }
             else
@@ -74,6 +84,7 @@ public class DialogueController : MonoBehaviour
             _textMesh.text += letter;
             yield return new WaitForSeconds(_currentDuration);
         }
+        _OnFinishSequence?.Invoke();
         _isPrinting = false;
 
         if (_currentIndex == (_currentDialogueSequence._dialogue.Count - 1))

@@ -16,6 +16,9 @@ public class GameManager : MonoSingleton<GameManager>
     [Header("---EVENTS---", order = 1)] //EVENTS
     [SerializeField] GameEvent _OnGameStart;
     [SerializeField] GameEvent _OnLoseLife;
+    [SerializeField] GameEvent _OnPause;
+    [SerializeField] GameEvent _OnUnPause;
+
     #endregion
 
     GameObject _player;
@@ -57,6 +60,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         _isPaused = !_isPaused;
         _pauseScreen.SetActive(_isPaused);
+
+        if(_isPaused)
+            _OnPause?.Invoke();
+        else
+            _OnUnPause?.Invoke();
+
         Time.timeScale = _isPaused ? 0 : 1f;
     }
 }

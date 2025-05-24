@@ -117,11 +117,16 @@ public class AudioManager : MonoBehaviour
 		musicSource.clip = musicLibrary.GetClipFromName(musicName);
 		musicSource.PlayDelayed(delay);
 	}
+    public void PlayMusic(string musicName)
+    {
+        musicSource.clip = musicLibrary.GetClipFromName(musicName);
+        musicSource.Play();
+    }
 
-	//==============================================================
-	// Play music fade in
-	//==============================================================
-	public IEnumerator PlayMusicFade(string musicName, float duration)
+    //==============================================================
+    // Play music fade in
+    //==============================================================
+    public IEnumerator PlayMusicFade(string musicName, float duration)
 	{
 		CoroutineRun = true; // Used in demo
 
@@ -203,7 +208,12 @@ public class AudioManager : MonoBehaviour
 		fxSource.PlayOneShot(soundLibrary.GetClipFromName(soundName), fxVolume * masterVolume);
 	}
 
-	public void PlaySound3D(string soundName, Vector3 soundPosition)
+    public void StopSound2D()
+    {
+        fxSource.Stop();
+    }
+
+    public void PlaySound3D(string soundName, Vector3 soundPosition)
 	{
 		AudioSource.PlayClipAtPoint(soundLibrary.GetClipFromName(soundName), soundPosition, fxVolume * masterVolume);
 	}
